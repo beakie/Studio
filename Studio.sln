@@ -71,8 +71,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture", "Picture", "{C633
 		Library\picture-colormodelconvbuilders_.h = Library\picture-colormodelconvbuilders_.h
 		Library\picture-colormodelhelpers_.h = Library\picture-colormodelhelpers_.h
 		Library\picture-hsvtorgbpixelconv.h = Library\picture-hsvtorgbpixelconv.h
-		Library\picture-qt-imagemapper_.h = Library\picture-qt-imagemapper_.h
-		Library\picture-qt.h = Library\picture-qt.h
 		Library\picture-quadchanpixelconvbuilders_.h = Library\picture-quadchanpixelconvbuilders_.h
 		Library\picture-quadcolormap.h = Library\picture-quadcolormap.h
 		Library\picture-quadcolormapscaledpixelconv.h = Library\picture-quadcolormapscaledpixelconv.h
@@ -121,6 +119,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Render3d", "Render3d", "{ED
 		Library\render3d.h = Library\render3d.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Qt", "Qt", "{6E009004-5FB5-4DBE-A9CA-6F53A88D05F2}"
+	ProjectSection(SolutionItems) = preProject
+		Library\picture-qt-imagemapper_.h = Library\picture-qt-imagemapper_.h
+		Library\picture-qt.h = Library\picture-qt.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -154,5 +158,6 @@ Global
 		{1484C5EF-837A-438B-9A42-109B223981AC} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{39B1E140-9199-48DF-8C9D-3CEE087D16F9} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{ED5ED465-CD5A-49CA-B684-775BC704AF1E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{6E009004-5FB5-4DBE-A9CA-6F53A88D05F2} = {C63334A9-184B-41E8-8959-400037139DDA}
 	EndGlobalSection
 EndGlobal
