@@ -5,83 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{EABBEA89-1522-47F3-A622-768DE28274A3}"
 	ProjectSection(SolutionItems) = preProject
-		Library\bodyrender-jointtojointbones_.h = Library\bodyrender-jointtojointbones_.h
-		Library\bodyrender.h = Library\bodyrender.h
-		Library\common-bounds_.h = Library\common-bounds_.h
-		Library\common-castpixelconv.h = Library\common-castpixelconv.h
-		Library\common-chainpixelconv.h = Library\common-chainpixelconv.h
-		Library\common-fromunitintervalpixelconv.h = Library\common-fromunitintervalpixelconv.h
-		Library\common-image.h = Library\common-image.h
-		Library\common-imatrixadapter.h = Library\common-imatrixadapter.h
-		Library\common-ipixelconverter.h = Library\common-ipixelconverter.h
-		Library\common-list.h = Library\common-list.h
-		Library\common-managedlist.h = Library\common-managedlist.h
-		Library\common-math_.h = Library\common-math_.h
-		Library\common-matrix2.h = Library\common-matrix2.h
-		Library\common-matrix3.h = Library\common-matrix3.h
-		Library\common-matrix4.h = Library\common-matrix4.h
-		Library\common-nullable.h = Library\common-nullable.h
-		Library\common-nullablenull.h = Library\common-nullablenull.h
-		Library\common-quaternion.h = Library\common-quaternion.h
-		Library\common-scalecastpixelconv.h = Library\common-scalecastpixelconv.h
-		Library\common-tounitintervalpixelconv.h = Library\common-tounitintervalpixelconv.h
-		Library\common-tuple.h = Library\common-tuple.h
-		Library\common-unitinterval.h = Library\common-unitinterval.h
-		Library\common-unitvector.h = Library\common-unitvector.h
-		Library\common-vector2.h = Library\common-vector2.h
-		Library\common-vector3.h = Library\common-vector3.h
-		Library\common-vector4.h = Library\common-vector4.h
-		Library\common.h = Library\common.h
 		Library\core.h = Library\core.h
-		Library\movement-bonemap.h = Library\movement-bonemap.h
-		Library\movement-jointlist.h = Library\movement-jointlist.h
-		Library\movement-positionlist.h = Library\movement-positionlist.h
-		Library\movement-positiontranslation_.h = Library\movement-positiontranslation_.h
-		Library\movement-skeletal.h = Library\movement-skeletal.h
-		Library\movement.h = Library\movement.h
-		Library\picture-argbtorgbpixelconv.h = Library\picture-argbtorgbpixelconv.h
-		Library\picture-cmyktorgbpixelconv.h = Library\picture-cmyktorgbpixelconv.h
-		Library\picture-colorhelpers_.h = Library\picture-colorhelpers_.h
-		Library\picture-colormaps_.h = Library\picture-colormaps_.h
-		Library\picture-colormodelconvbuilders_.h = Library\picture-colormodelconvbuilders_.h
-		Library\picture-colormodelhelpers_.h = Library\picture-colormodelhelpers_.h
-		Library\picture-hsvtorgbpixelconv.h = Library\picture-hsvtorgbpixelconv.h
-		Library\picture-qt-imagemapper_.h = Library\picture-qt-imagemapper_.h
-		Library\picture-qt.h = Library\picture-qt.h
-		Library\picture-quadchanpixelconvbuilders_.h = Library\picture-quadchanpixelconvbuilders_.h
-		Library\picture-quadcolormap.h = Library\picture-quadcolormap.h
-		Library\picture-quadcolormapscaledpixelconv.h = Library\picture-quadcolormapscaledpixelconv.h
-		Library\picture-rgbtoargbpixelconv.h = Library\picture-rgbtoargbpixelconv.h
-		Library\picture-rgbtocmykpixelconv.h = Library\picture-rgbtocmykpixelconv.h
-		Library\picture-rgbtohsvpixelconv.h = Library\picture-rgbtohsvpixelconv.h
-		Library\picture-selectchanavgquadchanpixelconv.h = Library\picture-selectchanavgquadchanpixelconv.h
-		Library\picture-selectchanavgtrichanpixelconv.h = Library\picture-selectchanavgtrichanpixelconv.h
-		Library\picture-selectchanquadchanpixelconv.h = Library\picture-selectchanquadchanpixelconv.h
-		Library\picture-selectchantrichanpixelconv.h = Library\picture-selectchantrichanpixelconv.h
-		Library\picture-spreadchanquadchanpixelconv.h = Library\picture-spreadchanquadchanpixelconv.h
-		Library\picture-spreadchantrichanpixelconv.h = Library\picture-spreadchantrichanpixelconv.h
-		Library\picture-spreadvaluequadchanpixelconv.h = Library\picture-spreadvaluequadchanpixelconv.h
-		Library\picture-spreadvaluetrichanpixelconv.h = Library\picture-spreadvaluetrichanpixelconv.h
-		Library\picture-trichanpixelconvbuilders_.h = Library\picture-trichanpixelconvbuilders_.h
-		Library\picture-tricolormap.h = Library\picture-tricolormap.h
-		Library\picture-tricolormappalettepixelconv.h = Library\picture-tricolormappalettepixelconv.h
-		Library\picture-tricolormapscaledpixelconv.h = Library\picture-tricolormapscaledpixelconv.h
-		Library\picture.h = Library\picture.h
-		Library\render3d-orthographic_.h = Library\render3d-orthographic_.h
-		Library\render3d.h = Library\render3d.h
-		Library\space2d-axis2d.h = Library\space2d-axis2d.h
-		Library\space2d-common_.h = Library\space2d-common_.h
-		Library\space2d-linesegment2d.h = Library\space2d-linesegment2d.h
-		Library\space2d-plot.h = Library\space2d-plot.h
-		Library\space2d-transformmatrixbuilders_.h = Library\space2d-transformmatrixbuilders_.h
-		Library\space2d.h = Library\space2d.h
-		Library\space3d-axis3d.h = Library\space3d-axis3d.h
-		Library\space3d-common_.h = Library\space3d-common_.h
-		Library\space3d-coordinate.h = Library\space3d-coordinate.h
-		Library\space3d-linesegment3d.h = Library\space3d-linesegment3d.h
-		Library\space3d-transformmatrixbuilders_.h = Library\space3d-transformmatrixbuilders_.h
-		Library\space3d-transformquaternionbuilders_.h = Library\space3d-transformquaternionbuilders_.h
-		Library\space3d.h = Library\space3d.h
 		Library\studio.h = Library\studio.h
 	EndProjectSection
 EndProject
@@ -91,15 +15,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MatrixTesterApp", "MatrixTe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PixelTesterApp", "PixelTesterApp\PixelTesterApp.vcxproj", "{FFC18198-81A5-44DC-B148-B1A45B960FEC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{9B25CE14-8EDF-46FC-9E03-D21777EE672C}"
-	ProjectSection(SolutionItems) = preProject
-		Library\core.h = Library\core.h
-		Library\studio.h = Library\studio.h
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{D017E0F5-9D8E-4E87-B03C-1A44581BD590}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{822A0207-86B8-4ED0-A9D5-17E518863D9C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BodyRender", "BodyRender", "{0F8A9DF2-5C25-4F76-8B9A-CFC903259278}"
+	ProjectSection(SolutionItems) = preProject
+		Library\bodyrender-jointtojointbones_.h = Library\bodyrender-jointtojointbones_.h
+		Library\bodyrender.h = Library\bodyrender.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{396EDE03-DC05-42F5-B7ED-8123A1C7847F}"
 	ProjectSection(SolutionItems) = preProject
 		Library\common-bounds_.h = Library\common-bounds_.h
 		Library\common-castpixelconv.h = Library\common-castpixelconv.h
@@ -128,13 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{822A02
 		Library\common.h = Library\common.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BodyRender", "BodyRender", "{876DA621-F87F-449C-84D8-64DFC8F3B35C}"
-	ProjectSection(SolutionItems) = preProject
-		Library\bodyrender-jointtojointbones_.h = Library\bodyrender-jointtojointbones_.h
-		Library\bodyrender.h = Library\bodyrender.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{B589F1A8-AE67-4144-8219-00701C05D23D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2EBFD270-37B4-4996-B345-DB29BC3B0C94}"
 	ProjectSection(SolutionItems) = preProject
 		Library\movement-bonemap.h = Library\movement-bonemap.h
 		Library\movement-jointlist.h = Library\movement-jointlist.h
@@ -144,7 +62,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{B5
 		Library\movement.h = Library\movement.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture", "Picture", "{A3F3A534-EA91-43AE-B108-D386A334636C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture", "Picture", "{C63334A9-184B-41E8-8959-400037139DDA}"
 	ProjectSection(SolutionItems) = preProject
 		Library\picture-argbtorgbpixelconv.h = Library\picture-argbtorgbpixelconv.h
 		Library\picture-cmyktorgbpixelconv.h = Library\picture-cmyktorgbpixelconv.h
@@ -176,13 +94,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture", "Picture", "{A3F3
 		Library\picture.h = Library\picture.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Render3D", "Render3D", "{86DCFC75-DAD4-4436-A065-7A6C07451611}"
-	ProjectSection(SolutionItems) = preProject
-		Library\render3d-orthographic_.h = Library\render3d-orthographic_.h
-		Library\render3d.h = Library\render3d.h
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space2D", "Space2D", "{428A0B86-E773-41A3-8FF6-3D8057E94A1D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space2d", "Space2d", "{1484C5EF-837A-438B-9A42-109B223981AC}"
 	ProjectSection(SolutionItems) = preProject
 		Library\space2d-axis2d.h = Library\space2d-axis2d.h
 		Library\space2d-common_.h = Library\space2d-common_.h
@@ -192,7 +104,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space2D", "Space2D", "{428A
 		Library\space2d.h = Library\space2d.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space3D", "Space3D", "{07AE2269-6AD5-4412-9E12-E619C1780A10}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space3d", "Space3d", "{39B1E140-9199-48DF-8C9D-3CEE087D16F9}"
 	ProjectSection(SolutionItems) = preProject
 		Library\space3d-axis3d.h = Library\space3d-axis3d.h
 		Library\space3d-common_.h = Library\space3d-common_.h
@@ -201,6 +113,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Space3D", "Space3D", "{07AE
 		Library\space3d-transformmatrixbuilders_.h = Library\space3d-transformmatrixbuilders_.h
 		Library\space3d-transformquaternionbuilders_.h = Library\space3d-transformquaternionbuilders_.h
 		Library\space3d.h = Library\space3d.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Render3d", "Render3d", "{ED5ED465-CD5A-49CA-B684-775BC704AF1E}"
+	ProjectSection(SolutionItems) = preProject
+		Library\render3d-orthographic_.h = Library\render3d-orthographic_.h
+		Library\render3d.h = Library\render3d.h
 	EndProjectSection
 EndProject
 Global
@@ -226,16 +144,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EABBEA89-1522-47F3-A622-768DE28274A3} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
 		{B12702AD-ABFB-343A-A199-8E24837244A3} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
 		{6EED0AF9-AE2C-4194-9AAD-3EB562A82D36} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
 		{FFC18198-81A5-44DC-B148-B1A45B960FEC} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
-		{822A0207-86B8-4ED0-A9D5-17E518863D9C} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{876DA621-F87F-449C-84D8-64DFC8F3B35C} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{B589F1A8-AE67-4144-8219-00701C05D23D} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{A3F3A534-EA91-43AE-B108-D386A334636C} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{86DCFC75-DAD4-4436-A065-7A6C07451611} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{428A0B86-E773-41A3-8FF6-3D8057E94A1D} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
-		{07AE2269-6AD5-4412-9E12-E619C1780A10} = {9B25CE14-8EDF-46FC-9E03-D21777EE672C}
+		{0F8A9DF2-5C25-4F76-8B9A-CFC903259278} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{396EDE03-DC05-42F5-B7ED-8123A1C7847F} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{2EBFD270-37B4-4996-B345-DB29BC3B0C94} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{C63334A9-184B-41E8-8959-400037139DDA} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{1484C5EF-837A-438B-9A42-109B223981AC} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{39B1E140-9199-48DF-8C9D-3CEE087D16F9} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{ED5ED465-CD5A-49CA-B684-775BC704AF1E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal
