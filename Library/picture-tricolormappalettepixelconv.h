@@ -8,7 +8,7 @@ namespace Picture
 {
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
-	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT> // TPIXELIN should be UInt values only. how to specify this?
+	template <typename TUNITINTERVAL, typename TVALUEIN, typename TVALUEOUT> // TVALUEIN should be UInt values only. how to specify this?
 	class TriColorMapPalettePixelConv
 	{
 	private:
@@ -21,14 +21,14 @@ namespace Picture
 		TriColorMapPalettePixelConv(const TriColorMap<TUNITINTERVAL>* colorMap)
 		{
 			_colorMap = colorMap;
-			_outLowerBound = Common::getLowerBound<TPIXELOUT>();
-			_outUpperBound = Common::getUpperBound<TPIXELOUT>();
+			_outLowerBound = Common::getLowerBound<TVALUEOUT>();
+			_outUpperBound = Common::getUpperBound<TVALUEOUT>();
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
-		Common::Vector3<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		Common::Vector3<TVALUEOUT> convertPixel(const TVALUEIN& value)
 		{
-			return Common::Vector3<TPIXELOUT>((_colorMap[value].Values[0] *_outBoundDiff) + _outLowerBound,
+			return Common::Vector3<TVALUEOUT>((_colorMap[value].Values[0] *_outBoundDiff) + _outLowerBound,
 												(_colorMap[value].Values[1] * _outBoundDiff) + _outLowerBound,
 												(_colorMap[value].Values[2] * _outBoundDiff) + _outLowerBound);
 		}

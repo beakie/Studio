@@ -8,7 +8,7 @@ namespace Picture
 {
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
-	template <typename TUNITINTERVAL, typename TPIXELIN, typename TPIXELOUT>
+	template <typename TUNITINTERVAL, typename TVALUEIN, typename TVALUEOUT>
 	class QuadColorMapScaledPixelConv
 	{
 	private:
@@ -30,7 +30,7 @@ namespace Picture
 		FloatMax _channel[4];
 
 	public:
-		QuadColorMapScaledPixelConv(const QuadColorMap<TUNITINTERVAL>* colorMap, const TPIXELIN lowerBound, const TPIXELIN upperBound) //should this be input type templates?
+		QuadColorMapScaledPixelConv(const QuadColorMap<TUNITINTERVAL>* colorMap, const TVALUEIN lowerBound, const TVALUEIN upperBound) //should this be input type templates?
 		{
 			_colorMap = colorMap;
 			_inLowerBound = lowerBound;
@@ -38,20 +38,20 @@ namespace Picture
 			_inBoundDiff = upperBound - lowerBound;
 			_lastIndex = _colorMap->Size - 1;
 			_spacing = ((TUNITINTERVAL)1 / _lastIndex);
-			_outLowerBound = Common::getLowerBound<TPIXELOUT>();
-			_outUpperBound = Common::getUpperBound<TPIXELOUT>();
+			_outLowerBound = Common::getLowerBound<TVALUEOUT>();
+			_outUpperBound = Common::getUpperBound<TVALUEOUT>();
 			_outBoundDiff = _outUpperBound - _outLowerBound;
 		}
 
 		QuadColorMapScaledPixelConv(const QuadColorMap<TUNITINTERVAL>* colorMap)
-			: QuadColorMapScaledPixelConv(colorMap, Common::getLowerBound<TPIXELIN>(), Common::getUpperBound<TPIXELIN>())
+			: QuadColorMapScaledPixelConv(colorMap, Common::getLowerBound<TVALUEIN>(), Common::getUpperBound<TVALUEIN>())
 		{
 		}
 
-		Common::Vector4<TPIXELOUT> convertPixel(const TPIXELIN& value)
+		Common::Vector4<TVALUEOUT> convertPixel(const TVALUEIN& value)
 		{
 			if (value == _inUpperBound)
-				return Common::Vector4<TPIXELOUT>((_colorMap->Values[_lastIndex].Values[0] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector4<TVALUEOUT>((_colorMap->Values[_lastIndex].Values[0] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_lastIndex].Values[1] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_lastIndex].Values[2] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_lastIndex].Values[3] * _outBoundDiff) + _outLowerBound);
@@ -60,7 +60,7 @@ namespace Picture
 			_index = (UInt8)_indexUnfloored;
 
 			if (_indexUnfloored == _index)
-				return Common::Vector4<TPIXELOUT>((_colorMap->Values[_index].Values[0] * _outBoundDiff) + _outLowerBound,
+				return Common::Vector4<TVALUEOUT>((_colorMap->Values[_index].Values[0] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_index].Values[1] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_index].Values[2] * _outBoundDiff) + _outLowerBound,
 													(_colorMap->Values[_index].Values[3] * _outBoundDiff) + _outLowerBound);
@@ -80,7 +80,7 @@ namespace Picture
 					_channel[i] = ((_toMapping - _fromMapping) * _diffUnitInterval) + _fromMapping;
 			}
 
-			return Common::Vector4<TPIXELOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
+			return Common::Vector4<TVALUEOUT>((_channel[0] * _outBoundDiff) + _outLowerBound,
 												(_channel[1] * _outBoundDiff) + _outLowerBound,
 												(_channel[2] * _outBoundDiff) + _outLowerBound,
 												(_channel[3] * _outBoundDiff) + _outLowerBound);
