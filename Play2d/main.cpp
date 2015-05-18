@@ -14,10 +14,13 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });
 	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0 });
 
-	int jointIndex = 1;
-	double jointRotation = Common::radian<double>(10.0);
+	int jointIndex1 = 1;
+	double jointRotation1 = Common::radian<double>(10.0);
+	skeletal.Joints.Joints[jointIndex1]->set(Space2d::getRotationMatrix(jointRotation1, skeletal.ZeroPositions.Positions[jointIndex1]->Values[0], skeletal.ZeroPositions.Positions[jointIndex1]->Values[1]));
 
-	skeletal.Joints.Joints[jointIndex]->set(Space2d::getRotationMatrix(jointRotation, skeletal.ZeroPositions.Positions[jointIndex]->Values[0], skeletal.ZeroPositions.Positions[jointIndex]->Values[1]));
+	int jointIndex2 = 2;
+	double jointRotation2 = Common::radian<double>(10.0);
+	skeletal.Joints.Joints[jointIndex2]->set(Space2d::getRotationMatrix(jointRotation2, skeletal.ZeroPositions.Positions[jointIndex2]->Values[0], skeletal.ZeroPositions.Positions[jointIndex2]->Values[1]));
 
 	SkeletalRender skeletalRender(&skeletal);
 	skeletalRender.show();
