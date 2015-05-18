@@ -5,7 +5,7 @@
 #include <qgraphicswidget.h>
 #include <qpainter.h>
 
-#include "../Library/movement.h"
+#include "../Library/studio.h"
 
 class SkeletalRender : public QWidget
 {

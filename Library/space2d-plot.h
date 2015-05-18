@@ -75,7 +75,7 @@ namespace Space2d
 		for (UInt8 i = 0; i < 3; ++i)
 			result.Values[i] = (plot.Values[0] * matrix.Values[0][i]) + (plot.Values[1] * matrix.Values[1][i]) + matrix.Values[2][i];
 
-		return Common::Vector2<TVALUE>(result.Values[0] / result.Values[3], result.Values[1] / result.Values[3]);
+		return Common::Vector2<TVALUE>(result.Values[0] / result.Values[2], result.Values[1] / result.Values[2]);
 	}
 
 }
