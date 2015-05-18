@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="skeletalrender.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="skeletalrender.h" />
