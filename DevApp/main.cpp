@@ -139,5 +139,7 @@ int main(int argc, char *argv[])
 
 	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
+	//Kinematics::calc
+
 	return a.exec();
 }
