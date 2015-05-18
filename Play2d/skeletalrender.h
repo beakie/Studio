@@ -15,7 +15,6 @@ public:
 
 	QBrush jointBrush;
 	QPen jointPen;
-	QBrush boneBrush;
 	QPen bonePen;
 
 	int jointRadius = 5;

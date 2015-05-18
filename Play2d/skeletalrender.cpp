@@ -7,12 +7,11 @@ SkeletalRender::SkeletalRender(Movement::Skeletal2d* skeletal)
 
 SkeletalRender::~SkeletalRender()
 {
-	jointBrush = QBrush(Qt::red);
+	jointBrush = QBrush(Qt::yellow);
 	jointPen = QPen(Qt::red);
 	jointPen.setWidth(6);
 
-	boneBrush = QBrush(Qt::blue);
-	bonePen = QPen(Qt::black);
+	bonePen = QPen(Qt::blue);
 	bonePen.setWidth(1);
 }
 
@@ -27,7 +26,6 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 		if (i > 0)
 		{
 			painter.setPen(bonePen);
-			painter.setBrush(boneBrush);
 			painter.drawLine(this->Skeletal->ZeroPositions.Positions[i - 1]->Values[0], this->Skeletal->ZeroPositions.Positions[i - 1]->Values[1], this->Skeletal->ZeroPositions.Positions[i]->Values[0], this->Skeletal->ZeroPositions.Positions[i]->Values[1]);
 		}
 
