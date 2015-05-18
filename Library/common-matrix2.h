@@ -185,10 +185,10 @@ namespace Common
 		/// </summary>
 		Matrix2<TVALUE>& operator*=(const Matrix2<TVALUE>& matrix)
 		{
-			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]),
-				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]),
-				(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]),
-				(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]));
+			set((Values[0][0] * matrix.Values[0][0]) + (Values[0][1] * matrix.Values[1][0]),
+				(Values[1][0] * matrix.Values[0][0]) + (Values[1][1] * matrix.Values[1][0]),
+				(Values[0][0] * matrix.Values[0][1]) + (Values[0][1] * matrix.Values[1][1]),
+				(Values[1][0] * matrix.Values[0][1]) + (Values[1][1] * matrix.Values[1][1]));
 
 			return *this;
 		}
