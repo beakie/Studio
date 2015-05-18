@@ -13,6 +13,13 @@ class SkeletalRender : public QWidget
 public:
 	Movement::Skeletal2d* Skeletal;
 
+	QBrush jointBrush;
+	QPen jointPen;
+	QBrush boneBrush;
+	QPen bonePen;
+
+	int jointRadius = 5;
+
 	SkeletalRender(Movement::Skeletal2d* skeletal);
 
 	~SkeletalRender();
