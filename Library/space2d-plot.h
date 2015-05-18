@@ -73,7 +73,7 @@ namespace Space2d
 		Common::Vector3<TVALUE> result;
 
 		for (UInt8 i = 0; i < 3; ++i)
-			result.Values[i] = (coordinate.Values[0] * matrix.Values[0][i]) + (coordinate.Values[1] * matrix.Values[1][i]) + matrix.Values[2][i];
+			result.Values[i] = (plot.Values[0] * matrix.Values[0][i]) + (plot.Values[1] * matrix.Values[1][i]) + matrix.Values[2][i];
 
 		return Common::Vector2<TVALUE>(result.Values[0] / result.Values[3], result.Values[1] / result.Values[3]);
 	}

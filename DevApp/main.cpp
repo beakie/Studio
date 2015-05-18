@@ -123,11 +123,21 @@ int main(int argc, char *argv[])
 
 	// Missing UInt32 bound stuff
 
-	Common::ToUnitIntervalPixelConv<Int8> convToUnitInterval = Common::ToUnitIntervalPixelConv<Int8>();
-	Common::FromUnitIntervalPixelConv<Int8> convFromUnitInterval = Common::FromUnitIntervalPixelConv<Int8>();
+	/*
+	//Common::ToUnitIntervalPixelConv<Int8> convToUnitInterval = Common::ToUnitIntervalPixelConv<Int8>();
+	//Common::FromUnitIntervalPixelConv<Int8> convFromUnitInterval = Common::FromUnitIntervalPixelConv<Int8>();
 
-	Common::UnitIntervalMax i = convToUnitInterval.convertPixel(13);
-	Int8 ui = convFromUnitInterval.convertPixel(i);
+	//Common::UnitIntervalMax i = convToUnitInterval.convertPixel(13);
+	//Int8 ui = convFromUnitInterval.convertPixel(i);
+	*/
+
+	Movement::Skeletal2d skeletal(4);
+
+	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
+	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0 });
+
+	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 
 	return a.exec();
 }
