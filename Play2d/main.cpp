@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 
 	Movement::Skeletal2d skeletal(4);
 
-	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 10 });
-	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 10 });
-	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 10 });
+	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 });
+	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0 });
 
 	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 

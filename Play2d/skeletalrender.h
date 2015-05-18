@@ -14,11 +14,13 @@ public:
 	Movement::Skeletal2d* Skeletal;
 
 	QBrush backgroundBrush;
-	QBrush jointBrush;
-	QPen jointPen;
+
 	QPen bonePen;
 
-	int jointRadius = 5;
+	QBrush jointBrush;
+	QPen jointPen;
+	int jointRadius;
+
 
 	SkeletalRender(Movement::Skeletal2d* skeletal);
 

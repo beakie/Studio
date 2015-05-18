@@ -7,11 +7,12 @@ SkeletalRender::SkeletalRender(Movement::Skeletal2d* skeletal)
 	backgroundBrush = QBrush(Qt::white);
 
 	jointBrush = QBrush(Qt::yellow);
-	jointPen = QPen(Qt::red);
+	jointPen = QPen(Qt::blue);
 	jointPen.setWidth(1);
+	jointRadius = 4;
 
 	bonePen = QPen(Qt::blue);
-	bonePen.setWidth(1);
+	bonePen.setWidth(2);
 }
 
 void SkeletalRender::paintEvent(QPaintEvent *event)
