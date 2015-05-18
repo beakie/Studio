@@ -210,15 +210,15 @@ namespace Common
 		/// </summary>
 		Matrix3<TVALUE>& operator*=(const Matrix3<TVALUE>& matrix)
 		{
-			set((matrix.Values[0][0] * Values[0][0]) + (matrix.Values[0][1] * Values[1][0]) + (matrix.Values[0][2] * Values[2][0]),
-				(matrix.Values[1][0] * Values[0][0]) + (matrix.Values[1][1] * Values[1][0]) + (matrix.Values[1][2] * Values[2][0]),
-				(matrix.Values[2][0] * Values[0][0]) + (matrix.Values[2][1] * Values[1][0]) + (matrix.Values[2][2] * Values[2][0]),
-				(matrix.Values[0][0] * Values[0][1]) + (matrix.Values[0][1] * Values[1][1]) + (matrix.Values[0][2] * Values[2][1]),
-				(matrix.Values[1][0] * Values[0][1]) + (matrix.Values[1][1] * Values[1][1]) + (matrix.Values[1][2] * Values[2][1]),
-				(matrix.Values[2][0] * Values[0][1]) + (matrix.Values[2][1] * Values[1][1]) + (matrix.Values[2][2] * Values[2][1]),
-				(matrix.Values[0][0] * Values[0][2]) + (matrix.Values[0][1] * Values[1][2]) + (matrix.Values[0][2] * Values[2][2]),
-				(matrix.Values[1][0] * Values[0][2]) + (matrix.Values[1][1] * Values[1][2]) + (matrix.Values[1][2] * Values[2][2]),
-				(matrix.Values[2][0] * Values[0][2]) + (matrix.Values[2][1] * Values[1][2]) + (matrix.Values[2][2] * Values[2][2]));
+			set((Values[0][0] * matrix.Values[0][0]) + (Values[0][1] * matrix.Values[1][0]) + (Values[0][2] * matrix.Values[2][0]),
+				(Values[1][0] * matrix.Values[0][0]) + (Values[1][1] * matrix.Values[1][0]) + (Values[1][2] * matrix.Values[2][0]),
+				(Values[2][0] * matrix.Values[0][0]) + (Values[2][1] * matrix.Values[1][0]) + (Values[2][2] * matrix.Values[2][0]),
+				(Values[0][0] * matrix.Values[0][1]) + (Values[0][1] * matrix.Values[1][1]) + (Values[0][2] * matrix.Values[2][1]),
+				(Values[1][0] * matrix.Values[0][1]) + (Values[1][1] * matrix.Values[1][1]) + (Values[1][2] * matrix.Values[2][1]),
+				(Values[2][0] * matrix.Values[0][1]) + (Values[2][1] * matrix.Values[1][1]) + (Values[2][2] * matrix.Values[2][1]),
+				(Values[0][0] * matrix.Values[0][2]) + (Values[0][1] * matrix.Values[1][2]) + (Values[0][2] * matrix.Values[2][2]),
+				(Values[1][0] * matrix.Values[0][2]) + (Values[1][1] * matrix.Values[1][2]) + (Values[1][2] * matrix.Values[2][2]),
+				(Values[2][0] * matrix.Values[0][2]) + (Values[2][1] * matrix.Values[1][2]) + (Values[2][2] * matrix.Values[2][2]));
 
 			return *this;
 		}

@@ -21,7 +21,6 @@ public:
 	QPen jointPen;
 	int jointRadius;
 
-
 	SkeletalRender(Movement::Skeletal2d* skeletal);
 
 	~SkeletalRender();

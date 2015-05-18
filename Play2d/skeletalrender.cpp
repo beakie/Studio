@@ -23,6 +23,9 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 
 	painter.fillRect(0, 0, this->width(), this->height(), backgroundBrush);
 
+	int offsetX = this->width() / 2;
+	int offsetY = this->height() / 2;
+
 	//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
 	//{
 	//	painter.setPen(this->bonePen);
@@ -41,7 +44,7 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 	for (int i = 0; i < lineList.count(); i++)
 	{
 		painter.setPen(this->jointPen);
-		painter.drawLine(lineList.Items[i]->PlotFrom.Values[0], lineList.Items[i]->PlotFrom.Values[1], lineList.Items[i]->PlotTo.Values[0], lineList.Items[i]->PlotTo.Values[1]);
+		painter.drawLine(lineList.Items[i]->PlotFrom.Values[0] + offsetX, lineList.Items[i]->PlotFrom.Values[1] + offsetY, lineList.Items[i]->PlotTo.Values[0] + offsetX, lineList.Items[i]->PlotTo.Values[1] + offsetY);
 	}
 
 }
