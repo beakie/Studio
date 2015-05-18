@@ -123,6 +123,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture-Qt", "Picture-Qt", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Play2d", "Play2d\Play2d.vcxproj", "{539D6705-C81F-4F02-8667-8C3FA2B5053B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", "{6906B4BF-34E6-42FA-9B09-33784287526E}"
+	ProjectSection(SolutionItems) = preProject
+		Library\kinematics.h = Library\kinematics.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -152,5 +157,6 @@ Global
 		{ED5ED465-CD5A-49CA-B684-775BC704AF1E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{6E009004-5FB5-4DBE-A9CA-6F53A88D05F2} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{539D6705-C81F-4F02-8667-8C3FA2B5053B} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
+		{6906B4BF-34E6-42FA-9B09-33784287526E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal

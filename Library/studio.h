@@ -1,9 +1,10 @@
 #include "bodyrender.h"
 #include "core.h"
 #include "common.h"
+#include "kinematics.h"
+#include "movement.h"
 #include "picture.h"
 #include "picture-qt.h"
-#include "movement.h"
 #include "render3d.h"
 #include "space2d.h"
 #include "space3d.h"
@@ -18,4 +19,5 @@ Render3d	-	Space2d, Space3d
 Picture		-	Common
 Picture-Qt	-	Picture
 BodyRender	-	Movement
+Kinematics	-	Movement
 *******************/
