@@ -47,7 +47,7 @@ namespace Space2d
 	template <typename TVALUE>
 	Common::Matrix3<TVALUE> getRotationMatrix(const TVALUE rotation, const Common::Vector2<TVALUE>& plot)
 	{
-		return getTranslationMatrix<TVALUE>(-plot.Values[0], -plot.Values[1]) * getRotationMatrix<TVALUE>(rotation) * getTranslationMatrix<TVALUE>(plot.Values[0], plot.Values[1]);
+		return getRotationMatrix(rotation, plot.Values[0], plot.Values[1]);
 	}
 
 	template <typename TVALUE>

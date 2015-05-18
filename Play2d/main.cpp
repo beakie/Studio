@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
 
 	int jointIndex = 1;
 	double jointRotation = Common::radian(270.0);
-	skeletal.Joints.Joints[jointIndex]->set(Space2d::getTranslationMatrix(skeletal.ZeroPositions.Positions[jointIndex]->Values[0], skeletal.ZeroPositions.Positions[jointIndex]->Values[1]) * Space2d::getRotationMatrix(jointRotation) * Space2d::getTranslationMatrix(-skeletal.ZeroPositions.Positions[jointIndex]->Values[0], -skeletal.ZeroPositions.Positions[jointIndex]->Values[1]));
+	//skeletal.Joints.Joints[jointIndex]->set(Space2d::getTranslationMatrix(skeletal.ZeroPositions.Positions[jointIndex]->Values[0], skeletal.ZeroPositions.Positions[jointIndex]->Values[1]) * Space2d::getRotationMatrix(jointRotation) * Space2d::getTranslationMatrix(-skeletal.ZeroPositions.Positions[jointIndex]->Values[0], -skeletal.ZeroPositions.Positions[jointIndex]->Values[1]));
+	skeletal.Joints.Joints[jointIndex]->set(Space2d::getRotationMatrix(jointRotation, - skeletal.ZeroPositions.Positions[jointIndex]->Values[0], - skeletal.ZeroPositions.Positions[jointIndex]->Values[1]));
 
 	SkeletalRender skeletalRender(&skeletal);
 	skeletalRender.show();
