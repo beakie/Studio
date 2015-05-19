@@ -14,9 +14,21 @@ namespace Kinematics
 	}
 
 	template <typename TVALUE>
-	bool alignRotatingArmWithCoordinate(TVALUE& rotatingJoint, TVALUE& reach1Joint, TVALUE& reach2Joint)
+	bool alignRotatingArmWithCoordinate(const TVALUE bone1Length, const TVALUE bone2Length, TVALUE& rotatingJointAngle, TVALUE& reach1JointAngle, TVALUE& reach2JointAngle)
 	{
 		return 0.0;
+	}
+
+	template <typename TVALUE>
+	bool alignRotatingArmWithCoordinate(const TVALUE bone1Length, const TVALUE bone2Length, Common::Matrix4<TVALUE>& rotatingJointMatrix, Common::Matrix4<TVALUE>& reach1JointMatrix, Common::Matrix4<TVALUE>& reach2JointMatrix)
+	{
+		TVALUE rotatingJointAngle;
+		TVALUE reach1JointAngle;
+		TVALUE reach2JointAngle;
+
+		alignRotatingArmWithCoordinate(bone1Length, bone2Length, rotatingJointAngle, reach1JointAngle, reach2JointAngle);
+
+		//rotatingJointMatrix = Space3d::getRotationMatrix()
 	}
 
 }
