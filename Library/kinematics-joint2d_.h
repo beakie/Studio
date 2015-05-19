@@ -3,10 +3,9 @@
 
 namespace Kinematics
 {
-	class Joint2d
-	{
 
-	};
+
+
 }
 
 #endif // KINEMATICSJOINT2D_H

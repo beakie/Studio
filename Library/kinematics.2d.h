@@ -1,7 +1,7 @@
 #ifndef KINEMATICS_2D_H
 #define KINEMATICS_2D_H
 
-#include "kinematics-joint2d.h"
+#include "kinematics-joint2d_.h"
 
 namespace Kinematics
 {
