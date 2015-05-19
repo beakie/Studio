@@ -14,7 +14,7 @@ namespace Kinematics
 	}
 
 	template <typename TPRECISION>
-	TPRECISION calculateAngleToAlign(const TPRECISION length1, const Space2d::LineSegment2d<TPRECISION> lineSegment)
+	TPRECISION calculateAngleToAlignPlotWithPlot(const TPRECISION length1, const Space2d::LineSegment2d<TPRECISION> lineSegment)
 	{
 		return 0.0;
 	}
