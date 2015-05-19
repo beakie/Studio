@@ -1,7 +1,7 @@
 #ifndef KINEMATICSJOINT2D_H
 #define KINEMATICSJOINT2D_H
 
-namespace Kinematics2d
+namespace Kinematics
 {
 	class Joint2d
 	{
