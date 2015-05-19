@@ -1,5 +1,5 @@
-#ifndef MOVEMENT2D_H
-#define MOVEMENT2D_H
+#ifndef MOVEMENT_2D_H
+#define MOVEMENT_2D_H
 
 #include "space2d.h"
 
@@ -30,4 +30,4 @@ namespace Movement
 
 }
 
-#endif // MOVEMENT2D_H
+#endif // MOVEMENT_2D_H

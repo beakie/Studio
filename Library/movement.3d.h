@@ -1,5 +1,5 @@
-#ifndef MOVEMENT3D_H
-#define MOVEMENT3D_H
+#ifndef MOVEMENT_3D_H
+#define MOVEMENT_3D_H
 
 #include "space3d.h"
 
@@ -30,4 +30,4 @@ namespace Movement
 
 }
 
-#endif // MOVEMENT3D_H
+#endif // MOVEMENT_3D_H
