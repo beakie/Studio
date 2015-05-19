@@ -7,9 +7,9 @@ namespace Kinematics
 {
 
 	template <typename TPRECISION>
-	TPRECISION calculateAngleForDistance(const TPRECISION length1, const TPRECISION length2)
+	TPRECISION calculateJointAngleForDistance(const TPRECISION length1, const TPRECISION length2)
 	{
-		return 0;
+		return 0.0;
 	}
 
 }
