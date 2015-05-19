@@ -9,8 +9,8 @@ namespace Movement
 	template <typename TVALUE>
 	struct ArmSolution
 	{
-		TVALUE Angle;
-		TVALUE Distance;
+		//TVALUE Angle;
+		//TVALUE Distance;
 	};
 }
 
