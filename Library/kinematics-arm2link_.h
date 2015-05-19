@@ -14,7 +14,7 @@ namespace Kinematics
 	}
 
 	template <typename TVALUE>
-	bool alignRotatingArmWithCoordinate(TVALUE& rotatingJoint, TVALUE& reachJoint1, TVALUE& reachJoint2)
+	bool alignRotatingArmWithCoordinate(TVALUE& rotatingJoint, TVALUE& reach1Joint, TVALUE& reach2Joint)
 	{
 		return 0.0;
 	}
