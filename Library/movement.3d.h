@@ -3,6 +3,7 @@
 
 #include "space3d.h"
 
+#include "movement-armsolution.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
 #include "movement-positiontranslation3d_.h"

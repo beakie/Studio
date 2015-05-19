@@ -3,6 +3,7 @@
 
 #include "space2d.h"
 
+#include "movement-armsolution.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
 #include "movement-positiontranslation2d_.h"
