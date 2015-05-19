@@ -6,15 +6,15 @@
 namespace Kinematics
 {
 
-	template <typename TPRECISION>
-	TPRECISION calculateJointAngleForDistance(const TPRECISION boneLength1, const TPRECISION boneLength2)
+	template <typename TVALUE>
+	TVALUE calculateJointAngleForDistance(const TVALUE boneLength1, const TVALUE boneLength2)
 	{
-		//Common::cos<TPRECISION>()
+		//Common::cos<TVALUE>()
 		return 0.0;
 	}
 
-	template <typename TPRECISION>
-	TPRECISION calculateAngleToAlignPlotWithPlot(const TPRECISION length1, const Space2d::LineSegment2d<TPRECISION> lineSegment)
+	template <typename TVALUE>
+	bool alignRotatingArmWithCoordinate(TVALUE& rotatingJoint, TVALUE& reachJoint1, TVALUE& reachJoint2)
 	{
 		return 0.0;
 	}
