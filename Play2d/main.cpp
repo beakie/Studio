@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		if (rotationList.Items[i] != 0)
 			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
 
-	double angle = Kinematics::calculateAngleForDistanceBetween1ApartFlexingJoints(1.0, 1.0);
+	double angle = Kinematics::calculateAngleForDistance(1.0, 1.0);
 
 	SkeletalRender skeletalRender(&skeletal);
 	skeletalRender.show();
