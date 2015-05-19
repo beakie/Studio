@@ -3,9 +3,9 @@
 
 #include "movement.h"
 
-#include "kinematics-joint2d.h"
+#include "kinematics2d-joint2d.h"
 
-namespace Kinematics
+namespace Kinematics2d
 {
 }
 
