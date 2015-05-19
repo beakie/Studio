@@ -50,6 +50,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{396EDE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2EBFD270-37B4-4996-B345-DB29BC3B0C94}"
 	ProjectSection(SolutionItems) = preProject
+		Library\movement-armsolution.h = Library\movement-armsolution.h
 		Library\movement-bonemap.h = Library\movement-bonemap.h
 		Library\movement-jointlist.h = Library\movement-jointlist.h
 		Library\movement-positionlist.h = Library\movement-positionlist.h
