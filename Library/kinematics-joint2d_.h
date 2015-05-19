@@ -6,7 +6,11 @@
 namespace Kinematics
 {
 
-
+	template <typename TPRECISION>
+	TPRECISION calculateAngleForDistanceBetween1ApartFlexingJoints(const TPRECISION length1, const TPRECISION length2)
+	{
+		return 0;
+	}
 
 }
 
