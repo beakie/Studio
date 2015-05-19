@@ -129,6 +129,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", "{6906B4BF-34E6-42FA-9B09-33784287526E}"
 	ProjectSection(SolutionItems) = preProject
 		Library\kinematics-joint2d.h = Library\kinematics-joint2d.h
+		Library\kinematics.2d.h = Library\kinematics.2d.h
+		Library\kinematics.3d.h = Library\kinematics.3d.h
 		Library\kinematics.h = Library\kinematics.h
 	EndProjectSection
 EndProject
