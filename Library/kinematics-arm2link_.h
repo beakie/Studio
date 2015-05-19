@@ -7,7 +7,7 @@ namespace Kinematics
 {
 
 	template <typename TPRECISION>
-	TPRECISION calculateJointAngleForDistance(const TPRECISION length1, const TPRECISION length2)
+	TPRECISION calculateJointAngleForDistance(const TPRECISION boneLength1, const TPRECISION boneLength2)
 	{
 		//Common::cos<TPRECISION>()
 		return 0.0;
@@ -16,7 +16,6 @@ namespace Kinematics
 	template <typename TPRECISION>
 	TPRECISION calculateAngleToAlign(const TPRECISION length1, const Space2d::LineSegment2d<TPRECISION> lineSegment)
 	{
-		//Common::cos<TPRECISION>()
 		return 0.0;
 	}
 
