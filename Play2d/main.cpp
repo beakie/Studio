@@ -11,19 +11,19 @@ int main(int argc, char *argv[])
 	Movement::Skeletal2d skeletal(2);
 
 	skeletal.ZeroPositions.Positions[0]->operator=({ 100, 0 });
-	skeletal.ZeroPositions.Positions[1]->operator=({ 220, 0 });
+	skeletal.ZeroPositions.Positions[1]->operator=({ 200, 0 });
 
+	bool isReachable;
+	double angle;
+	Kinematics::calculateJointAngleForDistance(100, 100, 50, angle, isReachable);
+	
 	Common::List<double> rotationList = Common::List<double>();
 	rotationList.add(0);
-	rotationList.add(10);
+	rotationList.add(angle);
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
 			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
-
-	bool isReachable;
-
-	Kinematics::calculateJointAngleForDistance(100, 120, 50, rotationList[1], isReachable);
 
 	SkeletalRender skeletalRender(&skeletal);
 	skeletalRender.show();
