@@ -14,12 +14,13 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Positions[1]->operator=({ 200, 0 });
 
 	bool isReachable;
-	double angle;
-	Kinematics::calculateJointAngleForDistance(100, 100, 50, angle, isReachable);
+	double angleRadian;
+	Kinematics::calculateJointAngleForDistance(100, 100, 50, angleRadian, isReachable);
 	
+	double angleDegree = Common::degree(angleRadian);
+
 	Common::List<double> rotationList = Common::List<double>();
-	rotationList.add(0);
-	rotationList.add(angle);
+	rotationList.add(180 - angleDegree);
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
