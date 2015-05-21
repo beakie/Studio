@@ -129,6 +129,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Play2d", "Play2d\Play2d.vcx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", "{6906B4BF-34E6-42FA-9B09-33784287526E}"
 	ProjectSection(SolutionItems) = preProject
+		Library\kinematics-arm2link_.cpp = Library\kinematics-arm2link_.cpp
 		Library\kinematics-arm2link_.h = Library\kinematics-arm2link_.h
 		Library\kinematics.2d.h = Library\kinematics.2d.h
 		Library\kinematics.3d.h = Library\kinematics.3d.h

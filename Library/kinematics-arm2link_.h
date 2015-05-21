@@ -5,6 +5,7 @@
 
 namespace Kinematics
 {
+	template<typename T>
 	void calculateJointAngleForDistance(const double boneLength1, const double boneLength2, const double distance, double& angle, bool& isReachable)
 	{
 		if ((boneLength1 + boneLength2) < distance)
@@ -27,6 +28,7 @@ namespace Kinematics
 		angle = boneLength1Angle * 2;
 	}
 
+	template<typename T>
 	bool alignRotatingArmWithCoordinate(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)
 	{
 		return 0.0;
