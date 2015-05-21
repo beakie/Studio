@@ -5,30 +5,31 @@
 
 namespace Kinematics
 {
-
-	template <typename TVALUE>
-	TVALUE calculateJointAngleForDistance(const TVALUE boneLength1, const TVALUE boneLength2)
+	void calculateJointAngleForDistance(const double boneLength1, const double boneLength2, const double distance, double& angle, bool& isReachable)
 	{
-		//Common::cos<TVALUE>()
-		return 0.0;
+		if ((boneLength1 + boneLength2) < distance)
+		{
+			angle = 0;
+			isReachable = false;
+			return;
+		}
+		else
+			isReachable = true;
+
+		double boneLength1DistancePercentage = boneLength1 / (boneLength1 + boneLength2);
+
+		double boneLength1Opposite = distance * boneLength1DistancePercentage;
+
+		//double boneLength1Adjacent = Common::power((boneLength1Hypotenuse * boneLength1Hypotenuse) - (boneLength1 * boneLength1), 0.5);
+
+		double boneLength1Angle = Common::sin<double>(boneLength1Opposite / boneLength1);
+
+		angle = boneLength1Angle * 2;
 	}
 
-	template <typename TVALUE>
-	bool alignRotatingArmWithCoordinate(const TVALUE bone1Length, const TVALUE bone2Length, TVALUE& rotatingJointAngle, TVALUE& reach1JointAngle, TVALUE& reach2JointAngle)
+	bool alignRotatingArmWithCoordinate(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)
 	{
 		return 0.0;
-	}
-
-	template <typename TVALUE>
-	bool alignRotatingArmWithCoordinate(const TVALUE bone1Length, const TVALUE bone2Length, Common::Matrix4<TVALUE>& rotatingJointMatrix, Common::Matrix4<TVALUE>& reach1JointMatrix, Common::Matrix4<TVALUE>& reach2JointMatrix)
-	{
-		TVALUE rotatingJointAngle;
-		TVALUE reach1JointAngle;
-		TVALUE reach2JointAngle;
-
-		alignRotatingArmWithCoordinate(bone1Length, bone2Length, rotatingJointAngle, reach1JointAngle, reach2JointAngle);
-
-		//rotatingJointMatrix = Space3d::getRotationMatrix()
 	}
 
 }
