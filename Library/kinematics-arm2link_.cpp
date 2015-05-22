@@ -4,7 +4,7 @@ void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, co
 {
 	if ((boneLength1 + boneLength2) < distance)
 	{
-		angle = 0;
+		angle = 2.0;
 		isReachable = false;
 		return;
 	}
