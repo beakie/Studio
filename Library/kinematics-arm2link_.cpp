@@ -4,13 +4,20 @@ void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, co
 {
 	if ((boneLength1 + boneLength2) < distance)
 	{
-		isReachable = false;
 		angle = 0;
+		isReachable = false;
 		return;
 	}
+	else
+		isReachable = true;
 
-	isReachable = true;
-	angle = Common::sin<double>((distance * (boneLength1 / (boneLength1 + boneLength2))) / boneLength1) * 2;
+	double boneLength1DistancePercentage = boneLength1 / (boneLength1 + boneLength2);
+
+	double boneLength1Opposite = distance * boneLength1DistancePercentage;
+
+	double boneLength1Angle = Common::sin<double>(boneLength1Opposite / boneLength1);
+
+	angle = boneLength1Angle * 2;
 }
 
 bool Kinematics::calculateRotateJointForCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)
