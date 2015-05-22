@@ -25,6 +25,7 @@ namespace Movement
 			: Joints(chainedBoneCount),
 			  BoneMap(chainedBoneCount),
 			  ZeroPositions(chainedBoneCount)
+			  // this represents the bones (ends). why not the bone starts. what about non linear?
 		{
 		}
 	};
