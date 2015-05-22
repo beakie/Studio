@@ -11,8 +11,10 @@ SkeletalRender::SkeletalRender(Movement::Skeletal2d* skeletal)
 	this->jointPen.setWidth(1);
 	this->jointRadius = 4;
 
-	this->bonePen = QPen(Qt::blue);
-	this->bonePen.setWidth(2);
+	this->bonePen1 = QPen(Qt::blue);
+	this->bonePen2 = QPen(Qt::red);
+	this->bonePen1.setWidth(2);
+	this->bonePen2.setWidth(2);
 }
 
 void SkeletalRender::paintEvent(QPaintEvent *event)
@@ -43,7 +45,11 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 
 	for (int i = 0; i < lineList.count(); i++)
 	{
-		painter.setPen(this->jointPen);
+		if (i % 2 == 0)
+			painter.setPen(this->bonePen1);
+		else
+			painter.setPen(this->bonePen2);
+
 		painter.drawLine(lineList.Items[i]->PlotFrom.Values[0] + offsetX, lineList.Items[i]->PlotFrom.Values[1] + offsetY, lineList.Items[i]->PlotTo.Values[0] + offsetX, lineList.Items[i]->PlotTo.Values[1] + offsetY);
 	}
 

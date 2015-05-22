@@ -8,11 +8,13 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	Movement::Skeletal2d skeletal(3);
+	Movement::Skeletal2d skeletal(5);
 
 	skeletal.ZeroPositions.Positions[0]->operator=({ 50, 0 });
 	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 });
 	skeletal.ZeroPositions.Positions[2]->operator=({ 150, 0 });
+	skeletal.ZeroPositions.Positions[3]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Positions[4]->operator=({ 250, 0 });
 
 	bool isReachable;
 	double flexAngleRadian;
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
 	double rotateAngleDegree = Common::degree(rotateAngleRadian);
 
 	Common::List<double> rotationList = Common::List<double>();
-	rotationList.add(0);
+	//rotationList.add(0);
 //	rotationList.add(180 - rotateAngleDegree);
 	rotationList.add(180 - flexAngleDegree);
 

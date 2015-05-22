@@ -15,7 +15,8 @@ public:
 
 	QBrush backgroundBrush;
 
-	QPen bonePen;
+	QPen bonePen1;
+	QPen bonePen2;
 
 	QBrush jointBrush;
 	QPen jointPen;
