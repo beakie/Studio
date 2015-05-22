@@ -13,6 +13,7 @@ void Kinematics::calculateAngleForFlexJointDistance(const double boneLength1, co
 	angle = Common::acos<double>(((boneLength1 * boneLength1) + (boneLength2 * boneLength2) - (distance * distance)) / (2 * boneLength1 * boneLength2));
 }
 
+//might not be right... untested...
 void Kinematics::calculateAlignmentForFlexJointDistance(const double boneLength1, const double boneLength2, const double distance, double& angle)
 {
 	if ((boneLength1 + boneLength2) < distance)
