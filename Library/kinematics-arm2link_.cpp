@@ -13,9 +13,9 @@ void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, co
 
 	double boneLength1DistancePercentage = boneLength1 / (boneLength1 + boneLength2);
 
-	double boneLength1Opposite = distance * boneLength1DistancePercentage;
+	double boneLength1Adjacent = distance * boneLength1DistancePercentage;
 
-	double boneLength1Angle = Common::sin<double>(boneLength1Opposite / boneLength1);
+	double boneLength1Angle = Common::cos<double>(boneLength1Adjacent / boneLength1);
 
 	angle = boneLength1Angle * 2;
 }
