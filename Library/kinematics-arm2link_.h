@@ -9,7 +9,7 @@ namespace Kinematics
 
 	void calculateAlignmentForFlexJointDistance(const double boneLength1, const double boneLength2, const double distance, double& angle);
 
-	bool calculateRotateJointForCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle);
+	bool calculateAngleForRotateJointCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle);
 }
 
 #endif // KINEMATICSJOINT2D_H
