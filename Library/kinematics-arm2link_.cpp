@@ -17,7 +17,7 @@ void Kinematics::calculateAlignmentForFlexJointDistance(const double boneLength1
 {
 }
 
-bool Kinematics::calculateRotateJointForCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)
+bool Kinematics::calculateAngleForRotateJointCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)
 {
 	return 0.0;
 }
