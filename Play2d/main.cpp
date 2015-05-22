@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
 	bool isReachable;
 	double flexAngleRadian;
-	Kinematics::calculateAngleForFlexJointDistance(50, 50, 50, flexAngleRadian, isReachable);
+	Kinematics::calculateAngleForFlexJointDistance(50, 50, 101, flexAngleRadian, isReachable);
 	double flexAngleDegree = Common::degree(flexAngleRadian);
 
 	double rotateAngleRadian;
@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
 	double rotateAngleDegree = Common::degree(rotateAngleRadian);
 
 	Common::List<double> rotationList = Common::List<double>();
-	//rotationList.add(0);
-//	rotationList.add(180 - rotateAngleDegree);
+	rotationList.add(0);
+	//rotationList.add(180 - rotateAngleDegree);
 	rotationList.add(180 - flexAngleDegree);
 
 	for (int i = 0; i < rotationList.count(); i++)

@@ -50,7 +50,12 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 		else
 			painter.setPen(this->bonePen2);
 
-		painter.drawLine(lineList.Items[i]->PlotFrom.Values[0] + offsetX, lineList.Items[i]->PlotFrom.Values[1] + offsetY, lineList.Items[i]->PlotTo.Values[0] + offsetX, lineList.Items[i]->PlotTo.Values[1] + offsetY);
+		UInt8 fromX = lineList.Items[i]->PlotFrom.Values[0];
+		UInt8 fromY = lineList.Items[i]->PlotFrom.Values[1];
+		UInt8 toX = lineList.Items[i]->PlotTo.Values[0];
+		UInt8 toY = lineList.Items[i]->PlotTo.Values[1];
+
+		painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
 	}
 
 }

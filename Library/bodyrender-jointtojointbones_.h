@@ -24,9 +24,9 @@ namespace BodyRender
 
 		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
 			if (boneMap.ParentBones[i] == i)
-				boneList.add({ *positionList.Positions[i], Common::Vector2<TVALUE>::getZero() });
+				boneList.add({ Common::Vector2<TVALUE>::getZero(), *positionList.Positions[i] });
 			else
-				boneList.add({ *positionList.Positions[i], *positionList.Positions[boneMap.ParentBones[i]] });
+				boneList.add({ *positionList.Positions[boneMap.ParentBones[i]], *positionList.Positions[i] });
 
 		return boneList;
 	}
@@ -38,9 +38,9 @@ namespace BodyRender
 
 		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
 			if (boneMap.ParentBones[i] == i)
-				boneList.add({ *positionList.Positions[i], Common::Vector3<TVALUE>::getZero() });
+				boneList.add({ Common::Vector3<TVALUE>::getZero(), *positionList.Positions[i] });
 			else
-				boneList.add({ *positionList.Positions[i], *positionList.Positions[boneMap.ParentBones[i]] });
+				boneList.add({ *positionList.Positions[boneMap.ParentBones[i]] , * positionList.Positions[i] });
 
 		return boneList;
 	}
