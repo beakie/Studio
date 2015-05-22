@@ -8,9 +8,8 @@ void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, co
 		isReachable = false;
 		return;
 	}
-	else
-		isReachable = true;
 
+	isReachable = true;
 	angle = Common::acos<double>(((boneLength1 * boneLength1) + (boneLength1 * boneLength1) - (distance * distance)) / (2 * boneLength1 * boneLength2));
 }
 
