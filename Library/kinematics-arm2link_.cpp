@@ -1,6 +1,6 @@
 #include "kinematics-arm2link_.h"
 
-void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, const double boneLength2, const double distance, double& angle, bool& isReachable)
+void Kinematics::calculateAngleForFlexJointDistance(const double boneLength1, const double boneLength2, const double distance, double& angle, bool& isReachable)
 {
 	if ((boneLength1 + boneLength2) < distance)
 	{
@@ -11,6 +11,10 @@ void Kinematics::calculateFlexJointAngleForDistance(const double boneLength1, co
 
 	isReachable = true;
 	angle = Common::acos<double>(((boneLength1 * boneLength1) + (boneLength1 * boneLength1) - (distance * distance)) / (2 * boneLength1 * boneLength2));
+}
+
+void Kinematics::calculateAlignmentForFlexJointDistance(const double boneLength1, const double boneLength2, const double distance, double& angle)
+{
 }
 
 bool Kinematics::calculateRotateJointForCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle)

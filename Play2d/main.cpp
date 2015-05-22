@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	bool isReachable;
 	double angleRadian;
-	Kinematics::calculateFlexJointAngleForDistance(100, 100, 50, angleRadian, isReachable);
+	Kinematics::calculateAngleForFlexJointDistance(100, 100, 50, angleRadian, isReachable);
 	
 	double angleDegree = Common::degree(angleRadian);
 
