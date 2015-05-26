@@ -49,7 +49,7 @@ public:
 		int offsetX = this->width() / 2;
 		int offsetY = this->height() / 2;
 
-		// *****
+		// ***** Bones (Zero - Direct Connection Method)
 
 		//for (int i = 1; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 		//{
@@ -66,18 +66,7 @@ public:
 			painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
 
-		// ***** Joints (Translated)
-
-		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJoints(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
-
-		for (int i = 0; i < translatedJoints.PositionCount; i++)
-		{
-			painter.setPen(this->jointPen);
-			painter.setBrush(this->jointBrush);
-			painter.drawEllipse(translatedJoints.Positions[i]->Values[0] - jointRadius + offsetX, translatedJoints.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
-		}
-
-		// *****
+		//// ***** Bones (Translated - Direct Connection Method)
 
 		//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
 
@@ -95,6 +84,17 @@ public:
 
 		//	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
 		//}
+
+		// ***** Joints (Translated)
+
+		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJoints(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
+
+		for (int i = 0; i < translatedJoints.PositionCount; i++)
+		{
+			painter.setPen(this->jointPen);
+			painter.setBrush(this->jointBrush);
+			painter.drawEllipse(translatedJoints.Positions[i]->Values[0] - jointRadius + offsetX, translatedJoints.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+		}
 
 		// *****
 
