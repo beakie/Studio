@@ -29,6 +29,10 @@ namespace Movement
 	typedef Skeletal<Space2d::PlotF64, Common::Matrix3F64> Skeletal2d64;
 	typedef Skeletal<Space2d::PlotF, Common::Matrix3F> Skeletal2d;
 
+	typedef SkeletalManifest<Space2d::PlotF32, Common::Matrix3F32> SkeletalManifest2d32;
+	typedef SkeletalManifest<Space2d::PlotF64, Common::Matrix3F64> SkeletalManifest2d64;
+	typedef SkeletalManifest<Space2d::PlotF, Common::Matrix3F> SkeletalManifest2d;
+
 }
 
 #endif // MOVEMENT_2D_H

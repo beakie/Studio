@@ -29,6 +29,10 @@ namespace Movement
 	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64> Skeletal3d64;
 	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F> Skeletal3d;
 
+	typedef SkeletalManifest<Space3d::CoordinateF32, Common::Matrix4F32> SkeletalManifest3d32;
+	typedef SkeletalManifest<Space3d::CoordinateF64, Common::Matrix4F64> SkeletalManifest3d64;
+	typedef SkeletalManifest<Space3d::CoordinateF, Common::Matrix4F> SkeletalManifest3d;
+
 }
 
 #endif // MOVEMENT_3D_H
