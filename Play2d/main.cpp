@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	Movement::SkeletalManifest2d skeletalManifest(5);
 
 	skeletalManifest.ZeroPositions.Positions[0]->operator=({ 0, 0 });
-	skeletalManifest.ZeroPositions.Positions[1]->operator=({ 50, 0 });
+	skeletalManifest.ZeroPositions.Positions[1]->operator=({ 75, 0 });
 	skeletalManifest.ZeroPositions.Positions[2]->operator=({ 100, 0 });
 	skeletalManifest.ZeroPositions.Positions[3]->operator=({ 150, 0 });
 	skeletalManifest.ZeroPositions.Positions[4]->operator=({ 200, 0 });

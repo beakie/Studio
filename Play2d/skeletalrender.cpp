@@ -34,29 +34,29 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 	//	painter.drawLine(this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[1], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1]);
 	//}
 
-	//for (int i = 0; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
-	//{
-	//	painter.setPen(this->jointPen);
-	//	painter.setBrush(this->jointBrush);
-	//	painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
-	//}
-
-	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
-
-	for (int i = 0; i < lineList.count(); i++)
+	for (int i = 0; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 	{
-		if (i % 2 == 0)
-			painter.setPen(this->bonePen1);
-		else
-			painter.setPen(this->bonePen2);
-
-		UInt8 fromX = lineList.Items[i]->PlotFrom.Values[0];
-		UInt8 fromY = lineList.Items[i]->PlotFrom.Values[1];
-		UInt8 toX = lineList.Items[i]->PlotTo.Values[0];
-		UInt8 toY = lineList.Items[i]->PlotTo.Values[1];
-
-		painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
+		painter.setPen(this->jointPen);
+		painter.setBrush(this->jointBrush);
+		painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
 	}
+
+	//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
+
+	//for (int i = 0; i < lineList.count(); i++)
+	//{
+	//	if (i % 2 == 0)
+	//		painter.setPen(this->bonePen1);
+	//	else
+	//		painter.setPen(this->bonePen2);
+
+	//	UInt8 fromX = lineList.Items[i]->PlotFrom.Values[0];
+	//	UInt8 fromY = lineList.Items[i]->PlotFrom.Values[1];
+	//	UInt8 toX = lineList.Items[i]->PlotTo.Values[0];
+	//	UInt8 toY = lineList.Items[i]->PlotTo.Values[1];
+
+	//	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
+	//}
 
 }
 
