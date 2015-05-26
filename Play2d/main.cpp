@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
 	double flexAngleDegree = Common::degree(flexAngleRadian);
 
 	Common::List<double> rotationList = Common::List<double>();
-	//rotationList.add(180 - flexAngleDegree);
+	rotationList.add(180 - flexAngleDegree);
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
 			skeletalManifest.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletalManifest.ZeroPositions.Positions[i]->Values[0], skeletalManifest.ZeroPositions.Positions[i]->Values[1]));
 
-	SkeletalRender skeletalRender(&skeletalManifest);
+	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletalManifest);
 	skeletalRender.show();
 
 	return a.exec();
