@@ -1,17 +1,22 @@
-#ifndef MOVEMENTARMSOLUTION_H
-#define MOVEMENTARMSOLUTION_H
+#ifndef MOVEMENTSKELETALMANIFEST_H
+#define MOVEMENTSKELETALMANIFEST_H
 
-#include "core.h"
-#include "common.h"
+#include "movement-skeletal.h"
 
 namespace Movement
 {
-	template <typename TVALUE>
-	struct ArmSolution
+	template <typename TPOINT, typename TMATRIX>
+	struct SkeletalManifest : Skeletal<TPOINT, TMATRIX>
 	{
-		//TVALUE Angle;
-		//TVALUE Distance;
+		SkeletalManifest()
+		{
+		}
+
+		SkeletalManifest(UInt8 chainedBoneCount)
+			: Skeletal(chainedBoneCount)
+		{
+		}
 	};
 }
 
-#endif // MOVEMENTARMSOLUTION_H
+#endif // MOVEMENTSKELETALMANIFEST_H
