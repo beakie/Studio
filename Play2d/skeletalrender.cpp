@@ -38,7 +38,7 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 	{
 		painter.setPen(this->jointPen);
 		painter.setBrush(this->jointBrush);
-		painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
+		painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 	}
 
 	//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
