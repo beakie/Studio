@@ -49,11 +49,15 @@ public:
 		int offsetX = this->width() / 2;
 		int offsetY = this->height() / 2;
 
+		// *****
+
 		//for (int i = 1; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 		//{
 		//	painter.setPen(this->bonePen);
 		//	painter.drawLine(this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[1], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1]);
 		//}
+
+		// ***** Joints (Zero Position)
 
 		for (int i = 0; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 		{
@@ -62,6 +66,7 @@ public:
 			painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
 
+		// ***** Joints (Translated)
 
 		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJoints(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
 
@@ -71,6 +76,8 @@ public:
 			painter.setBrush(this->jointBrush);
 			painter.drawEllipse(translatedJoints.Positions[i]->Values[0] - jointRadius + offsetX, translatedJoints.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
+
+		// *****
 
 		//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
 
@@ -88,6 +95,8 @@ public:
 
 		//	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
 		//}
+
+		// *****
 
 	}
 
