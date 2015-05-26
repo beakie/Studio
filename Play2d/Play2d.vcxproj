@@ -78,7 +78,6 @@
   <ItemGroup>
     <ClCompile Include="..\Library\kinematics-arm2link_.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="skeletalrender.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="skeletalrender.h" />

@@ -27,9 +27,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="skeletalrender.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Library\kinematics-arm2link_.cpp">
       <Filter>Source Files\Library</Filter>
     </ClCompile>
