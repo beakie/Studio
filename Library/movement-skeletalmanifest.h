@@ -8,6 +8,8 @@ namespace Movement
 	template <typename TPOINT, typename TMATRIX>
 	struct SkeletalManifest : Skeletal<TPOINT, TMATRIX>
 	{
+
+
 		SkeletalManifest()
 		{
 		}
