@@ -28,17 +28,17 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 	int offsetX = this->width() / 2;
 	int offsetY = this->height() / 2;
 
-	//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
+	//for (int i = 1; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 	//{
 	//	painter.setPen(this->bonePen);
-	//	painter.drawLine(this->Skeletal->ZeroPositions.Positions[i - 1]->Values[0], this->Skeletal->ZeroPositions.Positions[i - 1]->Values[1], this->Skeletal->ZeroPositions.Positions[i]->Values[0], this->Skeletal->ZeroPositions.Positions[i]->Values[1]);
+	//	painter.drawLine(this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[1], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1]);
 	//}
 
-	//for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
+	//for (int i = 0; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
 	//{
 	//	painter.setPen(this->jointPen);
 	//	painter.setBrush(this->jointBrush);
-	//	painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
+	//	painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
 	//}
 
 	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
