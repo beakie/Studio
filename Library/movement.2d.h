@@ -3,12 +3,12 @@
 
 #include "space2d.h"
 
-#include "movement-armsolution.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
 #include "movement-positiontranslation2d_.h"
 #include "movement-positionlist.h"
 #include "movement-skeletal.h"
+#include "movement-skeletalmanifest.h"
 
 namespace Movement
 {
