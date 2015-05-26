@@ -1,8 +1,8 @@
 #include "skeletalrender.h"
 
-SkeletalRender::SkeletalRender(Movement::Skeletal2d* skeletal)
+SkeletalRender::SkeletalRender(Movement::SkeletalManifest2d* skeletalManifest)
 {
-	this->Skeletal = skeletal;
+	this->SkeletalManifest = skeletalManifest;
 
 	this->backgroundBrush = QBrush(Qt::white);
 
@@ -41,7 +41,7 @@ void SkeletalRender::paintEvent(QPaintEvent *event)
 	//	painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius, jointRadius * 2, jointRadius * 2);
 	//}
 
-	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->Skeletal);
+	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
 
 	for (int i = 0; i < lineList.count(); i++)
 	{

@@ -11,7 +11,7 @@ class SkeletalRender : public QWidget
 {
 
 public:
-	Movement::Skeletal2d* Skeletal;
+	Movement::SkeletalManifest2d* SkeletalManifest;
 
 	QBrush backgroundBrush;
 
@@ -22,7 +22,7 @@ public:
 	QPen jointPen;
 	int jointRadius;
 
-	SkeletalRender(Movement::Skeletal2d* skeletal);
+	SkeletalRender(Movement::SkeletalManifest2d* skeletalManifest);
 
 	~SkeletalRender();
 

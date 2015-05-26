@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	Movement::Skeletal2d skeletal(5);
+	Movement::SkeletalManifest2d skeletalManifest(5);
 
-	skeletal.ZeroPositions.Positions[0]->operator=({ 0, 0 });
-	skeletal.ZeroPositions.Positions[1]->operator=({ 50, 0 });
-	skeletal.ZeroPositions.Positions[2]->operator=({ 100, 0 });
-	skeletal.ZeroPositions.Positions[3]->operator=({ 150, 0 });
-	skeletal.ZeroPositions.Positions[4]->operator=({ 200, 0 });
+	skeletalManifest.ZeroPositions.Positions[0]->operator=({ 0, 0 });
+	skeletalManifest.ZeroPositions.Positions[1]->operator=({ 50, 0 });
+	skeletalManifest.ZeroPositions.Positions[2]->operator=({ 100, 0 });
+	skeletalManifest.ZeroPositions.Positions[3]->operator=({ 150, 0 });
+	skeletalManifest.ZeroPositions.Positions[4]->operator=({ 200, 0 });
 
 	bool isReachable;
 	double flexAngleRadian;
@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
-			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
+			skeletalManifest.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletalManifest.ZeroPositions.Positions[i]->Values[0], skeletalManifest.ZeroPositions.Positions[i]->Values[1]));
 
-	SkeletalRender skeletalRender(&skeletal);
+	SkeletalRender skeletalRender(&skeletalManifest);
 	skeletalRender.show();
 
 	return a.exec();
