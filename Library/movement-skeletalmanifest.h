@@ -9,6 +9,11 @@ namespace Movement
 	struct SkeletalManifest : Skeletal<TPOINT, TMATRIX>
 	{
 
+		// Add "MappedPoints" to Skeletal
+		//   - BoneIndex, ZeroPositionOffsetX, ZeroPositionOffsetY
+		//   - Add constrants?
+		//
+		// This would mean I would calc the end effector without duplicating each of the joints doing boneFrom/boneTo.
 
 		SkeletalManifest()
 		{
