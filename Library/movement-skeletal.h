@@ -30,14 +30,14 @@ namespace Movement
 		{
 		}
 
-		PositionList<TPOINT> getTranslatedJoints()
+		PositionList<TPOINT> getTranslatedJointPositions()
 		{
-			return getTranslatedJoints(Joints, BoneMap, ZeroPositions);
+			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
 		}
 
 		BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
 		{
-			return getTranslatedPositions(Joints, BoneMap, EndEffectors);
+			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectors);
 		}
 	};
 }

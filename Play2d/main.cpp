@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 	skeletalRender.show();
 
 	skeletalRender.SkeletalManifest->getTranslatedEndEffectors();
+	skeletalRender.SkeletalManifest->getTranslatedJointPositions();
 
 	return a.exec();
 }
