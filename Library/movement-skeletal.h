@@ -5,7 +5,7 @@
 #include "common.h"
 
 #include "movement-bonemap.h"
-#include "movement-jointlist.h"
+#include "movement-bonepositionlist.h"
 #include "movement-positionlist.h"
 #include "movement-jointlist.h"
 
