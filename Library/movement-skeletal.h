@@ -14,10 +14,9 @@ namespace Movement
 	template <typename TPOINT, typename TMATRIX>
 	struct Skeletal
 	{
-		JointList<TMATRIX> Joints; // This works for basic translations/rotations, but what about skew and similar? Points along bone could require bespoke matrix? Is this right?
+		JointList<TMATRIX> Joints;
 		BoneMap BoneMap;
 		PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
-		// There could be a representation of the bones but zero positions shouldnt be it. it only have a use when rendering the skeletal. Do i need skeletalrender?
 		BoneFixedPositionList<TPOINT> EndEffectors;
 
 		Skeletal()
@@ -28,7 +27,6 @@ namespace Movement
 			: Joints(chainedBoneCount),
 			  BoneMap(chainedBoneCount),
 			  ZeroPositions(chainedBoneCount)
-			  // this represents the bones (ends). why not the bone starts. what about non linear?
 		{
 		}
 	};
