@@ -17,7 +17,7 @@ namespace Movement
 		JointList<TMATRIX> Joints;
 		BoneMap BoneMap;
 		PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
-		BoneFixedPositionList<TPOINT> EndEffectors; // Should this be relative to the bone or the body? prob bone!
+		BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
 
 		Skeletal()
 		{
@@ -37,7 +37,7 @@ namespace Movement
 
 		BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
 		{
-			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectors);
+			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectorZeroPositions);
 		}
 
 		TPOINT getTranslatedJointPosition(const int jointIndex)
@@ -47,7 +47,7 @@ namespace Movement
 
 		TPOINT getTranslatedEndEffector(const int endEffectorIndex)
 		{
-			return Movement::getTranslatedPosition(Joints, BoneMap, EndEffectors.BoneIndex[endEffectorIndex], *EndEffectors.Positions[endEffectorIndex]);
+			return Movement::getTranslatedPosition(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Positions[endEffectorIndex]);
 		}
 
 		TPOINT getTranslatedBoneFixedPosition(const int parentBoneIndex, const TPOINT& position)

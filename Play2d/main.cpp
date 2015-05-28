@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 	skeletalRender.SkeletalManifest->getTranslatedEndEffector(0);
 	skeletalRender.SkeletalManifest->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
 	skeletalRender.SkeletalManifest->getTranslatedJointPosition(0);
+	skeletalRender.SkeletalManifest->bindActuator()
 
 	return a.exec();
 }
