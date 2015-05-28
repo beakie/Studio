@@ -7,11 +7,11 @@
 
 namespace Common
 {
-	//template <typename T1 = FloatMax>
-	//static Tuple1<T1> createTuple(T1 value1)
-	//{
-	//	return Tuple1<T1>
-	//}
+	template <typename T1>
+	static Tuple1<T1> createTuple(T1 value1)
+	{
+		return Tuple1<T1>()
+	}
 }
 
 #endif // COMMONTUPLECREATION_H
