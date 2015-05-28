@@ -7,29 +7,29 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct BonePositionList
+	struct BoneFixedPositionList
 	{
 		TPOINT** Positions;
 		UInt8 PositionCount;
 
-		BonePositionList()
+		BoneFixedPositionList()
 			: Positions(0),
 			PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		BonePositionList(const BonePositionList<TPOINT>& positionList)
+		BoneFixedPositionList(const BoneFixedPositionList<TPOINT>& boneFixedPositionList)
 		{
-			Positions = new TPOINT*[positionList.PositionCount];
+			Positions = new TPOINT*[boneFixedPositionList.PositionCount];
 
-			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				Positions[i] = new TPOINT(*positionList.Positions[i]);
+			for (UInt8 i = 0; i < boneFixedPositionList.PositionCount; i++)
+				Positions[i] = new TPOINT(*boneFixedPositionList.Positions[i]);
 
-			PositionCount = positionList.PositionCount;
+			PositionCount = boneFixedPositionList.PositionCount;
 		}
 
-		BonePositionList(UInt8 size)
+		BoneFixedPositionList(UInt8 size)
 			: PositionCount(size)
 		{
 			Positions = new TPOINT*[size];
@@ -38,18 +38,18 @@ namespace Movement
 				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		BonePositionList<TPOINT>& operator=(const BonePositionList<TPOINT>& positionList)
+		BoneFixedPositionList<TPOINT>& operator=(const BoneFixedPositionList<TPOINT>& boneFixedPositionList)
 		{
-			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[boneFixedPositionList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				tmpPositions[i] = new TPOINT(*positionList.Positions[i]);
+			for (UInt8 i = 0; i < boneFixedPositionList.PositionCount; i++)
+				tmpPositions[i] = new TPOINT(*boneFixedPositionList.Positions[i]);
 
 			delete[] Positions;
 
 			Positions = tmpPositions;
 
-			PositionCount = positionList.PositionCount;
+			PositionCount = boneFixedPositionList.PositionCount;
 
 			return *this;
 		}
@@ -72,7 +72,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~BonePositionList()
+		~BoneFixedPositionList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 				delete Positions[i];

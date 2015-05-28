@@ -5,6 +5,7 @@
 #include "common.h"
 
 #include "movement-bonemap.h"
+#include "movement-jointlist.h"
 #include "movement-positionlist.h"
 #include "movement-jointlist.h"
 
@@ -17,6 +18,7 @@ namespace Movement
 		BoneMap BoneMap;
 		PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
 		// There could be a representation of the bones but zero positions shouldnt be it. it only have a use when rendering the skeletal. Do i need skeletalrender?
+
 
 		Skeletal()
 		{

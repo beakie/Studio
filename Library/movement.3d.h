@@ -4,6 +4,7 @@
 #include "space3d.h"
 
 #include "movement-bonemap.h"
+#include "movement-bonepositionlist.h"
 #include "movement-jointlist.h"
 #include "movement-positiontranslation3d_.h"
 #include "movement-positionlist.h"
