@@ -40,6 +40,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{396EDE
 		Library\common-scalecastpixelconv.h = Library\common-scalecastpixelconv.h
 		Library\common-tounitintervalpixelconv.h = Library\common-tounitintervalpixelconv.h
 		Library\common-tuple.h = Library\common-tuple.h
+		Library\common-tuplecreation_.h = Library\common-tuplecreation_.h
 		Library\common-unitinterval.h = Library\common-unitinterval.h
 		Library\common-unitvector.h = Library\common-unitvector.h
 		Library\common-vector2.h = Library\common-vector2.h
