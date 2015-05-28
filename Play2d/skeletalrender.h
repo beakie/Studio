@@ -12,7 +12,7 @@ class SkeletalRender : public QWidget
 {
 
 public:
-	Movement::SkeletalManifest<TPOINT, TMATRIX>* SkeletalManifest;
+	Movement::Skeletal<TPOINT, TMATRIX>* Skeletal;
 
 	QBrush backgroundBrush;
 	QPen bonePen1;
@@ -21,9 +21,9 @@ public:
 	QPen jointPen;
 	int jointRadius;
 
-	SkeletalRender(Movement::SkeletalManifest<TPOINT, TMATRIX>* skeletalManifest)
+	SkeletalRender(Movement::Skeletal<TPOINT, TMATRIX>* skeletal)
 	{
-		this->SkeletalManifest = skeletalManifest;
+		this->Skeletal = skeletal;
 
 		this->backgroundBrush = QBrush(Qt::white);
 
@@ -51,24 +51,24 @@ public:
 
 		// ***** Bones (Zero - Direct Connection Method)
 
-		//for (int i = 1; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
+		//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
 		//{
 		//	painter.setPen(this->bonePen);
-		//	painter.drawLine(this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i - 1]->Values[1], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0], this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1]);
+		//	painter.drawLine(this->Skeletal->ZeroPositions.Positions[i - 1]->Values[0], this->Skeletal->ZeroPositions.Positions[i - 1]->Values[1], this->Skeletal->ZeroPositions.Positions[i]->Values[0], this->Skeletal->ZeroPositions.Positions[i]->Values[1]);
 		//}
 
 		// ***** Joints (Zero Position)
 
-		for (int i = 0; i < this->SkeletalManifest->ZeroPositions.PositionCount; i++)
+		for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
 		{
 			painter.setPen(this->jointPen);
 			painter.setBrush(this->jointBrush);
-			painter.drawEllipse(this->SkeletalManifest->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->SkeletalManifest->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+			painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
 
 		//// ***** Bones (Translated - Direct Connection Method)
 
-		//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->SkeletalManifest);
+		//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->Skeletal);
 
 		//for (int i = 0; i < lineList.count(); i++)
 		//{
@@ -87,7 +87,7 @@ public:
 
 		// ***** Joints (Translated)
 
-		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJointPositions(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
+		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
 		for (int i = 0; i < translatedJoints.PositionCount; i++)
 		{

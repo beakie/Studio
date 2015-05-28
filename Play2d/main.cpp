@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	Movement::SkeletalManifest2d skeletalManifest(5);
+	Movement::Skeletal2d skeletal(5);
 
-	skeletalManifest.ZeroPositions.Positions[0]->operator=({ 0, 0 });
-	skeletalManifest.ZeroPositions.Positions[1]->operator=({ 75, 0 });
-	skeletalManifest.ZeroPositions.Positions[2]->operator=({ 100, 0 });
-	skeletalManifest.ZeroPositions.Positions[3]->operator=({ 150, 0 });
-	skeletalManifest.ZeroPositions.Positions[4]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Positions[0]->operator=({ 0, 0 });
+	skeletal.ZeroPositions.Positions[1]->operator=({ 75, 0 });
+	skeletal.ZeroPositions.Positions[2]->operator=({ 100, 0 });
+	skeletal.ZeroPositions.Positions[3]->operator=({ 150, 0 });
+	skeletal.ZeroPositions.Positions[4]->operator=({ 200, 0 });
 
 	bool isReachable;
 	double flexAngleRadian;
@@ -29,17 +29,16 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
-			skeletalManifest.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletalManifest.ZeroPositions.Positions[i]->Values[0], skeletalManifest.ZeroPositions.Positions[i]->Values[1]));
+			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
 
-	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletalManifest);
+	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletal);
 	skeletalRender.show();
 
-	skeletalRender.SkeletalManifest->getTranslatedEndEffectors();
-	skeletalRender.SkeletalManifest->getTranslatedJointPositions();
-	skeletalRender.SkeletalManifest->getTranslatedEndEffector(0);
-	skeletalRender.SkeletalManifest->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
-	skeletalRender.SkeletalManifest->getTranslatedJointPosition(0);
-	skeletalRender.SkeletalManifest->bindActuator()
+	skeletalRender.Skeletal->getTranslatedEndEffectors();
+	skeletalRender.Skeletal->getTranslatedJointPositions();
+	skeletalRender.Skeletal->getTranslatedEndEffector(0);
+	skeletalRender.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
+	skeletalRender.Skeletal->getTranslatedJointPosition(0);
 
 	return a.exec();
 }

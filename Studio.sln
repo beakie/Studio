@@ -58,7 +58,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2E
 		Library\movement-positiontranslation2d_.h = Library\movement-positiontranslation2d_.h
 		Library\movement-positiontranslation3d_.h = Library\movement-positiontranslation3d_.h
 		Library\movement-skeletal.h = Library\movement-skeletal.h
-		Library\movement-skeletalmanifest.h = Library\movement-skeletalmanifest.h
 		Library\movement.2d.h = Library\movement.2d.h
 		Library\movement.3d.h = Library\movement.3d.h
 		Library\movement.h = Library\movement.h
