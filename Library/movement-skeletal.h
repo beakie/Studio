@@ -4,10 +4,12 @@
 #include "core.h"
 #include "common.h"
 
-#include "movement-bonemap.h"
 #include "movement-bonefixedpositionlist.h"
-#include "movement-positionlist.h"
+#include "movement-bonemap.h"
 #include "movement-jointlist.h"
+#include "movement-positionlist.h"
+#include "movement-positiontranslation2d_.h"
+#include "movement-positiontranslation3d_.h"
 
 namespace Movement
 {
