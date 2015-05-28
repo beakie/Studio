@@ -18,7 +18,7 @@ namespace Movement
 	}
 
 	template <typename TVALUE>
-	PositionList<Common::Vector2<TVALUE>> getTranslatedJoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PositionList<Common::Vector2<TVALUE>>& jointPositions)
+	PositionList<Common::Vector2<TVALUE>> getTranslatedJointPositions(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PositionList<Common::Vector2<TVALUE>>& jointPositions)
 	{
 		PositionList<Common::Vector2<TVALUE>> translatedJoints = PositionList<Common::Vector2<TVALUE>>(jointPositions.PositionCount);
 

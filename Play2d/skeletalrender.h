@@ -87,7 +87,7 @@ public:
 
 		// ***** Joints (Translated)
 
-		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJoints(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
+		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJointPositions(this->SkeletalManifest->Joints, this->SkeletalManifest->BoneMap, this->SkeletalManifest->ZeroPositions);
 
 		for (int i = 0; i < translatedJoints.PositionCount; i++)
 		{
