@@ -40,6 +40,11 @@ namespace Movement
 			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectors);
 		}
 
+		TPOINT getTranslatedJointPosition(const int jointIndex)
+		{
+			return Movement::getTranslatedPosition(Joints, BoneMap, jointIndex, *ZeroPositions.Positions[jointIndex]);
+		}
+
 		TPOINT getTranslatedEndEffector(const int endEffectorIndex)
 		{
 			return Movement::getTranslatedPosition(Joints, BoneMap, EndEffectors.BoneIndex[endEffectorIndex], *EndEffectors.Positions[endEffectorIndex]);
