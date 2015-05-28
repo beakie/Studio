@@ -3,13 +3,15 @@
 
 #include "core.h"
 
+#include "common-tuple.h"
+
 namespace Common
 {
-	template <typename T1 = FloatMax>
-	
-	{
-		T1 Item1;
-	};
+	//template <typename T1 = FloatMax>
+	//static Tuple1<T1> createTuple(T1 value1)
+	//{
+	//	return Tuple1<T1>
+	//}
 }
 
 #endif // COMMONTUPLECREATION_H

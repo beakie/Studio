@@ -5,20 +5,20 @@
 
 namespace Common
 {
-	template <typename T1 = FloatMax>
+	template <typename T1>
 	struct Tuple1
 	{
 		T1 Item1;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax>
+	template <typename T1, typename T2>
 	struct Tuple2
 	{
 		T1 Item1;
 		T2 Item2;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax>
+	template <typename T1, typename T2, typename T3>
 	struct Tuple3
 	{
 		T1 Item1;
@@ -26,7 +26,7 @@ namespace Common
 		T3 Item3;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax>
+	template <typename T1, typename T2, typename T3, typename T4>
 	struct Tuple4
 	{
 		T1 Item1;
@@ -35,7 +35,7 @@ namespace Common
 		T4 Item4;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax>
+	template <typename T1, typename T2, typename T3, typename T4, typename T5>
 	struct Tuple5
 	{
 		T1 Item1;
@@ -45,7 +45,7 @@ namespace Common
 		T5 Item5;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax>
+	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
 	struct Tuple6
 	{
 		T1 Item1;
@@ -56,7 +56,7 @@ namespace Common
 		T6 Item6;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax, typename T7 = FloatMax>
+	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7>
 	struct Tuple7
 	{
 		T1 Item1;
@@ -68,7 +68,7 @@ namespace Common
 		T7 Item7;
 	};
 
-	template <typename T1 = FloatMax, typename T2 = FloatMax, typename T3 = FloatMax, typename T4 = FloatMax, typename T5 = FloatMax, typename T6 = FloatMax, typename T7 = FloatMax, typename T8 = FloatMax>
+	template <typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8>
 	struct Tuple8
 	{
 		T1 Item1;
