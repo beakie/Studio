@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletalManifest);
 	skeletalRender.show();
 
-	Common::createTuple(1, 2, 3, 4, 5, 6);
+	skeletalRender.SkeletalManifest->getTranslatedEndEffectors();
 
 	return a.exec();
 }

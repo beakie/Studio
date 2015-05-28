@@ -29,6 +29,16 @@ namespace Movement
 			  ZeroPositions(chainedBoneCount)
 		{
 		}
+
+		PositionList<TPOINT> getTranslatedJoints()
+		{
+			return getTranslatedJoints(Joints, BoneMap, ZeroPositions);
+		}
+
+		BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
+		{
+			return getTranslatedPositions(Joints, BoneMap, EndEffectors);
+		}
 	};
 }
 
