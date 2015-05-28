@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 	Common::List<double> rotationList = Common::List<double>();
 	//rotationList.add(180 - flexAngleDegree);
 	rotationList.add(0);
-	rotationList.add(0);
 	rotationList.add(90); // why does having two (or more) 90s give a diff first joint angle than a single 90
 
 	for (int i = 0; i < rotationList.count(); i++)
@@ -34,11 +33,11 @@ int main(int argc, char *argv[])
 	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletal);
 	skeletalRender.show();
 
-	skeletalRender.Skeletal->getTranslatedEndEffectors();
-	skeletalRender.Skeletal->getTranslatedJointPositions();
-	skeletalRender.Skeletal->getTranslatedEndEffector(0);
-	skeletalRender.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
-	skeletalRender.Skeletal->getTranslatedJointPosition(0);
+	//skeletalRender.Skeletal->getTranslatedEndEffectors();
+	//skeletalRender.Skeletal->getTranslatedJointPositions();
+	//skeletalRender.Skeletal->getTranslatedEndEffector(0);
+	//skeletalRender.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
+	//skeletalRender.Skeletal->getTranslatedJointPosition(0);
 
 	return a.exec();
 }
