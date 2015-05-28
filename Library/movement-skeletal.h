@@ -16,7 +16,7 @@ namespace Movement
 	template <typename TPOINT, typename TMATRIX>
 	struct Skeletal
 	{
-		JointList<TMATRIX> Joints;
+		JointList<TMATRIX> Joints; // Does this belong here? How is any of this stuff actually hanging together?
 		BoneMap BoneMap;
 		PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
 		BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
