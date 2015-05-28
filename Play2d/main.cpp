@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
 
 	skeletalRender.SkeletalManifest->getTranslatedEndEffectors();
 	skeletalRender.SkeletalManifest->getTranslatedJointPositions();
+	skeletalRender.SkeletalManifest->getTranslatedEndEffector(0);
+	skeletalRender.SkeletalManifest->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
 
 	return a.exec();
 }
