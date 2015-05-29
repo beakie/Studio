@@ -1,5 +1,5 @@
-#ifndef SKELETALRENDERRENDERBONES_H
-#define SKELETALRENDERRENDERBONES_H
+#ifndef SKELETALRENDERJOINTTOJOINT_H
+#define SKELETALRENDERJOINTTOJOINT_H
 
 #include "movement-bonemap.h"
 #include "movement-positionlist.h"
@@ -31,4 +31,4 @@ namespace SkeletalRender
 	}
 }
 
-#endif // SKELETALRENDERRENDERBONES_H
+#endif // SKELETALRENDERJOINTTOJOINT_H
