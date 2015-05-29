@@ -1,5 +1,5 @@
-#ifndef SPACE2DLINESEGMENT_H
-#define SPACE2DLINESEGMENT_H
+#ifndef SPACE2DLINESEGMENT2D_H
+#define SPACE2DLINESEGMENT2D_H
 
 #include "common.h"
 
@@ -12,7 +12,7 @@ namespace Space2d
 		Common::Vector2<TVALUE> PlotFrom;
 		Common::Vector2<TVALUE> PlotTo;
 
-		Common::Vector3<TVALUE> getOffset() const
+		Common::Vector2<TVALUE> getOffset() const
 		{
 			return PlotTo - PlotFrom;
 		}
@@ -25,4 +25,4 @@ namespace Space2d
 
 }
 
-#endif // SPACE2DLINESEGMENT_H
+#endif // SPACE2DLINESEGMENT2D_H

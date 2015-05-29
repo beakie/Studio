@@ -1,5 +1,5 @@
-#ifndef SPACE3DLINESEGMENT_H
-#define SPACE3DLINESEGMENT_H
+#ifndef SPACE3DLINESEGMENT3D_H
+#define SPACE3DLINESEGMENT3D_H
 
 #include "common.h"
 
@@ -25,4 +25,4 @@ namespace Space3d
 
 }
 
-#endif // SPACE3DLINESEGMENT_H
+#endif // SPACE3DLINESEGMENT3D_H

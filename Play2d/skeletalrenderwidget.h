@@ -59,6 +59,9 @@ public:
 
 		// ***** Joints (Zero Position)
 
+		//in order to do this next line... i need a line base class to cater for both 2d and 3d
+		//Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> zeroPositionJoints = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+
 		for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
 		{
 			painter.setPen(this->jointPen);
