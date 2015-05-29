@@ -1,39 +1,30 @@
-#ifndef SKELETALSBASICSKELETAL_H
-#define SKELETALSBASICSKELETAL_H
+#ifndef SKELETALSARMSKELETAL_H
+#define SKELETALSARMSKELETAL_H
 
 #include "core.h"
 #include "common.h"
 
-#include "movement-bonefixedpositionlist.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
 #include "movement-positionlist.h"
 #include "movement-positiontranslation2d_.h"
 #include "movement-positiontranslation3d_.h"
 
-// Create a series of render code which takes different combinations of skeletal elements and renders accordingly.
-//    Ie:
-//      ZeroPositions
-//      BoneMap/ZeroPositions
-//      JointList/BoneMap/ZeroPositions
-//      JointList/BoneMap/EndEffectorZeroPosition
-//      JointList/BoneMap/EndEffectorZeroPositions
-
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct BasicSkeletal
+	struct ArmSkeletal
 	{
 		Movement::JointList<TMATRIX> Joints;
 		Movement::BoneMap BoneMap;
-		Movement::PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
-		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
+		Movement::PositionList<TPOINT> ZeroPositions;
+		TPOINT EndEffector;
 
-		BasicSkeletal()
+		ArmSkeletal()
 		{
 		}
 
-		BasicSkeletal(UInt8 chainedBoneCount)
+		ArmSkeletal(UInt8 chainedBoneCount)
 			: Joints(chainedBoneCount),
 			  BoneMap(chainedBoneCount),
 			  ZeroPositions(chainedBoneCount)
@@ -67,4 +58,4 @@ namespace Skeletals
 	};
 }
 
-#endif // SKELETALSBASICSKELETAL_H
+#endif // SKELETALSARMSKELETAL_H
