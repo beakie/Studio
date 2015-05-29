@@ -144,6 +144,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skeletals", "Skeletals", "{
 		Library\skeletals.h = Library\skeletals.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkeletalRender", "SkeletalRender", "{C7030DD8-7707-43AB-9E34-51F04FA9E724}"
+	ProjectSection(SolutionItems) = preProject
+		Library\skeletalrender-zeropositions_.h = Library\skeletalrender-zeropositions_.h
+		Library\skeletalrender.h = Library\skeletalrender.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -175,5 +181,6 @@ Global
 		{539D6705-C81F-4F02-8667-8C3FA2B5053B} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
 		{6906B4BF-34E6-42FA-9B09-33784287526E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{74304190-B709-4A1C-A513-8265DBBF0FFB} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{C7030DD8-7707-43AB-9E34-51F04FA9E724} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal
