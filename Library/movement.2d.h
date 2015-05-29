@@ -9,7 +9,6 @@
 #include "movement-positiontranslation2d_.h"
 #include "movement-positionlist.h"
 #include "movement-skeletal.h"
-#include "movement-skeletal.h"
 
 namespace Movement
 {

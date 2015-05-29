@@ -57,7 +57,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2E
 		Library\movement-positionlist.h = Library\movement-positionlist.h
 		Library\movement-positiontranslation2d_.h = Library\movement-positiontranslation2d_.h
 		Library\movement-positiontranslation3d_.h = Library\movement-positiontranslation3d_.h
-		Library\movement-skeletal.h = Library\movement-skeletal.h
 		Library\movement.2d.h = Library\movement.2d.h
 		Library\movement.3d.h = Library\movement.3d.h
 		Library\movement.h = Library\movement.h
@@ -137,6 +136,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", 
 		Library\kinematics.h = Library\kinematics.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skeletals", "Skeletals", "{74304190-B709-4A1C-A513-8265DBBF0FFB}"
+	ProjectSection(SolutionItems) = preProject
+		Library\skeletals-basicskeletal.h = Library\skeletals-basicskeletal.h
+		Library\skeletals.2d.h = Library\skeletals.2d.h
+		Library\skeletals.3d.h = Library\skeletals.3d.h
+		Library\skeletals.h = Library\skeletals.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -167,5 +174,6 @@ Global
 		{6E009004-5FB5-4DBE-A9CA-6F53A88D05F2} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{539D6705-C81F-4F02-8667-8C3FA2B5053B} = {D017E0F5-9D8E-4E87-B03C-1A44581BD590}
 		{6906B4BF-34E6-42FA-9B09-33784287526E} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{74304190-B709-4A1C-A513-8265DBBF0FFB} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal
