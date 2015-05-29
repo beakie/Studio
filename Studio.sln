@@ -151,6 +151,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkeletalRender-Qt", "Skelet
 		Library\skeletalrender-qt.h = Library\skeletalrender-qt.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpaceCommon", "SpaceCommon", "{1F558864-5B8F-4B70-8333-CFF6AD18842D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -183,5 +185,6 @@ Global
 		{74304190-B709-4A1C-A513-8265DBBF0FFB} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{C7030DD8-7707-43AB-9E34-51F04FA9E724} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{839484E3-EB15-439C-9323-E4C9F6E9C47B} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{1F558864-5B8F-4B70-8333-CFF6AD18842D} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal
