@@ -6,18 +6,6 @@
 namespace BodyRender
 {
 	template <typename TVALUE>
-	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBones(Skeletals::BasicSkeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>> skeletal)
-	{
-		return getJointToJointBones(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.BoneMap);
-	}
-
-	template <typename TVALUE>
-	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBones(Skeletals::BasicSkeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>> skeletal)
-	{
-		return getJointToJointBones(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.BoneMap);
-	}
-
-	template <typename TVALUE>
 	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBones(Movement::PositionList<Common::Vector2<TVALUE>> positionList, Movement::BoneMap boneMap)
 	{
 		Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> boneList = Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8>();
