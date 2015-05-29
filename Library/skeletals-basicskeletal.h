@@ -11,17 +11,12 @@
 #include "movement-positiontranslation2d_.h"
 #include "movement-positiontranslation3d_.h"
 
-// THE WHOLE OF THIS SKELETAL STUFF IS JUST ONE TYPE OF IMPLEMENTATION... WHAT MATTERS ARE ITS COMPONENT AND THE STATIC METHODS THAT IMPLEMENT THEM!!!!!!!!!
-// DONT LET THIS BE FORGOTTEN... IT IS VITALLY IMPORTANT!!!
-// IF MAKING A SINGLE ARM MODEL, HAVING A LIST OF END EFFECTORS IS A WASTE OF MEMORY, AS LONG AS THERE ARE FUNCTIONS TO DO WHATEVER IS NEEDED FOR EVERY IMPLEMENTATION...
-//   ... THEN I AM GOOD!
-
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
 	struct BasicSkeletal
 	{
-		Movement::JointList<TMATRIX> Joints; // Does this belong here? How is any of this stuff actually hanging together?
+		Movement::JointList<TMATRIX> Joints;
 		Movement::BoneMap BoneMap;
 		Movement::PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
 		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
