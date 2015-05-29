@@ -1,18 +1,18 @@
 #ifndef BODYRENDERRENDERBONES_H
 #define BODYRENDERRENDERBONES_H
 
-#include "movement.h"
+#include "skeletals.h"
 
 namespace BodyRender
 {
 	template <typename TVALUE>
-	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBones(Movement::Skeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>> skeletal)
+	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBones(Skeletals::BasicSkeletal<Common::Vector2<TVALUE>, Common::Matrix3<TVALUE>> skeletal)
 	{
 		return getJointToJointBones(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.BoneMap);
 	}
 
 	template <typename TVALUE>
-	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBones(Movement::Skeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>> skeletal)
+	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBones(Skeletals::BasicSkeletal<Common::Vector3<TVALUE>, Common::Matrix4<TVALUE>> skeletal)
 	{
 		return getJointToJointBones(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.BoneMap);
 	}

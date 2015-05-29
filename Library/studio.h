@@ -6,6 +6,7 @@
 #include "picture.h"
 #include "picture-qt.h"
 #include "render3d.h"
+#include "skeletals.h"
 #include "space2d.h"
 #include "space3d.h"
 

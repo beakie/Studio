@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 
 	/*
 	// OLD STUFF
-	Movement::Skeletal<> skeletal = Movement::Skeletal<>();
+	Skeletals::BasicSkeletal<> skeletal = Skeletals::BasicSkeletal<>();
 
 	Movement::JointList<> jointList = Movement::JointList<>();
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 	*/
 
 	/*
-	//Movement::Skeletal3d skeletal(4);
+	//Skeletals::BasicSkeletal3d skeletal(4);
 
 	//skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
 	//skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0, 0 });
@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 	//Int8 ui = convFromUnitInterval.convertPixel(i);
 	*/
 
-	Movement::Skeletal2d skeletal(4);
+	Skeletals::BasicSkeletal2d skeletal(4);
 
 	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });

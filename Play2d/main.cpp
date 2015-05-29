@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	Movement::Skeletal2d skeletal(5);
+	Skeletals::BasicSkeletal2d skeletal(5);
 
 	skeletal.ZeroPositions.Positions[0]->operator=({ 0, 0 });
 	skeletal.ZeroPositions.Positions[1]->operator=({ 75, 0 });

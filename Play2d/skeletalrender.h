@@ -12,7 +12,7 @@ class SkeletalRender : public QWidget
 {
 
 public:
-	Movement::Skeletal<TPOINT, TMATRIX>* Skeletal;
+	Skeletals::BasicSkeletal<TPOINT, TMATRIX>* Skeletal;
 
 	QBrush backgroundBrush;
 	QPen bonePen1;
@@ -21,7 +21,7 @@ public:
 	QPen jointPen;
 	int jointRadius;
 
-	SkeletalRender(Movement::Skeletal<TPOINT, TMATRIX>* skeletal)
+	SkeletalRender(Skeletals::BasicSkeletal<TPOINT, TMATRIX>* skeletal)
 	{
 		this->Skeletal = skeletal;
 

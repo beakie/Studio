@@ -8,7 +8,6 @@
 #include "movement-jointlist.h"
 #include "movement-positiontranslation3d_.h"
 #include "movement-positionlist.h"
-#include "movement-skeletal.h"
 
 namespace Movement
 {
@@ -24,10 +23,6 @@ namespace Movement
 	typedef PositionList<Space3d::CoordinateF32> JointPositionList3d32;
 	typedef PositionList<Space3d::CoordinateF64> JointPositionList3d64;
 	typedef PositionList<Space3d::CoordinateF> JointPositionList3d;
-
-	typedef Skeletal<Space3d::CoordinateF32, Common::Matrix4F32> Skeletal3d32;
-	typedef Skeletal<Space3d::CoordinateF64, Common::Matrix4F64> Skeletal3d64;
-	typedef Skeletal<Space3d::CoordinateF, Common::Matrix4F> Skeletal3d;
 
 }
 

@@ -1,5 +1,5 @@
-#ifndef MOVEMENTSKELETAL_H
-#define MOVEMENTSKELETAL_H
+#ifndef SKELETALSBASICSKELETAL_H
+#define SKELETALSBASICSKELETAL_H
 
 #include "core.h"
 #include "common.h"
@@ -16,33 +16,33 @@
 // IF MAKING A SINGLE ARM MODEL, HAVING A LIST OF END EFFECTORS IS A WASTE OF MEMORY, AS LONG AS THERE ARE FUNCTIONS TO DO WHATEVER IS NEEDED FOR EVERY IMPLEMENTATION...
 //   ... THEN I AM GOOD!
 
-namespace Movement
+namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct Skeletal
+	struct BasicSkeletal
 	{
-		JointList<TMATRIX> Joints; // Does this belong here? How is any of this stuff actually hanging together?
-		BoneMap BoneMap;
-		PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
-		BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
+		Movement::JointList<TMATRIX> Joints; // Does this belong here? How is any of this stuff actually hanging together?
+		Movement::BoneMap BoneMap;
+		Movement::PositionList<TPOINT> ZeroPositions; // This should be the position of the axis in 3d space. Not the bone ends!
+		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions; // Should this be relative to the bone or the body? prob bone!
 
-		Skeletal()
+		BasicSkeletal()
 		{
 		}
 
-		Skeletal(UInt8 chainedBoneCount)
+		BasicSkeletal(UInt8 chainedBoneCount)
 			: Joints(chainedBoneCount),
 			  BoneMap(chainedBoneCount),
 			  ZeroPositions(chainedBoneCount)
 		{
 		}
 
-		PositionList<TPOINT> getTranslatedJointPositions()
+		Movement::PositionList<TPOINT> getTranslatedJointPositions()
 		{
 			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
 		}
 
-		BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
+		Movement::BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
 		{
 			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectorZeroPositions);
 		}
@@ -64,4 +64,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTSKELETAL_H
+#endif // SKELETALSBASICSKELETAL_H
