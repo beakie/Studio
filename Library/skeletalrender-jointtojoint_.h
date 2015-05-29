@@ -7,25 +7,25 @@
 namespace SkeletalRender
 {
 	template <typename TVALUE>
-	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBoneLines(Movement::BoneMap boneMap, Movement::PositionList<Common::Vector2<TVALUE>> positionList)
+	Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> getJointToJointBoneLines(Movement::BoneMap boneMap, Movement::PositionList<Common::Vector2<TVALUE>> jointPositionList)
 	{
 		Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8> boneList = Common::ManagedList<Space2d::LineSegment2d<TVALUE>, UInt8>();
 
 		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
 			if (boneMap.ParentBones[i] != i)
-				boneList.add({ *positionList.Positions[boneMap.ParentBones[i]], *positionList.Positions[i] });
+				boneList.add({ *jointPositionList.Positions[boneMap.ParentBones[i]], *jointPositionList.Positions[i] });
 
 		return boneList;
 	}
 
 	template <typename TVALUE>
-	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBoneLines(Movement::BoneMap boneMap, Movement::PositionList<Common::Vector3<TVALUE>> positionList)
+	Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> getJointToJointBoneLines(Movement::BoneMap boneMap, Movement::PositionList<Common::Vector3<TVALUE>> jointPositionList)
 	{
 		Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> boneList = Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8>();
 
 		for (UInt8 i = 0; i < boneMap.BoneCount - 1; i++)
 			if (boneMap.ParentBones[i] != i)
-				boneList.add({ *positionList.Positions[boneMap.ParentBones[i]], *positionList.Positions[i] });
+				boneList.add({ *jointPositionList.Positions[boneMap.ParentBones[i]], *jointPositionList.Positions[i] });
 
 		return boneList;
 	}
