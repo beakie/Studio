@@ -13,6 +13,7 @@
 
 // Create a series of render code which takes different combinations of skeletal elements and renders accordingly.
 //    Ie:
+//      ZeroPositions
 //      BoneMap/ZeroPositions
 //      JointList/BoneMap/ZeroPositions
 //      JointList/BoneMap/EndEffectorZeroPosition
