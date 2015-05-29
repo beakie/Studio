@@ -137,9 +137,7 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });
 	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0 });
 
-	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
-
-	//Kinematics::calc
+	Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(skeletal.BoneMap, skeletal.ZeroPositions);
 
 	return a.exec();
 }
