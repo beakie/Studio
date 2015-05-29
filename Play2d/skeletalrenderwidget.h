@@ -1,5 +1,5 @@
-#ifndef SKELETALRENDER_H
-#define SKELETALRENDER_H
+#ifndef SKELETALRENDERWIDGET_H
+#define SKELETALRENDERWIDGET_H
 
 #include <qwidget.h>
 #include <qgraphicswidget.h>
@@ -8,7 +8,7 @@
 #include "../Library/studio.h"
 
 template <typename TPOINT, typename TMATRIX>
-class SkeletalRender : public QWidget
+class SkeletalRenderWidget : public QWidget
 {
 
 public:
@@ -21,7 +21,7 @@ public:
 	QPen jointPen;
 	int jointRadius;
 
-	SkeletalRender(Skeletals::BasicSkeletal<TPOINT, TMATRIX>* skeletal)
+	SkeletalRenderWidget(Skeletals::BasicSkeletal<TPOINT, TMATRIX>* skeletal)
 	{
 		this->Skeletal = skeletal;
 
@@ -100,10 +100,10 @@ public:
 
 	}
 
-	~SkeletalRender()
+	~SkeletalRenderWidget()
 	{
 	}
 
 };
 
-#endif // SKELETALRENDER_H
+#endif // SKELETALRENDERWIDGET_H

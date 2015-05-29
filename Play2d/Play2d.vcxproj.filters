@@ -32,7 +32,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="skeletalrender.h">
+    <ClInclude Include="skeletalrenderwidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

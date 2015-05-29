@@ -2,7 +2,7 @@
 
 #include "../Library/studio.h"
 
-#include "skeletalrender.h"
+#include "skeletalrenderwidget.h"
 
 int main(int argc, char *argv[])
 {
@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
 		if (rotationList.Items[i] != 0)
 			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
 
-	SkeletalRender<Space2d::PlotF, Common::Matrix3F> skeletalRender(&skeletal);
-	skeletalRender.show();
+	SkeletalRenderWidget<Space2d::PlotF, Common::Matrix3F> skeletalRenderWidget(&skeletal);
+	skeletalRenderWidget.show();
 
-	//skeletalRender.Skeletal->getTranslatedEndEffectors();
-	//skeletalRender.Skeletal->getTranslatedJointPositions();
-	//skeletalRender.Skeletal->getTranslatedEndEffector(0);
-	//skeletalRender.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
-	//skeletalRender.Skeletal->getTranslatedJointPosition(0);
+	//skeletalRenderWidget.Skeletal->getTranslatedEndEffectors();
+	//skeletalRenderWidget.Skeletal->getTranslatedJointPositions();
+	//skeletalRenderWidget.Skeletal->getTranslatedEndEffector(0);
+	//skeletalRenderWidget.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
+	//skeletalRenderWidget.Skeletal->getTranslatedJointPosition(0);
 
 	return a.exec();
 }
