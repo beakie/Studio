@@ -141,6 +141,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skeletals", "Skeletals", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkeletalRender", "SkeletalRender", "{C7030DD8-7707-43AB-9E34-51F04FA9E724}"
 	ProjectSection(SolutionItems) = preProject
+		Library\skeletalrender-jointtoendeffector_.h = Library\skeletalrender-jointtoendeffector_.h
 		Library\skeletalrender-jointtojoint_.h = Library\skeletalrender-jointtojoint_.h
 		Library\skeletalrender.h = Library\skeletalrender.h
 	EndProjectSection
