@@ -11,6 +11,13 @@
 #include "movement-positiontranslation2d_.h"
 #include "movement-positiontranslation3d_.h"
 
+// Create a series of render code which takes different combinations of skeletal elements and renders accordingly.
+//    Ie:
+//      BoneMap/ZeroPositions
+//      JointList/BoneMap/ZeroPositions
+//      JointList/BoneMap/EndEffectorZeroPosition
+//      JointList/BoneMap/EndEffectorZeroPositions
+
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
