@@ -60,7 +60,7 @@ public:
 		// ***** Joints (Zero Position)
 
 		//in order to do this next line... i need a line base class to cater for both 2d and 3d
-		//Common::ManagedList<Space3d::LineSegment3d<TVALUE>, UInt8> zeroPositionJoints = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
 		for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
 		{
@@ -69,24 +69,24 @@ public:
 			painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
 
-		//// ***** Bones (Translated - Direct Connection Method)
+		// ***** Bones (Translated - Direct Connection Method)
 
-		/////////*Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
-		////////for (int i = 0; i < lineList.count(); i++)
-		////////{
-		////////	if (i % 2 == 0)
-		////////		painter.setPen(this->bonePen1);
-		////////	else
-		////////		painter.setPen(this->bonePen2);
+		for (int i = 0; i < lineList.count(); i++)
+		{
+			if (i % 2 == 0)
+				painter.setPen(this->bonePen1);
+			else
+				painter.setPen(this->bonePen2);
 
-		////////	UInt8 fromX = lineList.Items[i]->Item1.Values[0];
-		////////	UInt8 fromY = lineList.Items[i]->Item1.Values[1];
-		////////	UInt8 toX = lineList.Items[i]->Item2.Values[0];
-		////////	UInt8 toY = lineList.Items[i]->Item2.Values[1];
+			UInt8 fromX = lineList.Items[i]->Item1.Values[0];
+			UInt8 fromY = lineList.Items[i]->Item1.Values[1];
+			UInt8 toX = lineList.Items[i]->Item2.Values[0];
+			UInt8 toY = lineList.Items[i]->Item2.Values[1];
 
-		////////	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
-		////////}*/
+			painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
+		}
 
 		// ***** Joints (Translated)
 
