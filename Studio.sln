@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{396EDE
 		Library\common-nullable.h = Library\common-nullable.h
 		Library\common-nullablenull.h = Library\common-nullablenull.h
 		Library\common-quaternion.h = Library\common-quaternion.h
+		Library\common-range.h = Library\common-range.h
 		Library\common-scalecastpixelconv.h = Library\common-scalecastpixelconv.h
 		Library\common-tounitintervalpixelconv.h = Library\common-tounitintervalpixelconv.h
 		Library\common-tuple.h = Library\common-tuple.h
