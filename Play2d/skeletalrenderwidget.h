@@ -71,22 +71,22 @@ public:
 
 		//// ***** Bones (Translated - Direct Connection Method)
 
-		//Common::ManagedList<Space2d::LineSegment2d<>, UInt8> lineList = BodyRender::getJointToJointBones(*this->Skeletal);
+		/////////*Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
-		//for (int i = 0; i < lineList.count(); i++)
-		//{
-		//	if (i % 2 == 0)
-		//		painter.setPen(this->bonePen1);
-		//	else
-		//		painter.setPen(this->bonePen2);
+		////////for (int i = 0; i < lineList.count(); i++)
+		////////{
+		////////	if (i % 2 == 0)
+		////////		painter.setPen(this->bonePen1);
+		////////	else
+		////////		painter.setPen(this->bonePen2);
 
-		//	UInt8 fromX = lineList.Items[i]->PlotFrom.Values[0];
-		//	UInt8 fromY = lineList.Items[i]->PlotFrom.Values[1];
-		//	UInt8 toX = lineList.Items[i]->PlotTo.Values[0];
-		//	UInt8 toY = lineList.Items[i]->PlotTo.Values[1];
+		////////	UInt8 fromX = lineList.Items[i]->Item1.Values[0];
+		////////	UInt8 fromY = lineList.Items[i]->Item1.Values[1];
+		////////	UInt8 toX = lineList.Items[i]->Item2.Values[0];
+		////////	UInt8 toY = lineList.Items[i]->Item2.Values[1];
 
-		//	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
-		//}
+		////////	painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
+		////////}*/
 
 		// ***** Joints (Translated)
 
