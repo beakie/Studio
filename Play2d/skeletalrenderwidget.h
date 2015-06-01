@@ -59,20 +59,33 @@ public:
 
 		// ***** Joints (Zero Position)
 
-		//in order to do this next line... i need a line base class to cater for both 2d and 3d
-		Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->jointPen, offsetX, offsetY);
 
-		for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
-		{
-			painter.setPen(this->jointPen);
-			painter.setBrush(this->jointBrush);
-			painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
-		}
+		////////in order to do this next line... i need a line base class to cater for both 2d and 3d
+		//////Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = ;
+
+		//////renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions));
+		//////for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
+		//////{
+		//////	painter.setPen(this->jointPen);
+		//////	painter.setBrush(this->jointBrush);
+		//////	painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+		//////}
 
 		// ***** Bones (Translated - Direct Connection Method)
 
-		Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->bonePen1, offsetX, offsetY);
 
+		// ***** Joints (Translated)
+
+		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->jointPen, this->jointBrush, offsetX, offsetY);
+
+		// *****
+
+	}
+
+	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList, QPainter& painter, QPen pen, int offsetX, int offsetY)
+	{
 		for (int i = 0; i < lineList.count(); i++)
 		{
 			if (i % 2 == 0)
@@ -87,20 +100,16 @@ public:
 
 			painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
 		}
+	}
 
-		// ***** Joints (Translated)
-
-		Movement::PositionList<TPOINT> translatedJoints = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
-
-		for (int i = 0; i < translatedJoints.PositionCount; i++)
+	void renderPositionList(Movement::PositionList<TPOINT> positionList, QPainter& painter, QPen pen, QBrush brush, int offsetX, int offsetY)
+	{
+		painter.setPen(pen);
+		painter.setBrush(brush);
+		for (int i = 0; i < positionList.PositionCount; i++)
 		{
-			painter.setPen(this->jointPen);
-			painter.setBrush(this->jointBrush);
-			painter.drawEllipse(translatedJoints.Positions[i]->Values[0] - jointRadius + offsetX, translatedJoints.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+			painter.drawEllipse(positionList.Positions[i]->Values[0] - jointRadius + offsetX, positionList.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		}
-
-		// *****
-
 	}
 
 	~SkeletalRenderWidget()
