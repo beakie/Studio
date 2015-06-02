@@ -63,15 +63,16 @@ public:
 		int offsetY = this->height() / 2;
 
 		// ***** Bones (Zero)
-		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
+		////renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
 
 		//////// ***** Joints (Zero)
-		renderPositionList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
+		////renderPositionList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
 
 		Movement::PositionList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
 		//****THIS IS WRONG
 		// ***** Bones (Translated)
+
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, translatedJointPositions), painter, this->translatedPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
@@ -91,14 +92,7 @@ public:
 		painter.setPen(pen);
 
 		for (int i = 0; i < lineList.count(); i++)
-		{
-			UInt8 fromX = lineList.Items[i]->Item1.Values[0];
-			UInt8 fromY = lineList.Items[i]->Item1.Values[1];
-			UInt8 toX = lineList.Items[i]->Item2.Values[0];
-			UInt8 toY = lineList.Items[i]->Item2.Values[1];
-
-			painter.drawLine(fromX + offsetX, fromY + offsetY, toX + offsetX, toY + offsetY);
-		}
+			painter.drawLine(lineList.Items[i]->Item1.Values[0] + offsetX, lineList.Items[i]->Item1.Values[1] + offsetY, lineList.Items[i]->Item2.Values[0] + offsetX, lineList.Items[i]->Item2.Values[1] + offsetY);
 	}
 
 	void renderPositionList(Movement::PositionList<TPOINT> positionList, QPainter& painter, QPen pen, QBrush brush, const int jointRadius, const int offsetX, const int offsetY)
