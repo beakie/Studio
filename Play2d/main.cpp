@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 
 	Common::List<double> rotationList = Common::List<double>();
 	//rotationList.add(180 - flexAngleDegree);
-	rotationList.add(0);
-	rotationList.add(90); // why does having two (or more) 90s give a diff first joint angle than a single 90
+	rotationList.add(10);
+	//rotationList.add(90); // why does having two (or more) 90s give a diff first joint angle than a single 90
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)

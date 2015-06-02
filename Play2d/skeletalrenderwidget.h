@@ -68,8 +68,9 @@ public:
 		//////// ***** Joints (Zero)
 		renderPositionList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
 
+		//****THIS IS WRONG
 		// ***** Bones (Translated)
-		//renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->translatedPositionBonePen, offsetX, offsetY);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions)), painter, this->translatedPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
 		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
