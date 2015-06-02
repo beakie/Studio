@@ -56,7 +56,7 @@ public:
 
 		// ***** Joints (Zero Position)
 
-		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, offsetX, offsetY);
+		//renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, offsetX, offsetY);
 
 		////////in order to do this next line... i need a line base class to cater for both 2d and 3d
 		//////Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = ;
@@ -69,8 +69,14 @@ public:
 		//////	painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
 		//////}
 
-		// ***** Bones (Translated - Direct Connection Method)
+		// ***** Bones (Zero)
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
+
+		//////// ***** Joints (Zero)
+		//////renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, offsetX, offsetY);
+
+		// ***** Bones (Translated)
+		//renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
 		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, offsetX, offsetY);
@@ -96,10 +102,9 @@ public:
 	{
 		painter.setPen(pen);
 		painter.setBrush(brush);
+
 		for (int i = 0; i < positionList.PositionCount; i++)
-		{
 			painter.drawEllipse(positionList.Positions[i]->Values[0] - zeroPositionJointRadius + offsetX, positionList.Positions[i]->Values[1] - zeroPositionJointRadius + offsetY, zeroPositionJointRadius * 2, zeroPositionJointRadius * 2);
-		}
 	}
 
 	~SkeletalRenderWidget()
