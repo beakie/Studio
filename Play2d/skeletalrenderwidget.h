@@ -15,11 +15,10 @@ public:
 	Skeletals::BasicSkeletal<TPOINT, TMATRIX>* Skeletal;
 
 	QBrush backgroundBrush;
-	QPen bonePen1;
-	QPen bonePen2;
-	QBrush jointBrush;
-	QPen jointPen;
-	int jointRadius;
+	QPen zeroPositionBonePen;
+	QBrush zeroPositionJointBrush;
+	QPen zeroPositionJointPen;
+	int zeroPositionJointRadius;
 
 	SkeletalRenderWidget(Skeletals::BasicSkeletal<TPOINT, TMATRIX>* skeletal)
 	{
@@ -27,15 +26,13 @@ public:
 
 		this->backgroundBrush = QBrush(Qt::white);
 
-		this->jointBrush = QBrush(Qt::yellow);
-		this->jointPen = QPen(Qt::blue);
-		this->jointPen.setWidth(1);
-		this->jointRadius = 4;
+		this->zeroPositionJointBrush = QBrush(Qt::lightGray);
+		this->zeroPositionJointPen = QPen(Qt::blue);
+		this->zeroPositionJointPen.setWidth(1);
+		this->zeroPositionJointRadius = 4;
 
-		this->bonePen1 = QPen(Qt::blue);
-		this->bonePen2 = QPen(Qt::red);
-		this->bonePen1.setWidth(2);
-		this->bonePen2.setWidth(2);
+		this->zeroPositionBonePen = QPen(Qt::darkGray);
+		this->zeroPositionBonePen.setWidth(2);
 	}
 
 	void paintEvent(QPaintEvent *event)
@@ -59,7 +56,7 @@ public:
 
 		// ***** Joints (Zero Position)
 
-		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->jointPen, offsetX, offsetY);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, offsetX, offsetY);
 
 		////////in order to do this next line... i need a line base class to cater for both 2d and 3d
 		//////Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = ;
@@ -73,14 +70,10 @@ public:
 		//////}
 
 		// ***** Bones (Translated - Direct Connection Method)
-
-		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->bonePen1, offsetX, offsetY);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
-
-		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->jointPen, this->jointBrush, offsetX, offsetY);
-
-		// *****
+		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, offsetX, offsetY);
 
 	}
 
@@ -88,10 +81,7 @@ public:
 	{
 		for (int i = 0; i < lineList.count(); i++)
 		{
-			if (i % 2 == 0)
-				painter.setPen(this->bonePen1);
-			else
-				painter.setPen(this->bonePen2);
+			painter.setPen(pen);
 
 			UInt8 fromX = lineList.Items[i]->Item1.Values[0];
 			UInt8 fromY = lineList.Items[i]->Item1.Values[1];
@@ -108,7 +98,7 @@ public:
 		painter.setBrush(brush);
 		for (int i = 0; i < positionList.PositionCount; i++)
 		{
-			painter.drawEllipse(positionList.Positions[i]->Values[0] - jointRadius + offsetX, positionList.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+			painter.drawEllipse(positionList.Positions[i]->Values[0] - zeroPositionJointRadius + offsetX, positionList.Positions[i]->Values[1] - zeroPositionJointRadius + offsetY, zeroPositionJointRadius * 2, zeroPositionJointRadius * 2);
 		}
 	}
 
