@@ -62,29 +62,6 @@ public:
 		int offsetX = this->width() / 2;
 		int offsetY = this->height() / 2;
 
-		// ***** Bones (Zero - Direct Connection Method)
-
-		//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
-		//{
-		//	painter.setPen(this->bonePen);
-		//	painter.drawLine(this->Skeletal->ZeroPositions.Positions[i - 1]->Values[0], this->Skeletal->ZeroPositions.Positions[i - 1]->Values[1], this->Skeletal->ZeroPositions.Positions[i]->Values[0], this->Skeletal->ZeroPositions.Positions[i]->Values[1]);
-		//}
-
-		// ***** Joints (Zero Position)
-
-		//renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionJointPen, offsetX, offsetY);
-
-		////////in order to do this next line... i need a line base class to cater for both 2d and 3d
-		//////Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> zeroPositionJoints = ;
-
-		//////renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions));
-		//////for (int i = 0; i < this->Skeletal->ZeroPositions.PositionCount; i++)
-		//////{
-		//////	painter.setPen(this->jointPen);
-		//////	painter.setBrush(this->jointBrush);
-		//////	painter.drawEllipse(this->Skeletal->ZeroPositions.Positions[i]->Values[0] - jointRadius + offsetX, this->Skeletal->ZeroPositions.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
-		//////}
-
 		// ***** Bones (Zero)
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
 
@@ -96,6 +73,13 @@ public:
 
 		// ***** Joints (Translated)
 		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
+
+		// ***** Bones (Zero - Direct Connection Method)
+		//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
+		//{
+		//	painter.setPen(this->bonePen);
+		//	painter.drawLine(this->Skeletal->ZeroPositions.Positions[i - 1]->Values[0], this->Skeletal->ZeroPositions.Positions[i - 1]->Values[1], this->Skeletal->ZeroPositions.Positions[i]->Values[0], this->Skeletal->ZeroPositions.Positions[i]->Values[1]);
+		//}
 
 	}
 
