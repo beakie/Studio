@@ -86,10 +86,10 @@ public:
 
 	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList, QPainter& painter, QPen pen, int offsetX, int offsetY)
 	{
+		painter.setPen(pen);
+
 		for (int i = 0; i < lineList.count(); i++)
 		{
-			painter.setPen(pen);
-
 			UInt8 fromX = lineList.Items[i]->Item1.Values[0];
 			UInt8 fromY = lineList.Items[i]->Item1.Values[1];
 			UInt8 toX = lineList.Items[i]->Item2.Values[0];
@@ -105,7 +105,7 @@ public:
 		painter.setBrush(brush);
 
 		for (int i = 0; i < positionList.PositionCount; i++)
-			painter.drawEllipse(positionList.Positions[i]->Values[0] - jointRadius + offsetX, positionList.Positions[i]->Values[1] - jointRadius + offsetY, jointRadius * 2, jointRadius * 2);
+			painter.drawEllipse(positionList.Positions[i]->Values[0] + offsetX - jointRadius, positionList.Positions[i]->Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
 	}
 
 	~SkeletalRenderWidget()
