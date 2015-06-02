@@ -68,12 +68,14 @@ public:
 		//////// ***** Joints (Zero)
 		renderPositionList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
 
+		Movement::PositionList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+
 		//****THIS IS WRONG
 		// ***** Bones (Translated)
-		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions)), painter, this->translatedPositionBonePen, offsetX, offsetY);
+		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, translatedJointPositions), painter, this->translatedPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
-		renderPositionList(Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
+		renderPositionList(translatedJointPositions, painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
 
 		// ***** Bones (Zero - Direct Connection Method)
 		//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
