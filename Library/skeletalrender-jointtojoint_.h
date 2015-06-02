@@ -7,7 +7,7 @@
 namespace SkeletalRender
 {
 	template <typename TPOINT>
-	Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> getJointToJointBoneLines(Movement::BoneMap boneMap, Movement::PositionList<TPOINT> jointPositionList)
+	Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> getJointToJointBoneLines(const Movement::BoneMap& boneMap, const Movement::PositionList<TPOINT>& jointPositionList)
 	{
 		Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> boneList = Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8>();
 
