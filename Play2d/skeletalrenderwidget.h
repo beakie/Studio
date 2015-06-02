@@ -86,7 +86,7 @@ public:
 
 	}
 
-	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList, QPainter& painter, QPen pen, int offsetX, int offsetY)
+	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 
@@ -101,7 +101,7 @@ public:
 		}
 	}
 
-	void renderPositionList(Movement::PositionList<TPOINT> positionList, QPainter& painter, QPen pen, QBrush brush, int jointRadius, int offsetX, int offsetY)
+	void renderPositionList(Movement::PositionList<TPOINT> positionList, QPainter& painter, QPen pen, QBrush brush, const int jointRadius, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 		painter.setBrush(brush);
