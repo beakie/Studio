@@ -4,6 +4,7 @@
 #include <qwidget.h>
 #include <qgraphicswidget.h>
 #include <qpainter.h>
+#include <qstring.h>
 
 #include "../Library/studio.h"
 
@@ -70,6 +71,17 @@ public:
 
 		Movement::PositionList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
+		// ***** Angles
+
+		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
+		angleList.add(10);
+		angleList.add(20);
+		angleList.add(30);
+		angleList.add(40);
+		angleList.add(50);
+
+		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
+
 		// ***** Bones (Translated)
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, translatedJointPositions), painter, this->translatedPositionBonePen, offsetX, offsetY);
 
@@ -85,7 +97,7 @@ public:
 
 	}
 
-	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
+	void renderLineList(Common::ManagedList<Common::Tuple2<Space2d::PlotF, Space2d::PlotF>, UInt8> lineList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 
@@ -100,6 +112,17 @@ public:
 
 		for (int i = 0; i < positionList.PositionCount; i++)
 			painter.drawEllipse(positionList.Positions[i]->Values[0] + offsetX - jointRadius, positionList.Positions[i]->Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
+	}
+
+	void renderAngles(Movement::PositionList<TPOINT> positionList, Common::ManagedList<FloatMax> angleList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
+	{
+		painter.setPen(pen);
+		
+		for (int i = 0; i < positionList.PositionCount; i++)
+		{
+			QString angleString = QString::number((double)*angleList.Items[i]);
+			painter.drawText(positionList.Positions[i]->Values[0] + offsetX - 10, positionList.Positions[i]->Values[1] + offsetY - 10, angleString);
+		}
 	}
 
 	~SkeletalRenderWidget()
