@@ -3,8 +3,12 @@
 
 namespace Movement
 {
+	template <typename TVALUE>
 	class Rotating2dActuator
 	{
+	public:
+		TVALUE Angle;
+
 		Rotating2dActuator()
 		{
 		}
