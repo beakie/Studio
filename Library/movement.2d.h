@@ -6,8 +6,10 @@
 #include "movement-bonemap.h"
 #include "movement-bonefixedpositionlist.h"
 #include "movement-jointlist.h"
+#include "movement-linear2dactuator.h"
 #include "movement-positiontranslation2d_.h"
 #include "movement-positionlist.h"
+#include "movement-rotating2dactuator.h"
 
 namespace Movement
 {
