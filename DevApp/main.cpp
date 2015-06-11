@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
 	//Int8 ui = convFromUnitInterval.convertPixel(i);
 	*/
 
-	Skeletals::BasicSkeletal2d skeletal(4);
+	Skeletals::DefinitionUncompressed2d skeletal(4);
 
 	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
 	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });

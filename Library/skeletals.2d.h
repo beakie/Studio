@@ -1,21 +1,19 @@
 #ifndef SKELETALS_2D_H
 #define SKELETALS_2D_H
 
-#include "skeletals-armskeletal.h"
-#include "skeletals-basicskeletal.h"
 #include "skeletals-definition.h"
 #include "skeletals-definitionuncompressed.h"
 
 namespace Skeletals
 {
 
-	typedef ArmSkeletal<Space2d::PlotF32, Common::Matrix3F32> ArmSkeletal2d32;
-	typedef ArmSkeletal<Space2d::PlotF64, Common::Matrix3F64> ArmSkeletal2d64;
-	typedef ArmSkeletal<Space2d::PlotF, Common::Matrix3F> ArmSkeletal2d;
+	typedef Definition<Space2d::PlotF32, Common::Matrix3F32> Definition2d32;
+	typedef Definition<Space2d::PlotF64, Common::Matrix3F64> Definition2d64;
+	typedef Definition<Space2d::PlotF, Common::Matrix3F> Definition2d;
 
-	typedef BasicSkeletal<Space2d::PlotF32, Common::Matrix3F32> BasicSkeletal2d32;
-	typedef BasicSkeletal<Space2d::PlotF64, Common::Matrix3F64> BasicSkeletal2d64;
-	typedef BasicSkeletal<Space2d::PlotF, Common::Matrix3F> BasicSkeletal2d;
+	typedef DefinitionUncompressed<Space2d::PlotF32, Common::Matrix3F32> DefinitionUncompressed2d32;
+	typedef DefinitionUncompressed<Space2d::PlotF64, Common::Matrix3F64> DefinitionUncompressed2d64;
+	typedef DefinitionUncompressed<Space2d::PlotF, Common::Matrix3F> DefinitionUncompressed2d;
 
 }
 
