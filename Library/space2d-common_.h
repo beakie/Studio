@@ -1,5 +1,5 @@
-#ifndef SPACE2DCOMMON_H
-#define SPACE2DCOMMON_H
+#ifndef SPACE2D_COMMON_H
+#define SPACE2D_COMMON_H
 
 #include "common.h"
 
@@ -28,4 +28,4 @@ namespace Space2d
 
 }
 
-#endif // SPACE2DCOMMON_H
+#endif // SPACE2D_COMMON_H

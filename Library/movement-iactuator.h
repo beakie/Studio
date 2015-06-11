@@ -1,5 +1,5 @@
-#ifndef MOVEMENTIACTUATOR_H
-#define MOVEMENTIACTUATOR_H
+#ifndef MOVEMENT_IACTUATOR_H
+#define MOVEMENT_IACTUATOR_H
 
 namespace Movement
 {
@@ -15,4 +15,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTIACTUATOR_H
+#endif // MOVEMENT_IACTUATOR_H

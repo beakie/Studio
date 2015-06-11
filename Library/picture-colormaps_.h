@@ -1,5 +1,5 @@
-#ifndef PICTURECOLORMAPS_H
-#define PICTURECOLORMAPS_H
+#ifndef PICTURE_COLORMAPS_H
+#define PICTURE_COLORMAPS_H
 
 #include "core.h"
 #include "common.h"
@@ -66,4 +66,4 @@ namespace Picture
 
 }
 
-#endif // PICTURECOLORMAPS_H
+#endif // PICTURE_COLORMAPS_H

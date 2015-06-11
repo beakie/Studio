@@ -1,5 +1,5 @@
-#ifndef COMMONUNITINTERVAL_H
-#define COMMONUNITINTERVAL_H
+#ifndef COMMON_UNITINTERVAL_H
+#define COMMON_UNITINTERVAL_H
 
 #include "common-math_.h"
 
@@ -32,4 +32,4 @@ namespace Common
 
 }
 
-#endif // COMMONUNITINTERVAL_H
+#endif // COMMON_UNITINTERVAL_H

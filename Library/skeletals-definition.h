@@ -1,5 +1,5 @@
-#ifndef SKELETALSDEFINITION_H
-#define SKELETALSDEFINITION_H
+#ifndef SKELETALS_DEFINITION_H
+#define SKELETALS_DEFINITION_H
 
 #include "core.h"
 #include "common.h"
@@ -33,4 +33,4 @@ namespace Skeletals
 	};
 }
 
-#endif // SKELETALSDEFINITION_H
+#endif // SKELETALS_DEFINITION_H

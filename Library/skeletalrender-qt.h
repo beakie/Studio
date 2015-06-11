@@ -1,5 +1,5 @@
-#ifndef SKELETALRENDERQT_H
-#define SKELETALRENDERQT_H
+#ifndef SKELETALRENDER_QT_H
+#define SKELETALRENDER_QT_H
 
 namespace SkeletalRender
 {
@@ -8,4 +8,4 @@ namespace SkeletalRender
 	}
 }
 
-#endif // SKELETALRENDERQT_H
+#endif // SKELETALRENDER_QT_H

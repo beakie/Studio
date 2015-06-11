@@ -1,5 +1,5 @@
-#ifndef PICTUREQTIMAGEMAPPER_H
-#define PICTUREQTIMAGEMAPPER_H
+#ifndef PICTURE_QT_IMAGEMAPPER_H
+#define PICTURE_QT_IMAGEMAPPER_H
 
 #include "picture.h"
 
@@ -119,4 +119,4 @@ namespace Picture
 	}
 }
 
-#endif // PICTUREQTIMAGEMAPPER_H
+#endif // PICTURE_QT_IMAGEMAPPER_H

@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONEPOSITIONLIST_H
-#define MOVEMENTBONEPOSITIONLIST_H
+#ifndef MOVEMENT_BONEPOSITIONLIST_H
+#define MOVEMENT_BONEPOSITIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -107,4 +107,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTBONEPOSITIONLIST_H
+#endif // MOVEMENT_BONEPOSITIONLIST_H

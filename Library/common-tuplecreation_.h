@@ -1,5 +1,5 @@
-#ifndef COMMONTUPLECREATION_H
-#define COMMONTUPLECREATION_H
+#ifndef COMMON_TUPLECREATION_H
+#define COMMON_TUPLECREATION_H
 
 #include "core.h"
 
@@ -56,4 +56,4 @@ namespace Common
 	}
 }
 
-#endif // COMMONTUPLECREATION_H
+#endif // COMMON_TUPLECREATION_H

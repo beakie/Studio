@@ -1,5 +1,5 @@
-#ifndef COMMONIMATRIXADAPTER_H
-#define COMMONIMATRIXADAPTER_H
+#ifndef COMMON_IMATRIXADAPTER_H
+#define COMMON_IMATRIXADAPTER_H
 
 #include "core.h"
 
@@ -27,4 +27,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONIMATRIXADAPTER_H
+#endif // COMMON_IMATRIXADAPTER_H

@@ -1,5 +1,5 @@
-#ifndef SPACE3DCOORDINATE_H
-#define SPACE3DCOORDINATE_H
+#ifndef SPACE3D_COORDINATE_H
+#define SPACE3D_COORDINATE_H
 
 #include "common.h"
 
@@ -79,4 +79,4 @@ namespace Space3d
 	}
 }
 
-#endif // SPACE3DCOORDINATE_H
+#endif // SPACE3D_COORDINATE_H

@@ -1,5 +1,5 @@
-#ifndef COMMONMATH_H
-#define COMMONMATH_H
+#ifndef COMMON_MATH_H
+#define COMMON_MATH_H
 
 #include <cmath> //todo: REMOVE ME!!!!!!!!!
 
@@ -125,4 +125,4 @@ namespace Common
 
 }
 
-#endif // COMMONMATH_H
+#endif // COMMON_MATH_H

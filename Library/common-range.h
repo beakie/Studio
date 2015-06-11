@@ -1,5 +1,5 @@
-#ifndef COMMONRANGE_H
-#define COMMONRANGE_H
+#ifndef COMMON_RANGE_H
+#define COMMON_RANGE_H
 
 namespace Common
 {
@@ -30,4 +30,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONRANGE_H
+#endif // COMMON_RANGE_H

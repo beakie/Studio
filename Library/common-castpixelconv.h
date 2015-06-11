@@ -1,5 +1,5 @@
-#ifndef COMMONCASTPIXELCONV_H
-#define COMMONCASTPIXELCONV_H
+#ifndef COMMON_CASTPIXELCONV_H
+#define COMMON_CASTPIXELCONV_H
 
 #include "core.h"
 
@@ -16,4 +16,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONCASTPIXELCONV_H
+#endif // COMMON_CASTPIXELCONV_H

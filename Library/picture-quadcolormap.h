@@ -1,5 +1,5 @@
-#ifndef PICTUREQUADCOLORMAP_H
-#define PICTUREQUADCOLORMAP_H
+#ifndef PICTURE_QUADCOLORMAP_H
+#define PICTURE_QUADCOLORMAP_H
 
 #include "core.h"
 #include "common.h"
@@ -65,4 +65,4 @@ namespace Picture
 	};
 }
 
-#endif // PICTUREQUADCOLORMAP_H
+#endif // PICTURE_QUADCOLORMAP_H

@@ -1,5 +1,5 @@
-#ifndef COMMONVECTOR2_H
-#define COMMONVECTOR2_H
+#ifndef COMMON_VECTOR2_H
+#define COMMON_VECTOR2_H
 
 namespace Common
 {
@@ -266,4 +266,4 @@ namespace Common
 
 }
 
-#endif // COMMONVECTOR2_H
+#endif // COMMON_VECTOR2_H

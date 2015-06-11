@@ -1,5 +1,5 @@
-﻿#ifndef COMMONMATRIX4_H
-#define COMMONMATRIX4_H
+﻿#ifndef COMMON_MATRIX4_H
+#define COMMON_MATRIX4_H
 
 #include "core.h"
 
@@ -541,4 +541,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONMATRIX4_H
+#endif // COMMON_MATRIX4_H

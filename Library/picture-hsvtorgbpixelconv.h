@@ -1,5 +1,5 @@
-#ifndef PICTUREHSVTORGBPIXELCONV_H
-#define PICTUREHSVTORGBPIXELCONV_H
+#ifndef PICTURE_HSVTORGBPIXELCONV_H
+#define PICTURE_HSVTORGBPIXELCONV_H
 
 #include "core.h"
 #include "common.h"
@@ -46,4 +46,4 @@ namespace Picture
 
 }
 
-#endif // PICTUREHSVTORGBPIXELCONV_H
+#endif // PICTURE_HSVTORGBPIXELCONV_H

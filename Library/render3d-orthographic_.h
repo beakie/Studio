@@ -1,5 +1,5 @@
-#ifndef RENDER3DORTHOGRAPHIC_H
-#define RENDER3DORTHOGRAPHIC_H
+#ifndef RENDER3D_ORTHOGRAPHIC_H
+#define RENDER3D_ORTHOGRAPHIC_H
 
 #include "common.h"
 #include "space2d.h"
@@ -54,4 +54,4 @@ namespace Render3d
 	}
 }
 
-#endif // RENDER3DORTHOGRAPHIC_H
+#endif // RENDER3D_ORTHOGRAPHIC_H

@@ -1,5 +1,5 @@
-#ifndef COMMONUNITVECTOR_H
-#define COMMONUNITVECTOR_H
+#ifndef COMMON_UNITVECTOR_H
+#define COMMON_UNITVECTOR_H
 
 #include "common-vector2.h"
 #include "common-vector3.h"
@@ -68,4 +68,4 @@ namespace Common
 	}
 }
 
-#endif // COMMONUNITVECTOR_H
+#endif // COMMON_UNITVECTOR_H

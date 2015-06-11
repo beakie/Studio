@@ -1,5 +1,5 @@
-#ifndef PICTURERGBTOCMYKPIXELCONV_H
-#define PICTURERGBTOCMYKPIXELCONV_H
+#ifndef PICTURE_RGBTOCMYKPIXELCONV_H
+#define PICTURE_RGBTOCMYKPIXELCONV_H
 
 #include "core.h"
 #include "common.h"
@@ -33,6 +33,6 @@ namespace Picture
 
 }
 
-#endif // PICTURERGBTOCMYKPIXELCONV_H
+#endif // PICTURE_RGBTOCMYKPIXELCONV_H
 
 // http://www.javascripter.net/faq/rgb2cmyk.htm

@@ -1,5 +1,5 @@
-#ifndef PICTUREQT_H
-#define PICTUREQT_H
+#ifndef PICTURE_QT_H
+#define PICTURE_QT_H
 
 #include "common.h"
 
@@ -12,4 +12,4 @@ namespace Picture
 	}
 }
 
-#endif // PICTUREQT_H
+#endif // PICTURE_QT_H

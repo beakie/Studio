@@ -1,5 +1,5 @@
-#ifndef COMMONNULLABLENULL_H
-#define COMMONNULLABLENULL_H
+#ifndef COMMON_NULLABLENULL_H
+#define COMMON_NULLABLENULL_H
 
 namespace Common
 {
@@ -10,4 +10,4 @@ namespace Common
 
 }
 
-#endif // COMMONNULLABLENULL_H
+#endif // COMMON_NULLABLENULL_H

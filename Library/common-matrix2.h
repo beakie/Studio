@@ -1,5 +1,5 @@
-#ifndef COMMONMATRIX2_H
-#define COMMONMATRIX2_H
+#ifndef COMMON_MATRIX2_H
+#define COMMON_MATRIX2_H
 
 #include "core.h"
 
@@ -438,4 +438,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONMATRIX2_H
+#endif // COMMON_MATRIX2_H

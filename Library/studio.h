@@ -1,3 +1,6 @@
+#ifndef STUDIO_H
+#define STUDIO_H
+
 #include "core.h"
 #include "common.h"
 #include "kinematics.h"
@@ -23,3 +26,5 @@ Picture-Qt	 -	Picture
 BodyRender	 -	Movement
 Kinematics -	Movement
 *******************/
+
+#endif // STUDIO_H

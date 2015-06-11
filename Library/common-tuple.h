@@ -1,5 +1,5 @@
-#ifndef COMMONTUPLE_H
-#define COMMONTUPLE_H
+#ifndef COMMON_TUPLE_H
+#define COMMON_TUPLE_H
 
 #include "core.h"
 
@@ -214,4 +214,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONTUPLE_H
+#endif // COMMON_TUPLE_H

@@ -1,5 +1,5 @@
-#ifndef COMMONLIST_H
-#define COMMONLIST_H
+#ifndef COMMON_LIST_H
+#define COMMON_LIST_H
 
 // add insert functions
 
@@ -172,4 +172,4 @@ namespace Common
 
 }
 
-#endif // COMMONLIST_H
+#endif // COMMON_LIST_H

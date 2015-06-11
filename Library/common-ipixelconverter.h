@@ -1,5 +1,5 @@
-#ifndef COMMONIPIXELCONVERTER_H
-#define COMMONIPIXELCONVERTER_H
+#ifndef COMMON_IPIXELCONVERTER_H
+#define COMMON_IPIXELCONVERTER_H
 
 #include "core.h"
 
@@ -16,4 +16,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONIPIXELCONVERTER_H
+#endif // COMMON_IPIXELCONVERTER_H

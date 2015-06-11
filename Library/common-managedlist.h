@@ -1,5 +1,5 @@
-#ifndef COMMONMANAGEDLIST_H
-#define COMMONMANAGEDLIST_H
+#ifndef COMMON_MANAGEDLIST_H
+#define COMMON_MANAGEDLIST_H
 
 // add insert functions
 
@@ -177,4 +177,4 @@ namespace Common
 
 }
 
-#endif // COMMONMANAGEDLIST_H
+#endif // COMMON_MANAGEDLIST_H

@@ -1,5 +1,5 @@
-#ifndef MOVEMENTJOINTLIST_H
-#define MOVEMENTJOINTLIST_H
+#ifndef MOVEMENT_JOINTLIST_H
+#define MOVEMENT_JOINTLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -83,4 +83,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTJOINTLIST_H
+#endif // MOVEMENT_JOINTLIST_H

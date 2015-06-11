@@ -1,5 +1,5 @@
-#ifndef COMMONQUATERNION_H
-#define COMMONQUATERNION_H
+#ifndef COMMON_QUATERNION_H
+#define COMMON_QUATERNION_H
 
 #include "core.h"
 #include "common-vector3.h"
@@ -62,4 +62,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONQUATERNION_H
+#endif // COMMON_QUATERNION_H

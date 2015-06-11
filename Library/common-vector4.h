@@ -1,5 +1,5 @@
-#ifndef COMMONVECTOR4_H
-#define COMMONVECTOR4_H
+#ifndef COMMON_VECTOR4_H
+#define COMMON_VECTOR4_H
 
 #include "common-matrix4.h"
 
@@ -308,5 +308,4 @@ namespace Common
 
 }
 
-#endif // COMMONVECTOR4_H
-
+#endif // COMMON_VECTOR4_H

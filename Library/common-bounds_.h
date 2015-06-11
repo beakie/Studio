@@ -1,5 +1,5 @@
-#ifndef COMMONBOUNDS_H
-#define COMMONBOUNDS_H
+#ifndef COMMON_BOUNDS_H
+#define COMMON_BOUNDS_H
 
 #include "core.h"
 
@@ -141,4 +141,4 @@ namespace Common
 	}
 }
 
-#endif // COMMONBOUNDS_H
+#endif // COMMON_BOUNDS_H

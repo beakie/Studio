@@ -1,5 +1,5 @@
-#ifndef KINEMATICSJOINT2D_H
-#define KINEMATICSJOINT2D_H
+#ifndef KINEMATICS_JOINT2D_H
+#define KINEMATICS_JOINT2D_H
 
 #include "movement.2d.h"
 
@@ -12,4 +12,4 @@ namespace Kinematics
 	bool calculateAngleForRotateJointCoordinateAlignment(const double bone1Length, const double bone2Length, double& rotatingJointAngle, double& reach1JointAngle, double& reach2JointAngle);
 }
 
-#endif // KINEMATICSJOINT2D_H
+#endif // KINEMATICS_JOINT2D_H

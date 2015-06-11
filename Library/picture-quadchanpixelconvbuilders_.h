@@ -1,5 +1,5 @@
-#ifndef PICTUREQUADCHANPIXELCONVBUILDERS_H
-#define PICTUREQUADCHANPIXELCONVBUILDERS_H
+#ifndef PICTURE_QUADCHANPIXELCONVBUILDERS_H
+#define PICTURE_QUADCHANPIXELCONVBUILDERS_H
 
 #include "picture-spreadchanquadchanpixelconv.h"
 #include "picture-selectchanquadchanpixelconv.h"
@@ -56,4 +56,4 @@ namespace Picture
 
 }
 
-#endif // PICTUREQUADCHANPIXELCONVBUILDERS_H
+#endif // PICTURE_QUADCHANPIXELCONVBUILDERS_H

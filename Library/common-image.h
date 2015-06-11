@@ -1,5 +1,5 @@
-#ifndef COMMONIMAGE_H
-#define COMMONIMAGE_H
+#ifndef COMMON_IMAGE_H
+#define COMMON_IMAGE_H
 
 #include "common-bounds_.h"
 #include "common-math_.h"
@@ -738,4 +738,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONIMAGE_H
+#endif // COMMON_IMAGE_H

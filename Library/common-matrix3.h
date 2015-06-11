@@ -1,5 +1,5 @@
-#ifndef COMMONMATRIX3_H
-#define COMMONMATRIX3_H
+#ifndef COMMON_MATRIX3_H
+#define COMMON_MATRIX3_H
 
 #include "core.h"
 
@@ -471,4 +471,4 @@ namespace Common
 	};
 }
 
-#endif // COMMONMATRIX3_H
+#endif // COMMON_MATRIX3_H

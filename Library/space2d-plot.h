@@ -1,5 +1,5 @@
-#ifndef SPACE2DPLOT_H
-#define SPACE2DPLOT_H
+#ifndef SPACE2D_PLOT_H
+#define SPACE2D_PLOT_H
 
 #include "common.h"
 
@@ -80,4 +80,4 @@ namespace Space2d
 
 }
 
-#endif // SPACE2DPLOT_H
+#endif // SPACE2D_PLOT_H

@@ -1,5 +1,5 @@
-#ifndef COMMONNULLABLE_H
-#define COMMONNULLABLE_H
+#ifndef COMMON_NULLABLE_H
+#define COMMON_NULLABLE_H
 
 #include "common-bounds_.h"
 #include "common-nullablenull.h"
@@ -317,4 +317,4 @@ namespace Common
 
 }
 
-#endif // COMMONNULLABLE_H
+#endif // COMMON_NULLABLE_H

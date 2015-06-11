@@ -1,5 +1,5 @@
-#ifndef SPACE3DCOMMON_H
-#define SPACE3DCOMMON_H
+#ifndef SPACE3D_COMMON_H
+#define SPACE3D_COMMON_H
 
 #include "common.h"
 
@@ -28,4 +28,4 @@ namespace Space3d
 
 }
 
-#endif // SPACE3DCOMMON_H
+#endif // SPACE3D_COMMON_H

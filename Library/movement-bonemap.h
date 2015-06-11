@@ -1,5 +1,5 @@
-#ifndef MOVEMENTBONEMAP_H
-#define MOVEMENTBONEMAP_H
+#ifndef MOVEMENT_BONEMAP_H
+#define MOVEMENT_BONEMAP_H
 
 #include "core.h"
 #include "common.h"
@@ -134,4 +134,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENTBONEMAP_H
+#endif // MOVEMENT_BONEMAP_H

@@ -1,5 +1,5 @@
-#ifndef PICTURERGBTOHSVPIXELCONV_H
-#define PICTURERGBTOHSVPIXELCONV_H
+#ifndef PICTURE_RGBTOHSVPIXELCONV_H
+#define PICTURE_RGBTOHSVPIXELCONV_H
 
 #include "core.h"
 #include "common.h"
@@ -49,6 +49,6 @@ namespace Picture
 
 }
 
-#endif // PICTURERGBTOHSVPIXELCONV_H
+#endif // PICTURE_RGBTOHSVPIXELCONV_H
 
 // http://www.cs.rit.edu/~ncs/color/t_convert.html

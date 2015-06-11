@@ -1,7 +1,7 @@
 //128 64 192 255 0
 
-#ifndef PICTURECOLORHELPERS_H
-#define PICTURECOLORHELPERS_H
+#ifndef PICTURE_COLORHELPERS_H
+#define PICTURE_COLORHELPERS_H
 
 #include "common.h"
 
@@ -450,4 +450,4 @@ namespace Picture
 	}
 }
 
-#endif // PICTURECOLORHELPERS_H
+#endif // PICTURE_COLORHELPERS_H

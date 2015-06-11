@@ -1,5 +1,5 @@
-#ifndef PICTURETRICOLORMAP_H
-#define PICTURETRICOLORMAP_H
+#ifndef PICTURE_TRICOLORMAP_H
+#define PICTURE_TRICOLORMAP_H
 
 #include "core.h"
 #include "common.h"
@@ -65,4 +65,4 @@ namespace Picture
 	};
 }
 
-#endif // PICTURETRICOLORMAP_H
+#endif // PICTURE_TRICOLORMAP_H
