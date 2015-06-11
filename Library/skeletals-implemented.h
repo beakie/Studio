@@ -8,19 +8,19 @@
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct DefinitionUncompressed : Definition<TPOINT, TMATRIX>
+	struct Implemented : Definition<TPOINT, TMATRIX>
 	{
 		Movement::JointList<TMATRIX> Joints;
 		Movement::JointList<TMATRIX> JointPlacement;
 
-		DefinitionUncompressed()
+		Implemented()
 			: Definition(),
 			Joints(),
 			JointPlacement()
 		{
 		}
 
-		DefinitionUncompressed(UInt8 chainedBoneCount)
+		Implemented(UInt8 chainedBoneCount)
 			: Definition(chainedBoneCount),
 			Joints(chainedBoneCount),
 			JointPlacement(chainedBoneCount)

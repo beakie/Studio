@@ -13,7 +13,7 @@ class SkeletalRenderWidget : public QWidget
 {
 
 public:
-	Skeletals::DefinitionUncompressed<TPOINT, TMATRIX>* Skeletal;
+	Skeletals::Implemented<TPOINT, TMATRIX>* Skeletal;
 
 	QBrush backgroundBrush;
 
@@ -29,7 +29,7 @@ public:
 	QPen translatedPositionJointPen;
 	int translatedPositionJointRadius;
 
-	SkeletalRenderWidget(Skeletals::DefinitionUncompressed<TPOINT, TMATRIX>* skeletal)
+	SkeletalRenderWidget(Skeletals::Implemented<TPOINT, TMATRIX>* skeletal)
 	{
 		this->Skeletal = skeletal;
 
