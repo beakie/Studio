@@ -136,8 +136,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Skeletals", "Skeletals", "{74304190-B709-4A1C-A513-8265DBBF0FFB}"
 	ProjectSection(SolutionItems) = preProject
-		Library\skeletals-armskeletal.h = Library\skeletals-armskeletal.h
-		Library\skeletals-basicskeletal.h = Library\skeletals-basicskeletal.h
 		Library\skeletals-definition.h = Library\skeletals-definition.h
 		Library\skeletals-definitionuncompressed.h = Library\skeletals-definitionuncompressed.h
 		Library\skeletals.2d.h = Library\skeletals.2d.h

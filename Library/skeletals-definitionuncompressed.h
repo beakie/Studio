@@ -24,6 +24,32 @@ namespace Skeletals
 			Joints(chainedBoneCount)
 		{
 		}
+
+		Movement::PositionList<TPOINT> getTranslatedJointPositions()
+		{
+			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
+		}
+
+		Movement::BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
+		{
+			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectorZeroPositions);
+		}
+
+		TPOINT getTranslatedJointPosition(const int jointIndex)
+		{
+			return Movement::getTranslatedPosition(Joints, BoneMap, jointIndex, *ZeroPositions.Positions[jointIndex]);
+		}
+
+		TPOINT getTranslatedEndEffector(const int endEffectorIndex)
+		{
+			return Movement::getTranslatedPosition(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Positions[endEffectorIndex]);
+		}
+
+		TPOINT getTranslatedBoneFixedPosition(const int parentBoneIndex, const TPOINT& position)
+		{
+			return Movement::getTranslatedPosition(Joints, BoneMap, parentBoneIndex, position);
+		}
+
 	};
 }
 
