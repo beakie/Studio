@@ -14,12 +14,14 @@ namespace Skeletals
 		Movement::JointList<TMATRIX> JointPlacement;
 
 		DefinitionUncompressed()
-			: base()
+			: base(),
+			Joints()
 		{
 		}
 
 		DefinitionUncompressed(UInt8 chainedBoneCount)
-			: base(chainedBoneCount)
+			: base(chainedBoneCount),
+			Joints(chainedBoneCount)
 		{
 		}
 	};
