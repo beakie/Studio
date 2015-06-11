@@ -58,7 +58,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2E
 		Library\movement.2d.h = Library\movement.2d.h
 		Library\movement.3d.h = Library\movement.3d.h
 		Library\movement.h = Library\movement.h
-		Library\skeletals-definitionuncompressed.h = Library\skeletals-definitionuncompressed.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture", "Picture", "{C63334A9-184B-41E8-8959-400037139DDA}"

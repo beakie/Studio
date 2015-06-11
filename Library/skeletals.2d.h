@@ -4,6 +4,7 @@
 #include "skeletals-armskeletal.h"
 #include "skeletals-basicskeletal.h"
 #include "skeletals-definition.h"
+#include "skeletals-definitionuncompressed.h"
 
 namespace Skeletals
 {

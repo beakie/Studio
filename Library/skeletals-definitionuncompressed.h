@@ -1,35 +1,23 @@
-#ifndef SKELETALSDEFINITION_H
-#define SKELETALSDEFINITION_H
+#ifndef SKELETALSDEFINITIONUNCOMPRESSED_H
+#define SKELETALSDEFINITIONUNCOMPRESSED_H
 
-#include "core.h"
-#include "common.h"
-
-#include "movement-bonefixedpositionlist.h"
-#include "movement-bonemap.h"
-#include "movement-positionlist.h"
-#include "movement-positiontranslation2d_.h"
-#include "movement-positiontranslation3d_.h"
+#include "skeletals-definition.h"
 
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct Definition
+	struct DefinitionUncompressed : Definition<TPOINT, TMATRIX>
 	{
-		Movement::BoneMap BoneMap;
-		Movement::PositionList<TPOINT> ZeroPositions;
-		Movement::PositionList<TPOINT> ZeroRotation;
-		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions;
 
-		Definition()
+		DefinitionUncompressed()
 		{
 		}
 
-		Definition(UInt8 chainedBoneCount)
-			: BoneMap(chainedBoneCount),
-			ZeroPositions(chainedBoneCount)
+		DefinitionUncompressed(UInt8 chainedBoneCount)
+			: base(chainedBoneCount)
 		{
 		}
 	};
 }
 
-#endif // SKELETALSDEFINITION_H
+#endif // SKELETALSDEFINITIONUNCOMPRESSED_H
