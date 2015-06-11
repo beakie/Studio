@@ -17,7 +17,7 @@ namespace Skeletals
 	{
 		Movement::BoneMap BoneMap;
 		Movement::PositionList<TPOINT> ZeroPositions;
-		Movement::PositionList<TPOINT> ZeroRotation;
+		Movement::PositionList<TPOINT> ZeroRotations;
 		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions;
 
 		Definition()
@@ -26,7 +26,8 @@ namespace Skeletals
 
 		Definition(UInt8 chainedBoneCount)
 			: BoneMap(chainedBoneCount),
-			ZeroPositions(chainedBoneCount)
+			ZeroPositions(chainedBoneCount),
+			ZeroRotations(chainedBoneCount)
 		{
 		}
 	};

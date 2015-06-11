@@ -15,13 +15,15 @@ namespace Skeletals
 
 		DefinitionUncompressed()
 			: Definition(),
-			Joints()
+			Joints(),
+			JointPlacement()
 		{
 		}
 
 		DefinitionUncompressed(UInt8 chainedBoneCount)
 			: Definition(chainedBoneCount),
-			Joints(chainedBoneCount)
+			Joints(chainedBoneCount),
+			JointPlacement(chainedBoneCount)
 		{
 		}
 
