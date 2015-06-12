@@ -6,7 +6,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class SpreadValueQuadChanPixelConv
+	class SpreadValueQuadChanPixelConv : Common::IPixelConverter<TVALUE, Common::Vector4<TVALUE>>
 	{
 	public:
 		Common::Vector4<TVALUE> convertPixel(const TVALUE value)

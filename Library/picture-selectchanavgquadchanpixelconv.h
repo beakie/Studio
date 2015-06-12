@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class SelectChanAvgQuadChanPixelConv
+	class SelectChanAvgQuadChanPixelConv : Common::IPixelConverter<Common::Vector4<TVALUE>, TVALUE>
 	{
 	public:
 		TVALUE convertPixel(const Common::Vector4<TVALUE>& pixel)

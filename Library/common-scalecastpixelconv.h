@@ -2,11 +2,12 @@
 #define COMMON_SCALECASTPIXELCONV_H
 
 #include "core.h"
+#include "common-ipixelconverter.h"
 
 namespace Common
 {
 	template <typename TIN, typename TOUT>
-	class ScaleCastPixelConv
+	class ScaleCastPixelConv : IPixelConverter<TIN, TOUT>
 	{
 	private:
 		FloatMax offsetIn;

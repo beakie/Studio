@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TUNITINTERVAL>
-	class RgbToHsvPixelConv
+	class RgbToHsvPixelConv : Common::IPixelConverter<Common::Vector3<TUNITINTERVAL>, Common::Vector3<TUNITINTERVAL>>
 	{
 		// move function variables to here
 

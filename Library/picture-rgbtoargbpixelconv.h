@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class RgbToArgbPixelConv
+	class RgbToArgbPixelConv : Common::IPixelConverter<Common::Vector3<TVALUE>, Common::Vector4<TVALUE>>
 	{
 		// move function variables to here
 

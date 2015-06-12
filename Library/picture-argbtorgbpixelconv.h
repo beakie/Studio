@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class ArgbToRgbPixelConv
+	class ArgbToRgbPixelConv : Common::IPixelConverter<Common::Vector4<TVALUE>, Common::Vector3<TVALUE>>
 	{
 	public:
 		Common::Vector3<TVALUE> convertPixel(const Common::Vector4<TVALUE>& pixel)

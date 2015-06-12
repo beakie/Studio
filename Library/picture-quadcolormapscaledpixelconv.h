@@ -9,7 +9,7 @@ namespace Picture
 	//template specialization the main function. will be quicker, and end resulting would be the same... code base is bigger but worth every bytes
 
 	template <typename TUNITINTERVAL, typename TVALUEIN, typename TVALUEOUT>
-	class QuadColorMapScaledPixelConv
+	class QuadColorMapScaledPixelConv : Common::IPixelConverter<TVALUEIN, Common::Vector4<TVALUEOUT>>
 	{
 	private:
 		const QuadColorMap<TUNITINTERVAL>* _colorMap; // transform this on population. lowerbound defines offset, upperbound lets calc of multiplication

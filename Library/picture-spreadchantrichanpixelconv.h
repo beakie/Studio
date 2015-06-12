@@ -6,7 +6,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class SpreadChanTriChanPixelConv
+	class SpreadChanTriChanPixelConv : Common::IPixelConverter<Common::Vector3<TVALUE>, Common::Vector3<TVALUE>>
 	{
 	public:
 		UInt8 _channel;

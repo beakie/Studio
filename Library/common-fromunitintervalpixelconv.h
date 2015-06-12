@@ -2,13 +2,14 @@
 #define COMMON_FROMUNITINTERVALPIXELCONV_H
 
 #include "core.h"
+#include "common-ipixelconverter.h"
 #include "common-unitinterval.h"
 #include "common-bounds_.h"
 
 namespace Common
 {
 	template <typename TVALUE, typename TUNITINTERVAL = Common::UnitIntervalMax>
-	class FromUnitIntervalPixelConv
+	class FromUnitIntervalPixelConv : IPixelConverter<TUNITINTERVAL, TVALUE>
 	{
 	private:
 		FloatMax offset;

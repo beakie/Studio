@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TVALUE>
-	class SelectChanQuadChanPixelConv
+	class SelectChanQuadChanPixelConv : Common::IPixelConverter<Common::Vector4<TVALUE>, TVALUE>
 	{
 	public:
 		UInt8 _channel;

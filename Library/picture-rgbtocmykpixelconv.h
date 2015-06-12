@@ -7,7 +7,7 @@
 namespace Picture
 {
 	template <typename TUNITINTERVAL>
-	class RgbToCmykPixelConv
+	class RgbToCmykPixelConv : Common::IPixelConverter<Common::Vector3<TUNITINTERVAL>, Common::Vector4<TUNITINTERVAL>>
 	{
 		// move function variables to here
 
