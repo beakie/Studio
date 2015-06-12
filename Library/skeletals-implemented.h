@@ -11,19 +11,16 @@ namespace Skeletals
 	struct Implemented : Definition<TPOINT, TMATRIX>
 	{
 		Movement::JointList<TMATRIX> Joints; // Points multiplied by this matrix will transform as though fixed to joint
-		Movement::JointList<TMATRIX> JointPlacement;
 
 		Implemented()
 			: Definition(),
-			Joints(),
-			JointPlacement()
+			Joints()
 		{
 		}
 
 		Implemented(UInt8 chainedBoneCount)
 			: Definition(chainedBoneCount),
-			Joints(chainedBoneCount),
-			JointPlacement(chainedBoneCount)
+			Joints(chainedBoneCount)
 		{
 		}
 
