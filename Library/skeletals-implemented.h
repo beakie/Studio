@@ -10,7 +10,7 @@ namespace Skeletals
 	template <typename TPOINT, typename TMATRIX>
 	struct Implemented : Definition<TPOINT, TMATRIX>
 	{
-		Movement::JointList<TMATRIX> Joints;
+		Movement::JointList<TMATRIX> Joints; // Points multiplied by this matrix will transform as though fixed to joint
 		Movement::JointList<TMATRIX> JointPlacement;
 
 		Implemented()
@@ -25,6 +25,11 @@ namespace Skeletals
 			Joints(chainedBoneCount),
 			JointPlacement(chainedBoneCount)
 		{
+		}
+
+		void init()
+		{
+			//JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
 		}
 
 		Movement::PositionList<TPOINT> getTranslatedJointPositions()
