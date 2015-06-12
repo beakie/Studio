@@ -26,7 +26,7 @@ namespace Skeletals
 
 		void init()
 		{
-			//JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
+			JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
 		}
 
 		Movement::PositionList<TPOINT> getTranslatedJointPositions()

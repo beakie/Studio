@@ -2,17 +2,21 @@
 #define MOVEMENT_LINEAR2DACTUATOR_H
 
 #include "space2d-plot.h"
+#include "space2d-transformmatrixbuilders_.h"
 
 namespace Movement
 {
-	template <typename TVALUE>
-	class Linear2dActuator
+	template <typename TVALUE, typename TMATRIX>
+	class Linear2dActuator // Translates along X axis
 	{
 	public:
-		TVALUE Translation;
-
 		Linear2dActuator()
 		{
+		}
+
+		TMATRIX getJointMatrix(TVALUE translation)
+		{
+			return Space2d::getTranslationMatrix(translation, 0);
 		}
 
 		virtual ~Linear2dActuator()
