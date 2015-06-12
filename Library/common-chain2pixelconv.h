@@ -2,11 +2,12 @@
 #define PICTURE_CHAIN3PIXELCONV_H
 
 #include "core.h"
+#include "common-ipixelconverter.h"
 
 namespace Common
 {
 	template <typename TVALUEOUT, typename TCONVERTER1, typename TCONVERTER2, typename TVALUEIN>
-	class Chain2PixelConv
+	class Chain2PixelConv : IPixelConverter<TVALUEIN, TVALUEOUT>
 	{
 	private:
 		TCONVERTER1* _Converter1;
@@ -26,7 +27,7 @@ namespace Common
 	};
 
 	template <typename TVALUEOUT, typename TCONVERTER1, typename TCONVERTER2, typename TCONVERTER3, typename TVALUEIN>
-	class Chain3PixelConv
+	class Chain3PixelConv : IPixelConverter<TVALUEIN, TVALUEOUT>
 	{
 	private:
 		TCONVERTER1* _Converter1;
@@ -48,7 +49,7 @@ namespace Common
 	};
 
 	template <typename TVALUEOUT, typename TCONVERTER1, typename TCONVERTER2, typename TCONVERTER3, typename TCONVERTER4, typename TVALUEIN>
-	class Chain4PixelConv
+	class Chain4PixelConv : IPixelConverter<TVALUEIN, TVALUEOUT>
 	{
 	private:
 		TCONVERTER1* _Converter1;
