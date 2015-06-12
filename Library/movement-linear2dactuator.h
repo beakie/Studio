@@ -3,11 +3,12 @@
 
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
+#include "movement-iactuator.h"
 
 namespace Movement
 {
 	template <typename TVALUE, typename TMATRIX>
-	class Linear2dActuator // Translates along X axis
+	class Linear2dActuator : IActuator<TMATRIX> // Translates along X axis
 	{
 	public:
 		Linear2dActuator()

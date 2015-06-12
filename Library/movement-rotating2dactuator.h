@@ -3,11 +3,12 @@
 
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
+#include "movement-iactuator.h"
 
 namespace Movement
 {
 	template <typename TVALUE, typename TMATRIX>
-	class Rotating2dActuator
+	class Rotating2dActuator : IActuator<TMATRIX>
 	{
 	public:
 		Rotating2dActuator()

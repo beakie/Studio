@@ -3,11 +3,15 @@
 
 namespace Movement
 {
+	template <typename TMATRIX>
 	class IActuator
 	{
+	public:
 		IActuator()
 		{
 		}
+
+		TMATRIX getJointMatrix();
 
 		virtual ~IActuator()
 		{
