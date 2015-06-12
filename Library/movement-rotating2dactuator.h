@@ -14,7 +14,7 @@ namespace Movement
 		{
 		}
 
-		TMATRIX getJointMatrix(TVALUE angle)
+		TMATRIX getJointMatrix(TVALUE angle) // This means the function isnt generic
 		{
 			return Space2d::getRotationMatrix(angle);
 		}

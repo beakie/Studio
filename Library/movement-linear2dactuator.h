@@ -14,7 +14,7 @@ namespace Movement
 		{
 		}
 
-		TMATRIX getJointMatrix(TVALUE translation)
+		TMATRIX getJointMatrix(TVALUE translation) // This means the function isnt generic
 		{
 			return Space2d::getTranslationMatrix(translation, 0);
 		}
