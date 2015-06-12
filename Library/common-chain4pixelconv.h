@@ -1,5 +1,5 @@
-#ifndef PICTURE_CHAIN3PIXELCONV_H
-#define PICTURE_CHAIN3PIXELCONV_H
+#ifndef PICTURE_CHAIN4PIXELCONV_H
+#define PICTURE_CHAIN4PIXELCONV_H
 
 #include "core.h"
 #include "common-ipixelconverter.h"
@@ -32,4 +32,4 @@ namespace Common
 
 }
 
-#endif // PICTURE_CHAIN3PIXELCONV_H
+#endif // PICTURE_CHAIN4PIXELCONV_H
