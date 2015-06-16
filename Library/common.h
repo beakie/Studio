@@ -9,6 +9,8 @@
 #include "common-chain4pixelconv.h"
 #include "common-collection.h"
 #include "common-fromunitintervalpixelconv.h"
+#include "common-icollection.h"
+#include "common-ilist.h"
 #include "common-image.h"
 #include "common-ipixelconverter.h"
 #include "common-list.h"

@@ -1,13 +1,15 @@
 #ifndef COMMON_LIST_H
 #define COMMON_LIST_H
 
+#include "common-ilist.h"
+
 // add insert functions
 
 namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct List
+	struct List : IList<TVALUE, TINDEX>
 	{
 
 	protected:
@@ -41,27 +43,25 @@ namespace Common
 			return Capacity;
 		}
 
-		List<TVALUE, TINDEX>& remove(const TINDEX index)
+		void remove(const TINDEX index)
 		{
 			if (index >= Count)
-				return *this;
+				return;
 
 			for (TINDEX i = index; i < (Count - 1); i++)
 				Items[i] = Items[i + 1];
 
 			Count--;
-
-			return *this;
 		}
 
-		List<TVALUE, TINDEX>& add(const TVALUE item)
+		void add(const TVALUE item)
 		{
-			return operator+=(item);
+			operator+=(item);
 		}
 
-		List<TVALUE, TINDEX>& add(const List<TVALUE, TINDEX>& list)
+		void add(const ICollection<TVALUE, TINDEX>& collection)
 		{
-			return operator+=(list);
+			operator+=(collection);
 		}
 
 		void resize()
@@ -137,13 +137,23 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX>& list)
-		{
-			TINDEX listCount = list.Count;
+		//////List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX>& list)
+		//////{
+		//////	TINDEX listCount = list.Count;
 
-			//could be more efficient if only resizes once and then copies all items into the list itself
-			for (TINDEX i = 0; i < listCount; i++)
-				addItem(list.Items[i]);
+		//////	//could be more efficient if only resizes once and then copies all items into the list itself
+		//////	for (TINDEX i = 0; i < listCount; i++)
+		//////		addItem(list.Items[i]);
+
+		//////	return *this;
+		//////}
+
+		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TINDEX>& collection)
+		{
+			TINDEX collectionCount = collection.count();
+
+			for (TINDEX i = 0; i < collectionCount; i++)
+				operator+=(collection.operator[](i));
 
 			return *this;
 		}

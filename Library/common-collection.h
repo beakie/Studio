@@ -1,11 +1,13 @@
 #ifndef COMMON_COLLECTION_H
 #define COMMON_COLLECTION_H
 
+#include "common-icollection.h"
+
 namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct Collection
+	struct Collection : ICollection<TVALUE, TINDEX>
 	{
 
 	protected:
@@ -45,6 +47,15 @@ namespace Common
 		TINDEX capacity() const
 		{
 			return Count;
+		}
+
+		TINDEX getIndex(const TVALUE value)
+		{
+			for (TINDEX i = 0; i < Count; i++)
+				if (Items[i] == value)
+					return i + 1;
+
+			return 0;
 		}
 
 		Collection<TVALUE, TINDEX>& operator=(const Collection<TVALUE, TINDEX> &collection)

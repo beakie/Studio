@@ -53,8 +53,9 @@ int main(int argc, char *argv[])
 	collection = Common::Collection<unsigned int, int>(collection);
 
 	list = Common::List<unsigned int, int>();
-	list = Common::List<unsigned int, int>(collection);
+//	list = Common::List<unsigned int, int>(collection);
 	list = Common::List<unsigned int, int>(list);
+
 
 	return a.exec();
 }
