@@ -20,9 +20,9 @@ namespace Movement
 	typedef PointList<Space3d::CoordinateF64> PointList3d64;
 	typedef PointList<Space3d::CoordinateF> PointList3d;
 
-	typedef PointList<Space3d::CoordinateF32> JointPointList3d32;
-	typedef PointList<Space3d::CoordinateF64> JointPointList3d64;
-	typedef PointList<Space3d::CoordinateF> JointPointList3d;
+	typedef BoneFixedPointList<Space3d::CoordinateF32> BoneFixedPointList3d32;
+	typedef BoneFixedPointList<Space3d::CoordinateF64> BoneFixedPointList3d64;
+	typedef BoneFixedPointList<Space3d::CoordinateF> BoneFixedPointList3d;
 
 }
 

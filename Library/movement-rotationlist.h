@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_POSITIONLIST_H
-#define MOVEMENT_POSITIONLIST_H
+#ifndef MOVEMENT_ROTATIONLIST_H
+#define MOVEMENT_ROTATIONLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -7,80 +7,80 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct PointList
+	struct RotationList
 	{
-		TPOINT** Points;
-		UInt8 PointCount;
+		TPOINT** Rotations;
+		UInt8 RotationCount;
 
-		PointList()
-			: Points(0),
-			  PointCount(0)
+		RotationList()
+			: Rotations(0),
+			  RotationCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		PointList(const PointList<TPOINT>& pointList)
+		RotationList(const RotationList<TPOINT>& rotationList)
 		{
-			Points = new TPOINT*[pointList.PointCount];
+			Rotations = new TPOINT*[rotationList.RotationCount];
 
-			for (UInt8 i = 0; i < pointList.PointCount; i++)
-				Points[i] = new TPOINT(*pointList.Points[i]);
+			for (UInt8 i = 0; i < rotationList.RotationCount; i++)
+				Rotations[i] = new TPOINT(*rotationList.Rotations[i]);
 
-			PointCount = pointList.PointCount;
+			RotationCount = rotationList.RotationCount;
 		}
 
-		PointList(UInt8 size)
-			: PointCount(size)
+		RotationList(UInt8 size)
+			: RotationCount(size)
 		{
-			Points = new TPOINT*[size];
+			Rotations = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Points[i] = new TPOINT(TPOINT::getZero());
+				Rotations[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		PointList<TPOINT>& operator=(const PointList<TPOINT>& pointList)
+		RotationList<TPOINT>& operator=(const RotationList<TPOINT>& rotationList)
 		{
-			TPOINT** tmpPoints = new TPOINT*[pointList.PointCount + 1];
+			TPOINT** tmpRotations = new TPOINT*[rotationList.RotationCount + 1];
 
-			for (UInt8 i = 0; i < pointList.PointCount; i++)
-				tmpPoints[i] = new TPOINT(*pointList.Points[i]);
+			for (UInt8 i = 0; i < rotationList.RotationCount; i++)
+				tmpRotations[i] = new TPOINT(*rotationList.Rotations[i]);
 
-			delete[] Points;
+			delete[] Rotations;
 
-			Points = tmpPoints;
+			Rotations = tmpRotations;
 
-			PointCount = pointList.PointCount;
+			RotationCount = rotationList.RotationCount;
 
 			return *this;
 		}
 
-		UInt8 addPoint()
+		UInt8 addRotation()
 		{
-			TPOINT** tmpPoints = new TPOINT*[PointCount + 1];
+			TPOINT** tmpRotations = new TPOINT*[RotationCount + 1];
 
-			for (UInt8 i = 0; i < PointCount; i++)
-				tmpPoints[i] = Points[i];
+			for (UInt8 i = 0; i < RotationCount; i++)
+				tmpRotations[i] = Rotations[i];
 
-			tmpPoints[PointCount] = new TPOINT(TPOINT::getZero());
+			tmpRotations[RotationCount] = new TPOINT(TPOINT::getZero());
 
-			delete[] Points;
+			delete[] Rotations;
 
-			Points = tmpPoints;
+			Rotations = tmpRotations;
 
-			PointCount++;
+			RotationCount++;
 
-			return PointCount - 1;
+			return RotationCount - 1;
 		}
 
-		~PointList()
+		~RotationList()
 		{
-			for (UInt8 i = 0; i < PointCount; i++)
-				delete Points[i];
+			for (UInt8 i = 0; i < RotationCount; i++)
+				delete Rotations[i];
 
-			delete[] Points;
+			delete[] Rotations;
 		}
 
 	};
 }
 
-#endif // MOVEMENT_POSITIONLIST_H
+#endif // MOVEMENT_ROTATIONLIST_H

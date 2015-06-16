@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_POSITIONLIST_H
-#define MOVEMENT_POSITIONLIST_H
+#ifndef MOVEMENT_POINTLIST_H
+#define MOVEMENT_POINTLIST_H
 
 #include "core.h"
 #include "common.h"
@@ -83,4 +83,4 @@ namespace Movement
 	};
 }
 
-#endif // MOVEMENT_POSITIONLIST_H
+#endif // MOVEMENT_POINTLIST_H

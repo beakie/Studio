@@ -22,9 +22,9 @@ namespace Movement
 	typedef PointList<Space2d::PlotF64> PointList2d64;
 	typedef PointList<Space2d::PlotF> PointList2d;
 
-	typedef PointList<Space2d::PlotF32> JointPointList2d32;
-	typedef PointList<Space2d::PlotF64> JointPointList2d64;
-	typedef PointList<Space2d::PlotF> JointPointList2d;
+	typedef BoneFixedPointList<Space2d::PlotF32> BoneFixedPointList2d32;
+	typedef BoneFixedPointList<Space2d::PlotF64> BoneFixedPointList2d64;
+	typedef BoneFixedPointList<Space2d::PlotF> BoneFixedPointList2d;
 
 }
 
