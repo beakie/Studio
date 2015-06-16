@@ -11,7 +11,7 @@ namespace Movement
 		{
 		}
 
-		TMATRIX getJointMatrix();
+		void set(const TMATRIX& matrix);
 
 		virtual ~IActuator()
 		{

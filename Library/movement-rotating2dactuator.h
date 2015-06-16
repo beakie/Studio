@@ -11,13 +11,15 @@ namespace Movement
 	class Rotating2dActuator : IActuator<TMATRIX>
 	{
 	public:
+		TVALUE Angle;
+
 		Rotating2dActuator()
 		{
 		}
 
-		TMATRIX getJointMatrix(TVALUE angle) // This means the function isnt generic
+		void set(const TMATRIX& matrix)
 		{
-			return Space2d::getRotationMatrix(angle);
+			matrix = Space2d::getRotationMatrix(Angle);
 		}
 
 		virtual ~Rotating2dActuator()

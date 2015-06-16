@@ -11,13 +11,15 @@ namespace Movement
 	class Linear2dActuator : IActuator<TMATRIX> // Translates along X axis
 	{
 	public:
+		TVALUE Translation;
+			
 		Linear2dActuator()
 		{
 		}
 
-		TMATRIX getJointMatrix(TVALUE translation) // This means the function isnt generic
+		void set(const TMATRIX& matrix)
 		{
-			return Space2d::getTranslationMatrix(translation, 0);
+			matrix = Space2d::getTranslationMatrix(Translation, 0);
 		}
 
 		virtual ~Linear2dActuator()
