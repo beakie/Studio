@@ -7,6 +7,7 @@
 #include "common-chain2pixelconv.h"
 #include "common-chain3pixelconv.h"
 #include "common-chain4pixelconv.h"
+#include "common-collection.h"
 #include "common-fromunitintervalpixelconv.h"
 #include "common-image.h"
 #include "common-ipixelconverter.h"
