@@ -3,40 +3,40 @@
 
 #include "space2d.h"
 
-#include "movement-bonefixedpositionlist.h"
+#include "movement-bonefixedpointlist.h"
 #include "movement-bonemap.h"
 #include "movement-jointlist.h"
-#include "movement-positionlist.h"
+#include "movement-pointlist.h"
 
 namespace Movement
 {
 
 	template <typename TVALUE>
-	Common::Vector2<TVALUE> getTranslatedPosition(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const int parentBoneIndex, const Common::Vector2<TVALUE>& position)
+	Common::Vector2<TVALUE> getTranslatedPoint(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const int parentBoneIndex, const Common::Vector2<TVALUE>& point)
 	{
-		return Space2d::multiplyPlotByMatrix(position, boneMap.getBoneTransformMatrix(jointList, parentBoneIndex));
+		return Space2d::multiplyPlotByMatrix(point, boneMap.getBoneTransformMatrix(jointList, parentBoneIndex));
 	}
 
 	template <typename TVALUE>
-	PositionList<Common::Vector2<TVALUE>> getTranslatedJointPositions(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PositionList<Common::Vector2<TVALUE>>& jointPositions)
+	PointList<Common::Vector2<TVALUE>> getTranslatedJointPoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PointList<Common::Vector2<TVALUE>>& jointPoints)
 	{
-		PositionList<Common::Vector2<TVALUE>> translatedJoints = PositionList<Common::Vector2<TVALUE>>(jointPositions.PositionCount);
+		PointList<Common::Vector2<TVALUE>> translatedJoints = PointList<Common::Vector2<TVALUE>>(jointPoints.PointCount);
 
-		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
-			translatedJoints.Positions[i]->operator=(getTranslatedPosition(jointList, boneMap, i, *jointPositions.Positions[i]));
+		for (UInt8 i = 0; i < jointPoints.PointCount; i++)
+			translatedJoints.Points[i]->operator=(getTranslatedPoint(jointList, boneMap, i, *jointPoints.Points[i]));
 
 		return translatedJoints;
 	}
 
 	template <typename TVALUE>
-	BoneFixedPositionList<Common::Vector2<TVALUE>> getTranslatedPositions(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const BoneFixedPositionList<Common::Vector2<TVALUE>>& boneFixedPositions)
+	BoneFixedPointList<Common::Vector2<TVALUE>> getTranslatedPoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const BoneFixedPointList<Common::Vector2<TVALUE>>& boneFixedPoints)
 	{
-		BoneFixedPositionList<Common::Vector2<TVALUE>> translatedPositions = BoneFixedPositionList<Common::Vector2<TVALUE>>(boneFixedPositions.PositionCount);
+		BoneFixedPointList<Common::Vector2<TVALUE>> translatedPoints = BoneFixedPointList<Common::Vector2<TVALUE>>(boneFixedPoints.PointCount);
 
-		for (UInt8 i = 0; i < boneFixedPositions.PositionCount; i++)
-			translatedPositions.Positions[i]->operator=(getTranslatedPosition(jointList, boneMap, boneFixedPositions.BoneIndex[i], *boneFixedPositions.Positions[i]));
+		for (UInt8 i = 0; i < boneFixedPoints.PointCount; i++)
+			translatedPoints.Points[i]->operator=(getTranslatedPoint(jointList, boneMap, boneFixedPoints.BoneIndex[i], *boneFixedPoints.Points[i]));
 
-		return translatedPositions;
+		return translatedPoints;
 	}
 
 }
