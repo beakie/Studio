@@ -7,29 +7,29 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct PositionList
+	struct PointList
 	{
 		TPOINT** Positions;
 		UInt8 PositionCount;
 
-		PositionList()
+		PointList()
 			: Positions(0),
 			  PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		PositionList(const PositionList<TPOINT>& positionList)
+		PointList(const PointList<TPOINT>& pointList)
 		{
-			Positions = new TPOINT*[positionList.PositionCount];
+			Positions = new TPOINT*[pointList.PositionCount];
 
-			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				Positions[i] = new TPOINT(*positionList.Positions[i]);
+			for (UInt8 i = 0; i < pointList.PositionCount; i++)
+				Positions[i] = new TPOINT(*pointList.Positions[i]);
 
-			PositionCount = positionList.PositionCount;
+			PositionCount = pointList.PositionCount;
 		}
 
-		PositionList(UInt8 size)
+		PointList(UInt8 size)
 			: PositionCount(size)
 		{
 			Positions = new TPOINT*[size];
@@ -38,18 +38,18 @@ namespace Movement
 				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		PositionList<TPOINT>& operator=(const PositionList<TPOINT>& positionList)
+		PointList<TPOINT>& operator=(const PointList<TPOINT>& pointList)
 		{
-			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[pointList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < positionList.PositionCount; i++)
-				tmpPositions[i] = new TPOINT(*positionList.Positions[i]);
+			for (UInt8 i = 0; i < pointList.PositionCount; i++)
+				tmpPositions[i] = new TPOINT(*pointList.Positions[i]);
 
 			delete[] Positions;
 
 			Positions = tmpPositions;
 
-			PositionCount = positionList.PositionCount;
+			PositionCount = pointList.PositionCount;
 
 			return *this;
 		}
@@ -72,7 +72,7 @@ namespace Movement
 			return PositionCount - 1;
 		}
 
-		~PositionList()
+		~PointList()
 		{
 			for (UInt8 i = 0; i < PositionCount; i++)
 				delete Positions[i];

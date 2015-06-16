@@ -29,12 +29,12 @@ namespace Skeletals
 			JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
 		}
 
-		Movement::PositionList<TPOINT> getTranslatedJointPositions()
+		Movement::PointList<TPOINT> getTranslatedJointPositions()
 		{
 			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
 		}
 
-		Movement::BoneFixedPositionList<TPOINT> getTranslatedEndEffectors()
+		Movement::BoneFixedPointList<TPOINT> getTranslatedEndEffectors()
 		{
 			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectorZeroPositions);
 		}

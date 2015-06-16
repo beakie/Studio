@@ -4,9 +4,9 @@
 #include "core.h"
 #include "common.h"
 
-#include "movement-bonefixedpositionlist.h"
+#include "movement-bonefixedpointlist.h"
 #include "movement-bonemap.h"
-#include "movement-positionlist.h"
+#include "movement-pointlist.h"
 #include "movement-positiontranslation2d_.h"
 #include "movement-positiontranslation3d_.h"
 
@@ -16,9 +16,9 @@ namespace Skeletals
 	struct Definition
 	{
 		Movement::BoneMap BoneMap;
-		Movement::PositionList<TPOINT> ZeroPositions;
-		Movement::PositionList<TPOINT> ZeroRotations;
-		Movement::BoneFixedPositionList<TPOINT> EndEffectorZeroPositions;
+		Movement::PointList<TPOINT> ZeroPositions;
+		Movement::PointList<TPOINT> ZeroRotations;
+		Movement::BoneFixedPointList<TPOINT> EndEffectorZeroPositions;
 
 		Definition()
 		{

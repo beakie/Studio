@@ -67,9 +67,9 @@ public:
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, this->Skeletal->ZeroPositions), painter, this->zeroPositionBonePen, offsetX, offsetY);
 
 		//////// ***** Joints (Zero)
-		renderPositionList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
+		renderPointList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
 
-		Movement::PositionList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		Movement::PointList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
 		// ***** Angles
 
@@ -86,7 +86,7 @@ public:
 		renderLineList(SkeletalRender::getJointToJointBoneLines(this->Skeletal->BoneMap, translatedJointPositions), painter, this->translatedPositionBonePen, offsetX, offsetY);
 
 		// ***** Joints (Translated)
-		renderPositionList(translatedJointPositions, painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
+		renderPointList(translatedJointPositions, painter, this->translatedPositionJointPen, this->translatedPositionJointBrush, this->translatedPositionJointRadius, offsetX, offsetY);
 
 		// ***** Bones (Zero - Direct Connection Method)
 		//for (int i = 1; i < this->Skeletal->ZeroPositions.PositionCount; i++)
@@ -105,23 +105,23 @@ public:
 			painter.drawLine(lineList.Items[i]->Item1.Values[0] + offsetX, lineList.Items[i]->Item1.Values[1] + offsetY, lineList.Items[i]->Item2.Values[0] + offsetX, lineList.Items[i]->Item2.Values[1] + offsetY);
 	}
 
-	void renderPositionList(Movement::PositionList<TPOINT> positionList, QPainter& painter, QPen pen, QBrush brush, const int jointRadius, const int offsetX, const int offsetY)
+	void renderPointList(Movement::PointList<TPOINT> pointList, QPainter& painter, QPen pen, QBrush brush, const int jointRadius, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 		painter.setBrush(brush);
 
-		for (int i = 0; i < positionList.PositionCount; i++)
-			painter.drawEllipse(positionList.Positions[i]->Values[0] + offsetX - jointRadius, positionList.Positions[i]->Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
+		for (int i = 0; i < pointList.PositionCount; i++)
+			painter.drawEllipse(pointList.Positions[i]->Values[0] + offsetX - jointRadius, pointList.Positions[i]->Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
 	}
 
-	void renderAngles(Movement::PositionList<TPOINT> positionList, Common::ManagedList<FloatMax> angleList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
+	void renderAngles(Movement::PointList<TPOINT> pointList, Common::ManagedList<FloatMax> angleList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 		
-		for (int i = 0; i < positionList.PositionCount; i++)
+		for (int i = 0; i < pointList.PositionCount; i++)
 		{
 			QString angleString = QString::number((double)*angleList.Items[i]);
-			painter.drawText(positionList.Positions[i]->Values[0] + offsetX - 10, positionList.Positions[i]->Values[1] + offsetY - 10, angleString);
+			painter.drawText(pointList.Positions[i]->Values[0] + offsetX - 10, pointList.Positions[i]->Values[1] + offsetY - 10, angleString);
 		}
 	}
 

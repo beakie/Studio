@@ -4,11 +4,11 @@
 #include "space2d.h"
 
 #include "movement-bonemap.h"
-#include "movement-bonefixedpositionlist.h"
+#include "movement-bonefixedpointlist.h"
 #include "movement-jointlist.h"
 #include "movement-linear2dactuator.h"
 #include "movement-positiontranslation2d_.h"
-#include "movement-positionlist.h"
+#include "movement-pointlist.h"
 #include "movement-rotating2dactuator.h"
 
 namespace Movement
@@ -18,13 +18,13 @@ namespace Movement
 	typedef JointList<Common::Matrix3F64> JointList2d64;
 	typedef JointList<Common::Matrix3F> JointList2d;
 
-	typedef PositionList<Space2d::PlotF32> PositionList2d32;
-	typedef PositionList<Space2d::PlotF64> PositionList2d64;
-	typedef PositionList<Space2d::PlotF> PositionList2d;
+	typedef PointList<Space2d::PlotF32> PointList2d32;
+	typedef PointList<Space2d::PlotF64> PointList2d64;
+	typedef PointList<Space2d::PlotF> PointList2d;
 
-	typedef PositionList<Space2d::PlotF32> JointPositionList2d32;
-	typedef PositionList<Space2d::PlotF64> JointPositionList2d64;
-	typedef PositionList<Space2d::PlotF> JointPositionList2d;
+	typedef PointList<Space2d::PlotF32> JointPointList2d32;
+	typedef PointList<Space2d::PlotF64> JointPointList2d64;
+	typedef PointList<Space2d::PlotF> JointPointList2d;
 
 }
 

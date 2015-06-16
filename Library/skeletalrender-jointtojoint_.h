@@ -2,18 +2,18 @@
 #define SKELETALRENDER_JOINTTOJOINT_H
 
 #include "movement-bonemap.h"
-#include "movement-positionlist.h"
+#include "movement-pointlist.h"
 
 namespace SkeletalRender
 {
 	template <typename TPOINT>
-	Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> getJointToJointBoneLines(const Movement::BoneMap& boneMap, const Movement::PositionList<TPOINT>& jointPositionList)
+	Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> getJointToJointBoneLines(const Movement::BoneMap& boneMap, const Movement::PointList<TPOINT>& jointPointList)
 	{
 		Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> boneList = Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8>();
 
 		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
 			if (boneMap.ParentBones[i] != i)
-				boneList.add({ *jointPositionList.Positions[boneMap.ParentBones[i]], *jointPositionList.Positions[i] });
+				boneList.add({ *jointPointList.Positions[boneMap.ParentBones[i]], *jointPointList.Positions[i] });
 
 		return boneList;
 	}
