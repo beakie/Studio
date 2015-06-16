@@ -6,10 +6,10 @@
 
 namespace Movement
 {
-	template <typename TPOINT>
+	template <typename TVECTOR>
 	struct RotationList
 	{
-		TPOINT** Rotations;
+		TVECTOR** Rotations;
 		UInt8 RotationCount;
 
 		RotationList()
@@ -19,12 +19,12 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		RotationList(const RotationList<TPOINT>& rotationList)
+		RotationList(const RotationList<TVECTOR>& rotationList)
 		{
-			Rotations = new TPOINT*[rotationList.RotationCount];
+			Rotations = new TVECTOR*[rotationList.RotationCount];
 
 			for (UInt8 i = 0; i < rotationList.RotationCount; i++)
-				Rotations[i] = new TPOINT(*rotationList.Rotations[i]);
+				Rotations[i] = new TVECTOR(*rotationList.Rotations[i]);
 
 			RotationCount = rotationList.RotationCount;
 		}
@@ -32,18 +32,18 @@ namespace Movement
 		RotationList(UInt8 size)
 			: RotationCount(size)
 		{
-			Rotations = new TPOINT*[size];
+			Rotations = new TVECTOR*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Rotations[i] = new TPOINT(TPOINT::getZero());
+				Rotations[i] = new TVECTOR(TVECTOR::getZero());
 		}
 
-		RotationList<TPOINT>& operator=(const RotationList<TPOINT>& rotationList)
+		RotationList<TVECTOR>& operator=(const RotationList<TVECTOR>& rotationList)
 		{
-			TPOINT** tmpRotations = new TPOINT*[rotationList.RotationCount + 1];
+			TVECTOR** tmpRotations = new TVECTOR*[rotationList.RotationCount + 1];
 
 			for (UInt8 i = 0; i < rotationList.RotationCount; i++)
-				tmpRotations[i] = new TPOINT(*rotationList.Rotations[i]);
+				tmpRotations[i] = new TVECTOR(*rotationList.Rotations[i]);
 
 			delete[] Rotations;
 
@@ -56,12 +56,12 @@ namespace Movement
 
 		UInt8 addRotation()
 		{
-			TPOINT** tmpRotations = new TPOINT*[RotationCount + 1];
+			TVECTOR** tmpRotations = new TVECTOR*[RotationCount + 1];
 
 			for (UInt8 i = 0; i < RotationCount; i++)
 				tmpRotations[i] = Rotations[i];
 
-			tmpRotations[RotationCount] = new TPOINT(TPOINT::getZero());
+			tmpRotations[RotationCount] = new TVECTOR(TVECTOR::getZero());
 
 			delete[] Rotations;
 
