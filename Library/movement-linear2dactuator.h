@@ -7,8 +7,8 @@
 
 namespace Movement
 {
-	template <typename TVALUE, typename TMATRIX>
-	class Linear2dActuator : IActuator<TMATRIX> // Translates along X axis
+	template <typename TVALUE>
+	class Linear2dActuator : IActuator<Common::Matrix3<TVALUE>> // Translates along X axis
 	{
 	public:
 		TVALUE Translation;
@@ -17,7 +17,7 @@ namespace Movement
 		{
 		}
 
-		void set(const TMATRIX& matrix)
+		void set(const Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Space2d::getTranslationMatrix(Translation, 0);
 		}

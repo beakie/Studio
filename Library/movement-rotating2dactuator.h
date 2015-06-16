@@ -7,8 +7,8 @@
 
 namespace Movement
 {
-	template <typename TVALUE, typename TMATRIX>
-	class Rotating2dActuator : IActuator<TMATRIX>
+	template <typename TVALUE>
+	class Rotating2dActuator : IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 		TVALUE Angle;
@@ -17,7 +17,7 @@ namespace Movement
 		{
 		}
 
-		void set(const TMATRIX& matrix)
+		void set(const Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Space2d::getRotationMatrix(Angle);
 		}
