@@ -7,101 +7,101 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct BoneFixedPointList
+	struct BoneFixedPositionList
 	{
 		UInt8* BoneIndex;
-		TPOINT** Points;
-		UInt8 PointCount;
+		TPOINT** Positions;
+		UInt8 PositionCount;
 
-		BoneFixedPointList()
-			: Points(0),
-			PointCount(0)
+		BoneFixedPositionList()
+			: Positions(0),
+			PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		BoneFixedPointList(const BoneFixedPointList<TPOINT>& boneFixedPointList)
+		BoneFixedPositionList(const BoneFixedPositionList<TPOINT>& boneFixedPositionList)
 		{
-			BoneIndex = new UInt8[boneFixedPointList.PointCount];
-			Points = new TPOINT*[boneFixedPointList.PointCount];
+			BoneIndex = new UInt8[boneFixedPositionList.PositionCount];
+			Positions = new TPOINT*[boneFixedPositionList.PositionCount];
 
-			for (UInt8 i = 0; i < boneFixedPointList.PointCount; i++)
+			for (UInt8 i = 0; i < boneFixedPositionList.PositionCount; i++)
 			{
-				BoneIndex[i] = boneFixedPointList.BoneIndex[i];
-				Points[i] = new TPOINT(*boneFixedPointList.Points[i]);
+				BoneIndex[i] = boneFixedPositionList.BoneIndex[i];
+				Positions[i] = new TPOINT(*boneFixedPositionList.Positions[i]);
 			}
 
-			PointCount = boneFixedPointList.PointCount;
+			PositionCount = boneFixedPositionList.PositionCount;
 		}
 
-		BoneFixedPointList(UInt8 size)
-			: PointCount(size)
+		BoneFixedPositionList(UInt8 size)
+			: PositionCount(size)
 		{
 			BoneIndex = new UInt8[size];
-			Points = new TPOINT*[size];
+			Positions = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
 			{
 				BoneIndex[i] = 0;
-				Points[i] = new TPOINT(TPOINT::getZero());
+				Positions[i] = new TPOINT(TPOINT::getZero());
 			}
 		}
 
-		BoneFixedPointList<TPOINT>& operator=(const BoneFixedPointList<TPOINT>& boneFixedPointList)
+		BoneFixedPositionList<TPOINT>& operator=(const BoneFixedPositionList<TPOINT>& boneFixedPositionList)
 		{
-			UInt8* tmpBoneIndex = new UInt8[boneFixedPointList.PointCount + 1];
-			TPOINT** tmpPoints = new TPOINT*[boneFixedPointList.PointCount + 1];
+			UInt8* tmpBoneIndex = new UInt8[boneFixedPositionList.PositionCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[boneFixedPositionList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < boneFixedPointList.PointCount; i++)
+			for (UInt8 i = 0; i < boneFixedPositionList.PositionCount; i++)
 			{
-				tmpBoneIndex[i] = boneFixedPointList.BoneIndex[i];
-				tmpPoints[i] = new TPOINT(*boneFixedPointList.Points[i]);
+				tmpBoneIndex[i] = boneFixedPositionList.BoneIndex[i];
+				tmpPositions[i] = new TPOINT(*boneFixedPositionList.Positions[i]);
 			}
 
 			delete[] BoneIndex;
-			delete[] Points;
+			delete[] Positions;
 
 			BoneIndex = tmpBoneIndex;
-			Points = tmpPoints;
+			Positions = tmpPositions;
 
-			PointCount = boneFixedPointList.PointCount;
+			PositionCount = boneFixedPositionList.PositionCount;
 
 			return *this;
 		}
 
-		UInt8 addPoint()
+		UInt8 addPosition()
 		{
-			UInt8* tmpBoneIndex = new UInt8[PointCount + 1];
-			TPOINT** tmpPoints = new TPOINT*[PointCount + 1];
+			UInt8* tmpBoneIndex = new UInt8[PositionCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
 
-			for (UInt8 i = 0; i < PointCount; i++)
+			for (UInt8 i = 0; i < PositionCount; i++)
 			{
 				tmpBoneIndex[i] = BoneIndex[i];
-				tmpPoints[i] = Points[i];
+				tmpPositions[i] = Positions[i];
 			}
 
-			tmpBoneIndex[PointCount] = 0;
-			tmpPoints[PointCount] = new TPOINT(TPOINT::getZero());
+			tmpBoneIndex[PositionCount] = 0;
+			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
 			delete[] BoneIndex;
-			delete[] Points;
+			delete[] Positions;
 
 			BoneIndex = tmpBoneIndex;
-			Points = tmpPoints;
+			Positions = tmpPositions;
 
-			PointCount++;
+			PositionCount++;
 
-			return PointCount - 1;
+			return PositionCount - 1;
 		}
 
-		~BoneFixedPointList()
+		~BoneFixedPositionList()
 		{
 			delete[] BoneIndex;
 
-			for (UInt8 i = 0; i < PointCount; i++)
-				delete Points[i];
+			for (UInt8 i = 0; i < PositionCount; i++)
+				delete Positions[i];
 
-			delete[] Points;
+			delete[] Positions;
 		}
 
 	};

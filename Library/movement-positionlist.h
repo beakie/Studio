@@ -7,77 +7,77 @@
 namespace Movement
 {
 	template <typename TPOINT>
-	struct PointList
+	struct PositionList
 	{
-		TPOINT** Points;
-		UInt8 PointCount;
+		TPOINT** Positions;
+		UInt8 PositionCount;
 
-		PointList()
-			: Points(0),
-			  PointCount(0)
+		PositionList()
+			: Positions(0),
+			  PositionCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
-		PointList(const PointList<TPOINT>& pointList)
+		PositionList(const PositionList<TPOINT>& positionList)
 		{
-			Points = new TPOINT*[pointList.PointCount];
+			Positions = new TPOINT*[positionList.PositionCount];
 
-			for (UInt8 i = 0; i < pointList.PointCount; i++)
-				Points[i] = new TPOINT(*pointList.Points[i]);
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
+				Positions[i] = new TPOINT(*positionList.Positions[i]);
 
-			PointCount = pointList.PointCount;
+			PositionCount = positionList.PositionCount;
 		}
 
-		PointList(UInt8 size)
-			: PointCount(size)
+		PositionList(UInt8 size)
+			: PositionCount(size)
 		{
-			Points = new TPOINT*[size];
+			Positions = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
-				Points[i] = new TPOINT(TPOINT::getZero());
+				Positions[i] = new TPOINT(TPOINT::getZero());
 		}
 
-		PointList<TPOINT>& operator=(const PointList<TPOINT>& pointList)
+		PositionList<TPOINT>& operator=(const PositionList<TPOINT>& positionList)
 		{
-			TPOINT** tmpPoints = new TPOINT*[pointList.PointCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[positionList.PositionCount + 1];
 
-			for (UInt8 i = 0; i < pointList.PointCount; i++)
-				tmpPoints[i] = new TPOINT(*pointList.Points[i]);
+			for (UInt8 i = 0; i < positionList.PositionCount; i++)
+				tmpPositions[i] = new TPOINT(*positionList.Positions[i]);
 
-			delete[] Points;
+			delete[] Positions;
 
-			Points = tmpPoints;
+			Positions = tmpPositions;
 
-			PointCount = pointList.PointCount;
+			PositionCount = positionList.PositionCount;
 
 			return *this;
 		}
 
-		UInt8 addPoint()
+		UInt8 addPosition()
 		{
-			TPOINT** tmpPoints = new TPOINT*[PointCount + 1];
+			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
 
-			for (UInt8 i = 0; i < PointCount; i++)
-				tmpPoints[i] = Points[i];
+			for (UInt8 i = 0; i < PositionCount; i++)
+				tmpPositions[i] = Positions[i];
 
-			tmpPoints[PointCount] = new TPOINT(TPOINT::getZero());
+			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
 
-			delete[] Points;
+			delete[] Positions;
 
-			Points = tmpPoints;
+			Positions = tmpPositions;
 
-			PointCount++;
+			PositionCount++;
 
-			return PointCount - 1;
+			return PositionCount - 1;
 		}
 
-		~PointList()
+		~PositionList()
 		{
-			for (UInt8 i = 0; i < PointCount; i++)
-				delete Points[i];
+			for (UInt8 i = 0; i < PositionCount; i++)
+				delete Positions[i];
 
-			delete[] Points;
+			delete[] Positions;
 		}
 
 	};
