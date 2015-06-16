@@ -7,9 +7,6 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	/// <summary>
-	/// 1 dimensional list of values
-	/// </summary>
 	struct List
 	{
 
