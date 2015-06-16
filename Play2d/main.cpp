@@ -4,6 +4,30 @@
 
 #include "skeletalrenderwidget.h"
 
+template <typename T>
+struct IFoo
+{
+	virtual void test(T param) = 0;
+};
+
+struct Bar : IFoo<int>
+{
+	void test(int param)
+	{
+	}
+};
+
+struct Baz
+{
+};
+
+struct Qux : IFoo<Baz&>
+{
+	void test(Baz& param)
+	{
+	}
+};
+
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -55,6 +79,14 @@ int main(int argc, char *argv[])
 //	list = Common::List<unsigned int, int>(collection);
 	list = Common::List<unsigned int, int>(list);
 	*/
+
+	Bar bar = Bar();
+	int i = 123;
+	bar.test(i);
+
+	Qux qux = Qux();
+	Baz b = Baz();
+	qux.test(b);
 
 	return a.exec();
 }
