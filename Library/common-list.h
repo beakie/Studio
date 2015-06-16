@@ -59,9 +59,9 @@ namespace Common
 			operator+=(item);
 		}
 
-		void add(const ICollection<TVALUE, TINDEX>& collection)
+		void add(const List<TVALUE, TINDEX>& list)
 		{
-			operator+=(collection);
+			operator+=(list);
 		}
 
 		void resize()
@@ -137,16 +137,16 @@ namespace Common
 			return *this;
 		}
 
-		//////List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX>& list)
-		//////{
-		//////	TINDEX listCount = list.Count;
+		List<TVALUE, TINDEX> & operator+=(const List<TVALUE, TINDEX>& list)
+		{
+			TINDEX listCount = list.Count;
 
-		//////	//could be more efficient if only resizes once and then copies all items into the list itself
-		//////	for (TINDEX i = 0; i < listCount; i++)
-		//////		addItem(list.Items[i]);
+			//could be more efficient if only resizes once and then copies all items into the list itself
+			for (TINDEX i = 0; i < listCount; i++)
+				addItem(list.Items[i]);
 
-		//////	return *this;
-		//////}
+			return *this;
+		}
 
 		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TINDEX>& collection)
 		{
@@ -172,7 +172,7 @@ namespace Common
 			return false;
 		}
 
-		~List() {
+		virtual ~List() {
 			delete[] Items;
 		}
 	};

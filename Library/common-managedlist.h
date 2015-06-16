@@ -1,13 +1,15 @@
 #ifndef COMMON_MANAGEDLIST_H
 #define COMMON_MANAGEDLIST_H
 
+#include "common-ilist.h"
+
 // add insert functions
 
 namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct ManagedList
+	struct ManagedList //: IList<TVALUE*, TINDEX>
 	{
 
 	protected:
@@ -41,7 +43,7 @@ namespace Common
 			return Capacity;
 		}
 
-		ManagedList<TVALUE, TINDEX>& remove(const TINDEX index)
+		void remove(const TINDEX index)
 		{
 			if (index >= Count)
 				return *this;
@@ -56,14 +58,14 @@ namespace Common
 			return *this;
 		}
 
-		ManagedList<TVALUE, TINDEX>& add(const TVALUE& item)
+		void add(const TVALUE& item)
 		{
-			return operator+=(item);
+			operator+=(item);
 		}
 
-		ManagedList<TVALUE, TINDEX>& add(const ManagedList<TVALUE, TINDEX>& list)
+		void add(const ManagedList<TVALUE, TINDEX>& list)
 		{
-			return operator+=(list);
+			operator+=(list);
 		}
 
 		void resize()
