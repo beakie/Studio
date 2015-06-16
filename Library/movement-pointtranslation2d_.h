@@ -18,12 +18,12 @@ namespace Movement
 	}
 
 	template <typename TVALUE>
-	PointList<Common::Vector2<TVALUE>> getTranslatedJointPoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PointList<Common::Vector2<TVALUE>>& jointPositions)
+	PointList<Common::Vector2<TVALUE>> getTranslatedJointPositions(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PointList<Common::Vector2<TVALUE>>& jointPositions)
 	{
-		PointList<Common::Vector2<TVALUE>> translatedJoints = PointList<Common::Vector2<TVALUE>>(jointPositions.PositionCount);
+		PointList<Common::Vector2<TVALUE>> translatedJoints = PointList<Common::Vector2<TVALUE>>(jointPositions.PointCount);
 
-		for (UInt8 i = 0; i < jointPositions.PositionCount; i++)
-			translatedJoints.Positions[i]->operator=(getTranslatedPoint(jointList, boneMap, i, *jointPositions.Positions[i]));
+		for (UInt8 i = 0; i < jointPositions.PointCount; i++)
+			translatedJoints.Points[i]->operator=(getTranslatedPoint(jointList, boneMap, i, *jointPositions.Points[i]));
 
 		return translatedJoints;
 	}
@@ -31,10 +31,10 @@ namespace Movement
 	template <typename TVALUE>
 	BoneFixedPointList<Common::Vector2<TVALUE>> getTranslatedPoints(const JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const BoneFixedPointList<Common::Vector2<TVALUE>>& boneFixedPositions)
 	{
-		BoneFixedPointList<Common::Vector2<TVALUE>> translatedPoints = BoneFixedPointList<Common::Vector2<TVALUE>>(boneFixedPositions.PositionCount);
+		BoneFixedPointList<Common::Vector2<TVALUE>> translatedPoints = BoneFixedPointList<Common::Vector2<TVALUE>>(boneFixedPositions.PointCount);
 
-		for (UInt8 i = 0; i < boneFixedPositions.PositionCount; i++)
-			translatedPoints.Positions[i]->operator=(getTranslatedPoint(jointList, boneMap, boneFixedPositions.BoneIndex[i], *boneFixedPositions.Positions[i]));
+		for (UInt8 i = 0; i < boneFixedPositions.PointCount; i++)
+			translatedPoints.Points[i]->operator=(getTranslatedPoint(jointList, boneMap, boneFixedPositions.BoneIndex[i], *boneFixedPositions.Points[i]));
 
 		return translatedPoints;
 	}

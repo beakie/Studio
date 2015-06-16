@@ -29,9 +29,9 @@ namespace Skeletals
 			JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
 		}
 
-		Movement::PointList<TPOINT> getTranslatedJointPoints()
+		Movement::PointList<TPOINT> getTranslatedJointPositions()
 		{
-			return Movement::getTranslatedJointPoints(Joints, BoneMap, ZeroPositions);
+			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
 		}
 
 		Movement::BoneFixedPointList<TPOINT> getTranslatedEndEffectors()
@@ -41,12 +41,12 @@ namespace Skeletals
 
 		TPOINT getTranslatedJointPosition(const int jointIndex)
 		{
-			return Movement::getTranslatedPoint(Joints, BoneMap, jointIndex, *ZeroPositions.Positions[jointIndex]);
+			return Movement::getTranslatedPoint(Joints, BoneMap, jointIndex, *ZeroPositions.Points[jointIndex]);
 		}
 
 		TPOINT getTranslatedEndEffector(const int endEffectorIndex)
 		{
-			return Movement::getTranslatedPoint(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Positions[endEffectorIndex]);
+			return Movement::getTranslatedPoint(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Points[endEffectorIndex]);
 		}
 
 		TPOINT getTranslatedBoneFixedPosition(const int parentBoneIndex, const TPOINT& position)

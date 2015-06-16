@@ -114,9 +114,9 @@ int main(int argc, char *argv[])
 	/*
 	//Skeletals::BasicSkeletal3d skeletal(4);
 
-	//skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
-	//skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0, 0 });
-	//skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0, 0 });
+	//skeletal.ZeroPositions.Points[1]->operator=({ 100, 0, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
+	//skeletal.ZeroPositions.Points[2]->operator=({ 200, 0, 0 });
+	//skeletal.ZeroPositions.Points[3]->operator=({ 300, 0, 0 });
 
 	//Common::ManagedList<Space3d::LineSegment3d<>, UInt8> lineList = BodyRender::getJointToJointBones(skeletal);
 	*/
@@ -133,9 +133,9 @@ int main(int argc, char *argv[])
 
 	Skeletals::Implemented2d skeletal(4);
 
-	skeletal.ZeroPositions.Positions[1]->operator=({ 100, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
-	skeletal.ZeroPositions.Positions[2]->operator=({ 200, 0 });
-	skeletal.ZeroPositions.Positions[3]->operator=({ 300, 0 });
+	skeletal.ZeroPositions.Points[1]->operator=({ 100, 0 }); // Should these be decimal? What space coordinates am i using? Does it matter if I'm just applying to matrices?
+	skeletal.ZeroPositions.Points[2]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Points[3]->operator=({ 300, 0 });
 
 	Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(skeletal.BoneMap, skeletal.ZeroPositions);
 

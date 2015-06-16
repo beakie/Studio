@@ -13,7 +13,7 @@ namespace SkeletalRender
 
 		for (UInt8 i = 0; i < boneMap.BoneCount; i++)
 			if (boneMap.ParentBones[i] != i)
-				boneList.add({ *jointPointList.Positions[boneMap.ParentBones[i]], *jointPointList.Positions[i] });
+				boneList.add({ *jointPointList.Points[boneMap.ParentBones[i]], *jointPointList.Points[i] });
 
 		return boneList;
 	}

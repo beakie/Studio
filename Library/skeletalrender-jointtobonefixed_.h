@@ -13,8 +13,8 @@ namespace SkeletalRender
 	{
 		Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8> lineList = Common::ManagedList<Common::Tuple2<TPOINT, TPOINT>, UInt8>();
 
-		for (UInt8 i = 0; i < boneFixedPointList.PositionCount; i++)
-			lineList.add({ *jointPointList.Positions[boneFixedPointList.BoneIndex[i]], *boneFixedPointList.Positions[i] });
+		for (UInt8 i = 0; i < boneFixedPointList.PointCount; i++)
+			lineList.add({ *jointPointList.Points[boneFixedPointList.BoneIndex[i]], *boneFixedPointList.Points[i] });
 
 		return lineList;
 	}

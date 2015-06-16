@@ -10,98 +10,98 @@ namespace Movement
 	struct BoneFixedPointList
 	{
 		UInt8* BoneIndex;
-		TPOINT** Positions;
-		UInt8 PositionCount;
+		TPOINT** Points;
+		UInt8 PointCount;
 
 		BoneFixedPointList()
-			: Positions(0),
-			PositionCount(0)
+			: Points(0),
+			PointCount(0)
 		{
 		}
 
 		template <typename TVALUE = FloatMax>
 		BoneFixedPointList(const BoneFixedPointList<TPOINT>& boneFixedPointList)
 		{
-			BoneIndex = new UInt8[boneFixedPointList.PositionCount];
-			Positions = new TPOINT*[boneFixedPointList.PositionCount];
+			BoneIndex = new UInt8[boneFixedPointList.PointCount];
+			Points = new TPOINT*[boneFixedPointList.PointCount];
 
-			for (UInt8 i = 0; i < boneFixedPointList.PositionCount; i++)
+			for (UInt8 i = 0; i < boneFixedPointList.PointCount; i++)
 			{
 				BoneIndex[i] = boneFixedPointList.BoneIndex[i];
-				Positions[i] = new TPOINT(*boneFixedPointList.Positions[i]);
+				Points[i] = new TPOINT(*boneFixedPointList.Points[i]);
 			}
 
-			PositionCount = boneFixedPointList.PositionCount;
+			PointCount = boneFixedPointList.PointCount;
 		}
 
 		BoneFixedPointList(UInt8 size)
-			: PositionCount(size)
+			: PointCount(size)
 		{
 			BoneIndex = new UInt8[size];
-			Positions = new TPOINT*[size];
+			Points = new TPOINT*[size];
 
 			for (UInt8 i = 0; i < size; i++)
 			{
 				BoneIndex[i] = 0;
-				Positions[i] = new TPOINT(TPOINT::getZero());
+				Points[i] = new TPOINT(TPOINT::getZero());
 			}
 		}
 
 		BoneFixedPointList<TPOINT>& operator=(const BoneFixedPointList<TPOINT>& boneFixedPointList)
 		{
-			UInt8* tmpBoneIndex = new UInt8[boneFixedPointList.PositionCount + 1];
-			TPOINT** tmpPositions = new TPOINT*[boneFixedPointList.PositionCount + 1];
+			UInt8* tmpBoneIndex = new UInt8[boneFixedPointList.PointCount + 1];
+			TPOINT** tmpPoints = new TPOINT*[boneFixedPointList.PointCount + 1];
 
-			for (UInt8 i = 0; i < boneFixedPointList.PositionCount; i++)
+			for (UInt8 i = 0; i < boneFixedPointList.PointCount; i++)
 			{
 				tmpBoneIndex[i] = boneFixedPointList.BoneIndex[i];
-				tmpPositions[i] = new TPOINT(*boneFixedPointList.Positions[i]);
+				tmpPoints[i] = new TPOINT(*boneFixedPointList.Points[i]);
 			}
 
 			delete[] BoneIndex;
-			delete[] Positions;
+			delete[] Points;
 
 			BoneIndex = tmpBoneIndex;
-			Positions = tmpPositions;
+			Points = tmpPoints;
 
-			PositionCount = boneFixedPointList.PositionCount;
+			PointCount = boneFixedPointList.PointCount;
 
 			return *this;
 		}
 
-		UInt8 addPosition()
+		UInt8 addPoint()
 		{
-			UInt8* tmpBoneIndex = new UInt8[PositionCount + 1];
-			TPOINT** tmpPositions = new TPOINT*[PositionCount + 1];
+			UInt8* tmpBoneIndex = new UInt8[PointCount + 1];
+			TPOINT** tmpPoints = new TPOINT*[PointCount + 1];
 
-			for (UInt8 i = 0; i < PositionCount; i++)
+			for (UInt8 i = 0; i < PointCount; i++)
 			{
 				tmpBoneIndex[i] = BoneIndex[i];
-				tmpPositions[i] = Positions[i];
+				tmpPoints[i] = Points[i];
 			}
 
-			tmpBoneIndex[PositionCount] = 0;
-			tmpPositions[PositionCount] = new TPOINT(TPOINT::getZero());
+			tmpBoneIndex[PointCount] = 0;
+			tmpPoints[PointCount] = new TPOINT(TPOINT::getZero());
 
 			delete[] BoneIndex;
-			delete[] Positions;
+			delete[] Points;
 
 			BoneIndex = tmpBoneIndex;
-			Positions = tmpPositions;
+			Points = tmpPoints;
 
-			PositionCount++;
+			PointCount++;
 
-			return PositionCount - 1;
+			return PointCount - 1;
 		}
 
 		~BoneFixedPointList()
 		{
 			delete[] BoneIndex;
 
-			for (UInt8 i = 0; i < PositionCount; i++)
-				delete Positions[i];
+			for (UInt8 i = 0; i < PointCount; i++)
+				delete Points[i];
 
-			delete[] Positions;
+			delete[] Points;
 		}
 
 	};

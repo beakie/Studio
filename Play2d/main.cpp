@@ -10,11 +10,11 @@ int main(int argc, char *argv[])
 
 	Skeletals::Implemented2d skeletal(5);
 
-	skeletal.ZeroPositions.Positions[0]->operator=({ 0, 0 });
-	skeletal.ZeroPositions.Positions[1]->operator=({ 75, 0 });
-	skeletal.ZeroPositions.Positions[2]->operator=({ 100, 0 });
-	skeletal.ZeroPositions.Positions[3]->operator=({ 150, 0 });
-	skeletal.ZeroPositions.Positions[4]->operator=({ 200, 0 });
+	skeletal.ZeroPositions.Points[0]->operator=({ 0, 0 });
+	skeletal.ZeroPositions.Points[1]->operator=({ 75, 0 });
+	skeletal.ZeroPositions.Points[2]->operator=({ 100, 0 });
+	skeletal.ZeroPositions.Points[3]->operator=({ 150, 0 });
+	skeletal.ZeroPositions.Points[4]->operator=({ 200, 0 });
 
 	bool isReachable;
 	double flexAngleRadian;
@@ -27,18 +27,18 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)
-			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Positions[i]->Values[0], skeletal.ZeroPositions.Positions[i]->Values[1]));
+			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Points[i]->Values[0], skeletal.ZeroPositions.Points[i]->Values[1]));
 
 	SkeletalRenderWidget<Space2d::PlotF, Common::Matrix3F> skeletalRenderWidget(&skeletal);
 	skeletalRenderWidget.show();
 
 	//skeletalRenderWidget.Skeletal->getTranslatedEndEffectors();
-	//skeletalRenderWidget.Skeletal->getTranslatedJointPoints();
+	//skeletalRenderWidget.Skeletal->getTranslatedJointPositions();
 	//skeletalRenderWidget.Skeletal->getTranslatedEndEffector(0);
 	//skeletalRenderWidget.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
 	//skeletalRenderWidget.Skeletal->getTranslatedJointPosition(0);
 
-	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPoints(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
+	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::Linear2dActuator<float> linearActuator;
 	Movement::Rotating2dActuator<float> rotatingActuator;
