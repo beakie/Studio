@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{D017E0F5-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{396EDE03-DC05-42F5-B7ED-8123A1C7847F}"
 	ProjectSection(SolutionItems) = preProject
+		Library\common-array.h = Library\common-array.h
 		Library\common-bounds_.h = Library\common-bounds_.h
 		Library\common-castpixelconv.h = Library\common-castpixelconv.h
 		Library\common-chain2pixelconv.h = Library\common-chain2pixelconv.h
