@@ -6,11 +6,16 @@
 #include "movement-bonemap.h"
 #include "movement-bonefixedpointlist.h"
 #include "movement-jointlist.h"
-#include "movement-pointtranslation3d_.h"
 #include "movement-pointlist.h"
+#include "movement-pointtranslation3d_.h"
+#include "movement-rotationlist.h"
 
 namespace Movement
 {
+
+	typedef BoneFixedPointList<Space3d::CoordinateF32> BoneFixedPointList3d32;
+	typedef BoneFixedPointList<Space3d::CoordinateF64> BoneFixedPointList3d64;
+	typedef BoneFixedPointList<Space3d::CoordinateF> BoneFixedPointList3d;
 
 	typedef JointList<Common::Matrix4F32> JointList3d32;
 	typedef JointList<Common::Matrix4F64> JointList3d64;
@@ -20,9 +25,9 @@ namespace Movement
 	typedef PointList<Space3d::CoordinateF64> PointList3d64;
 	typedef PointList<Space3d::CoordinateF> PointList3d;
 
-	typedef BoneFixedPointList<Space3d::CoordinateF32> BoneFixedPointList3d32;
-	typedef BoneFixedPointList<Space3d::CoordinateF64> BoneFixedPointList3d64;
-	typedef BoneFixedPointList<Space3d::CoordinateF> BoneFixedPointList3d;
+	typedef RotationList<Common::Vector2F32> RotationList2d32;
+	typedef RotationList<Common::Vector2F64> RotationList2d64;
+	typedef RotationList<Common::Vector2F> RotationList2d;
 
 }
 

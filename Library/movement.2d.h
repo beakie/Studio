@@ -7,12 +7,17 @@
 #include "movement-bonefixedpointlist.h"
 #include "movement-jointlist.h"
 #include "movement-linear2dactuator.h"
-#include "movement-pointtranslation2d_.h"
 #include "movement-pointlist.h"
+#include "movement-pointtranslation2d_.h"
 #include "movement-rotating2dactuator.h"
+#include "movement-rotationlist.h"
 
 namespace Movement
 {
+
+	typedef BoneFixedPointList<Space2d::PlotF32> BoneFixedPointList2d32;
+	typedef BoneFixedPointList<Space2d::PlotF64> BoneFixedPointList2d64;
+	typedef BoneFixedPointList<Space2d::PlotF> BoneFixedPointList2d;
 
 	typedef JointList<Common::Matrix3F32> JointList2d32;
 	typedef JointList<Common::Matrix3F64> JointList2d64;
@@ -22,9 +27,9 @@ namespace Movement
 	typedef PointList<Space2d::PlotF64> PointList2d64;
 	typedef PointList<Space2d::PlotF> PointList2d;
 
-	typedef BoneFixedPointList<Space2d::PlotF32> BoneFixedPointList2d32;
-	typedef BoneFixedPointList<Space2d::PlotF64> BoneFixedPointList2d64;
-	typedef BoneFixedPointList<Space2d::PlotF> BoneFixedPointList2d;
+	typedef RotationList<Common::Vector3F32> RotationList3d32;
+	typedef RotationList<Common::Vector3F64> RotationList3d64;
+	typedef RotationList<Common::Vector3F> RotationList3d;
 
 }
 
