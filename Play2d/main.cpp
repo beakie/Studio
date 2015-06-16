@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	/*
 	Skeletals::Implemented2d skeletal(5);
 
 	skeletal.ZeroPositions.Points[0]->operator=({ 0, 0 });
@@ -43,8 +42,8 @@ int main(int argc, char *argv[])
 
 	Movement::Linear2dActuator<float> linearActuator;
 	Movement::Rotating2dActuator<float> rotatingActuator;
-	*/
 
+	/*
 	Common::Collection<unsigned int, int> collection;
 	Common::List<unsigned int, int> list;
 
@@ -55,7 +54,7 @@ int main(int argc, char *argv[])
 	list = Common::List<unsigned int, int>();
 //	list = Common::List<unsigned int, int>(collection);
 	list = Common::List<unsigned int, int>(list);
-
+	*/
 
 	return a.exec();
 }
