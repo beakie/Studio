@@ -7,8 +7,8 @@
 #include "movement-bonefixedpointlist.h"
 #include "movement-bonemap.h"
 #include "movement-pointlist.h"
-#include "movement-positiontranslation2d_.h"
-#include "movement-positiontranslation3d_.h"
+#include "movement-pointtranslation2d_.h"
+#include "movement-pointtranslation3d_.h"
 
 namespace Skeletals
 {

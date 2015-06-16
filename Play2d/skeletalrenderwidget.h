@@ -69,7 +69,7 @@ public:
 		//////// ***** Joints (Zero)
 		renderPointList(this->Skeletal->ZeroPositions, painter, this->zeroPositionJointPen, this->zeroPositionJointBrush, this->zeroPositionJointRadius, offsetX, offsetY);
 
-		Movement::PointList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPositions(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
+		Movement::PointList<TPOINT> translatedJointPositions = Movement::getTranslatedJointPoints(this->Skeletal->Joints, this->Skeletal->BoneMap, this->Skeletal->ZeroPositions);
 
 		// ***** Angles
 

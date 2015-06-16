@@ -33,12 +33,12 @@ int main(int argc, char *argv[])
 	skeletalRenderWidget.show();
 
 	//skeletalRenderWidget.Skeletal->getTranslatedEndEffectors();
-	//skeletalRenderWidget.Skeletal->getTranslatedJointPositions();
+	//skeletalRenderWidget.Skeletal->getTranslatedJointPoints();
 	//skeletalRenderWidget.Skeletal->getTranslatedEndEffector(0);
 	//skeletalRenderWidget.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
 	//skeletalRenderWidget.Skeletal->getTranslatedJointPosition(0);
 
-	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
+	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPoints(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::Linear2dActuator<float> linearActuator;
 	Movement::Rotating2dActuator<float> rotatingActuator;

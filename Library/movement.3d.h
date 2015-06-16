@@ -6,7 +6,7 @@
 #include "movement-bonemap.h"
 #include "movement-bonefixedpointlist.h"
 #include "movement-jointlist.h"
-#include "movement-positiontranslation3d_.h"
+#include "movement-pointtranslation3d_.h"
 #include "movement-pointlist.h"
 
 namespace Movement

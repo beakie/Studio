@@ -29,29 +29,29 @@ namespace Skeletals
 			JointPlacement.populate(BoneMap, ZeroPositions, ZeroRotations);
 		}
 
-		Movement::PointList<TPOINT> getTranslatedJointPositions()
+		Movement::PointList<TPOINT> getTranslatedJointPoints()
 		{
-			return Movement::getTranslatedJointPositions(Joints, BoneMap, ZeroPositions);
+			return Movement::getTranslatedJointPoints(Joints, BoneMap, ZeroPositions);
 		}
 
 		Movement::BoneFixedPointList<TPOINT> getTranslatedEndEffectors()
 		{
-			return Movement::getTranslatedPositions(Joints, BoneMap, EndEffectorZeroPositions);
+			return Movement::getTranslatedPoints(Joints, BoneMap, EndEffectorZeroPositions);
 		}
 
 		TPOINT getTranslatedJointPosition(const int jointIndex)
 		{
-			return Movement::getTranslatedPosition(Joints, BoneMap, jointIndex, *ZeroPositions.Positions[jointIndex]);
+			return Movement::getTranslatedPoint(Joints, BoneMap, jointIndex, *ZeroPositions.Positions[jointIndex]);
 		}
 
 		TPOINT getTranslatedEndEffector(const int endEffectorIndex)
 		{
-			return Movement::getTranslatedPosition(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Positions[endEffectorIndex]);
+			return Movement::getTranslatedPoint(Joints, BoneMap, EndEffectorZeroPositions.BoneIndex[endEffectorIndex], *EndEffectorZeroPositions.Positions[endEffectorIndex]);
 		}
 
 		TPOINT getTranslatedBoneFixedPosition(const int parentBoneIndex, const TPOINT& position)
 		{
-			return Movement::getTranslatedPosition(Joints, BoneMap, parentBoneIndex, position);
+			return Movement::getTranslatedPoint(Joints, BoneMap, parentBoneIndex, position);
 		}
 
 	};
