@@ -9,7 +9,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct ManagedList //: IList<TVALUE*, TINDEX>
+	struct ManagedList : IList<TVALUE&, TINDEX>
 	{
 
 	protected:
@@ -46,7 +46,7 @@ namespace Common
 		void remove(const TINDEX index)
 		{
 			if (index >= Count)
-				return *this;
+				return;
 
 			delete Items[index];
 
@@ -55,7 +55,7 @@ namespace Common
 
 			Count--;
 
-			return *this;
+			return;
 		}
 
 		void add(const TVALUE& item)
@@ -107,7 +107,7 @@ namespace Common
 
 			delete[] Items;
 
-			Items = new TVALUE[0];
+			Items = new TVALUE*[0];
 
 			Capacity = 0;
 			Count = 0;
@@ -160,7 +160,7 @@ namespace Common
 			return Items[n];
 		}
 
-		bool exists(const TVALUE value)
+		bool exists(const TVALUE& value)
 		{
 			for (TINDEX i = 0; i < Count; i++)
 				if (Items[i] == value)
