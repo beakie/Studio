@@ -12,7 +12,7 @@ namespace Common
 	public:
 		virtual void remove(const TINDEX index) = 0;
 
-		virtual void add(const TIN item) = 0;
+		//virtual void add(const TIN item) = 0;
 
 		virtual void clear() = 0;
 

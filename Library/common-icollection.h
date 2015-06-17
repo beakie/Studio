@@ -10,11 +10,11 @@ namespace Common
 	public:
 		virtual TINDEX count() const = 0;
 
-		virtual TINDEX getIndex(const TIN value) = 0;
+		//virtual TINDEX getIndex(const TIN value) = 0;
 
 		virtual TOUT operator[] (TINDEX n) = 0;
 
-		virtual bool exists(const TIN value) = 0;
+		//virtual bool exists(const TIN value) = 0;
 
 		~ICollection() {
 		}

@@ -6,52 +6,44 @@
 
 /*
 
+struct SomeStruct
+{
+};
+
 template <typename T1, typename T2>
-struct IBase
+struct IList
 {
-	virtual void test(T1 param) = 0;
-	virtual T2 test2() = 0;
+	virtual void add(T1 param) = 0;
+	virtual T2 get() = 0;
 };
 
-template <typename T>
-struct IComplex : IBase<T&, T>
+struct Bar : IList<int, int>
 {
-};
-
-template <typename T>
-struct ISimple : IBase<T, T>
-{
-};
-
-struct Bar : ISimple<int>
-{
-	void test(int param)
+	void add(int param)
 	{
 	}
 
-	int test2()
+	int get()
 	{
 		return 1;
 	}
 };
 
-struct Baz
+struct Qux : IList<SomeStruct&, SomeStruct>
 {
-};
-
-struct Qux : IComplex<Baz>
-{
-	void test(Baz& param)
+	void add(SomeStruct& param)
 	{
 	}
 
-	Baz test2()
+	SomeStruct get()
 	{
-		return Baz();
+		return SomeStruct();
 	}
 };
 
 */
+
+
 
 int main(int argc, char *argv[])
 {
@@ -106,12 +98,15 @@ int main(int argc, char *argv[])
 	*/
 
 	/*
+
 	Bar bar = Bar();
-	bar.test(bar.test2());
+	bar.add(bar.get());
 
 	Qux qux = Qux();
-	qux.test(qux.test2());
+	qux.add(qux.get());
+	
 	*/
+
 
 	return a.exec();
 }
