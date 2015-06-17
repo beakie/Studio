@@ -8,12 +8,18 @@ template <typename T>
 struct IFoo
 {
 	virtual void test(T param) = 0;
+	virtual T test2() = 0;
 };
 
 struct Bar : IFoo<int>
 {
 	void test(int param)
 	{
+	}
+
+	int test2()
+	{
+		return 1;
 	}
 };
 
@@ -25,6 +31,11 @@ struct Qux : IFoo<Baz&>
 {
 	void test(Baz& param)
 	{
+	}
+
+	Baz& test2()
+	{
+		return Baz();
 	}
 };
 
@@ -81,12 +92,10 @@ int main(int argc, char *argv[])
 	*/
 
 	Bar bar = Bar();
-	int i = 123;
-	bar.test(i);
+	bar.test(bar.test2());
 
 	Qux qux = Qux();
-	Baz b = Baz();
-	qux.test(b);
+	qux.test(qux.test2());
 
 	return a.exec();
 }

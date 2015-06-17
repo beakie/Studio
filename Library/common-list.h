@@ -158,7 +158,7 @@ namespace Common
 			return *this;
 		}
 
-		TVALUE & operator[] (TINDEX n)
+		TVALUE operator[] (TINDEX n)
 		{
 			return Items[n];
 		}
