@@ -9,7 +9,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct ManagedList : IList<TVALUE, TINDEX>
+	struct ManagedList //: IList<TVALUE, TVALUE, TINDEX>
 	{
 
 	protected:
@@ -58,7 +58,7 @@ namespace Common
 			return;
 		}
 
-		void add(const TVALUE& item)
+		void add(const TVALUE item)
 		{
 			operator+=(item);
 		}

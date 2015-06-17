@@ -9,7 +9,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct List : IList<TVALUE, TINDEX>
+	struct List : IList<TVALUE, TVALUE, TINDEX>
 	{
 
 	protected:
@@ -148,7 +148,7 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TINDEX>& collection)
+		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TVALUE, TINDEX>& collection)
 		{
 			TINDEX collectionCount = collection.count();
 

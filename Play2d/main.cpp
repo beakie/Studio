@@ -4,14 +4,26 @@
 
 #include "skeletalrenderwidget.h"
 
-template <typename T>
-struct IFoo
+/*
+
+template <typename T1, typename T2>
+struct IBase
 {
-	virtual void test(T param) = 0;
-	virtual T test2() = 0;
+	virtual void test(T1 param) = 0;
+	virtual T2 test2() = 0;
 };
 
-struct Bar : IFoo<int>
+template <typename T>
+struct IComplex : IBase<T&, T>
+{
+};
+
+template <typename T>
+struct ISimple : IBase<T, T>
+{
+};
+
+struct Bar : ISimple<int>
 {
 	void test(int param)
 	{
@@ -27,17 +39,19 @@ struct Baz
 {
 };
 
-struct Qux : IFoo<Baz&>
+struct Qux : IComplex<Baz>
 {
 	void test(Baz& param)
 	{
 	}
 
-	Baz& test2()
+	Baz test2()
 	{
 		return Baz();
 	}
 };
+
+*/
 
 int main(int argc, char *argv[])
 {
@@ -91,11 +105,13 @@ int main(int argc, char *argv[])
 	list = Common::List<unsigned int, int>(list);
 	*/
 
+	/*
 	Bar bar = Bar();
 	bar.test(bar.test2());
 
 	Qux qux = Qux();
 	qux.test(qux.test2());
+	*/
 
 	return a.exec();
 }

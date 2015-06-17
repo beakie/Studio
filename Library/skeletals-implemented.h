@@ -8,7 +8,7 @@
 namespace Skeletals
 {
 	template <typename TPOINT, typename TMATRIX>
-	struct Implemented : Definition<TPOINT, TMATRIX>
+	struct Implemented : Definition<TPOINT>
 	{
 		Movement::JointList<TMATRIX> Joints; // Points multiplied by this matrix will transform as though fixed to joint
 

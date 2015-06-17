@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Points[2]->operator=({ 200, 0 });
 	skeletal.ZeroPositions.Points[3]->operator=({ 300, 0 });
 
-	Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines(skeletal.BoneMap, skeletal.ZeroPositions);
+	Common::ManagedList<Common::Tuple2<Space2d::PlotF64, Space2d::PlotF64>, UInt8> lineList = SkeletalRender::getJointToJointBoneLines<Space2d::PlotF64>(skeletal.BoneMap, skeletal.ZeroPositions);
 
 	return a.exec();
 }

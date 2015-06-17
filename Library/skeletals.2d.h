@@ -7,9 +7,9 @@
 namespace Skeletals
 {
 
-	typedef Definition<Space2d::PlotF32, Common::Matrix3F32> Definition2d32;
-	typedef Definition<Space2d::PlotF64, Common::Matrix3F64> Definition2d64;
-	typedef Definition<Space2d::PlotF, Common::Matrix3F> Definition2d;
+	typedef Definition<Space2d::PlotF32> Definition2d32;
+	typedef Definition<Space2d::PlotF64> Definition2d64;
+	typedef Definition<Space2d::PlotF> Definition2d;
 
 	typedef Implemented<Space2d::PlotF32, Common::Matrix3F32> Implemented2d32;
 	typedef Implemented<Space2d::PlotF64, Common::Matrix3F64> Implemented2d64;

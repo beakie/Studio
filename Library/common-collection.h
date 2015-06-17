@@ -7,7 +7,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct Collection : ICollection<TVALUE, TINDEX>
+	struct Collection : ICollection<TVALUE, TVALUE, TINDEX>
 	{
 
 	protected:

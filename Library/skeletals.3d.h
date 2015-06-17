@@ -7,9 +7,9 @@
 namespace Skeletals
 {
 
-	typedef Definition<Space3d::CoordinateF32, Common::Matrix4F32> Definition3d32;
-	typedef Definition<Space3d::CoordinateF64, Common::Matrix4F64> Definition3d64;
-	typedef Definition<Space3d::CoordinateF, Common::Matrix4F> Definition3d;
+	typedef Definition<Space3d::CoordinateF32> Definition3d32;
+	typedef Definition<Space3d::CoordinateF64> Definition3d64;
+	typedef Definition<Space3d::CoordinateF> Definition3d;
 
 	typedef Implemented<Space3d::CoordinateF32, Common::Matrix4F32> Implemented3d32;
 	typedef Implemented<Space3d::CoordinateF64, Common::Matrix4F64> Implemented3d64;

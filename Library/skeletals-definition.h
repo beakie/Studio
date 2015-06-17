@@ -12,7 +12,7 @@
 
 namespace Skeletals
 {
-	template <typename TPOINT, typename TMATRIX>
+	template <typename TPOINT>
 	struct Definition
 	{
 		Movement::BoneMap BoneMap;
