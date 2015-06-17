@@ -8,42 +8,43 @@
 
 struct SomeStruct
 {
+	// ******
 };
 
-template <typename T1, typename T2>
-struct IList
+template <typename TIN, typename TOUT, typename TINDEX>
+struct IFoo
 {
-	virtual void add(T1 param) = 0;
-	virtual T2 get() = 0;
+public:
+	virtual void add(const TIN item) = 0; // <-- BAD
+	//virtual void add(const TOUT& item) = 0; // <-- GOOD
+
+	// ******
 };
 
-struct Bar : IList<int, int>
+template <typename TVALUE, typename TINDEX>
+struct Bar : IFoo<TVALUE &, TVALUE, TINDEX>
 {
-	void add(int param)
+
+public:
+
+	void add(const TVALUE& item)
 	{
+		// ******
 	}
 
-	int get()
-	{
-		return 1;
-	}
+	// ******
 };
 
-struct Qux : IList<SomeStruct&, SomeStruct>
+int main(int argc, char *argv[])
 {
-	void add(SomeStruct& param)
-	{
-	}
+	SomeStruct someStruct;
+	Bar<SomeStruct, int> bar = Bar<SomeStruct, int>();
+	bar.add(someStruct);
 
-	SomeStruct get()
-	{
-		return SomeStruct();
-	}
-};
+	// ******
+}
 
 */
-
-
 
 int main(int argc, char *argv[])
 {
@@ -97,15 +98,7 @@ int main(int argc, char *argv[])
 	list = Common::List<unsigned int, int>(list);
 	*/
 
-	/*
-
-	Bar bar = Bar();
-	bar.add(bar.get());
-
-	Qux qux = Qux();
-	qux.add(qux.get());
 	
-	*/
 
 
 	return a.exec();
