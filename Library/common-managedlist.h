@@ -9,7 +9,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct ManagedList : IList<TVALUE &, TVALUE, TINDEX>
+	struct ManagedList : IList<const TVALUE &, TVALUE, TINDEX>
 	{
 
 	protected:

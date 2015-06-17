@@ -4,48 +4,6 @@
 
 #include "skeletalrenderwidget.h"
 
-/*
-
-struct SomeStruct
-{
-	// ******
-};
-
-template <typename TIN, typename TOUT, typename TINDEX>
-struct IFoo
-{
-public:
-	virtual void add(const TIN item) = 0; // <-- BAD
-	//virtual void add(const TOUT& item) = 0; // <-- GOOD
-
-	// ******
-};
-
-template <typename TVALUE, typename TINDEX>
-struct Bar : IFoo<TVALUE &, TVALUE, TINDEX>
-{
-
-public:
-
-	void add(const TVALUE& item)
-	{
-		// ******
-	}
-
-	// ******
-};
-
-int main(int argc, char *argv[])
-{
-	SomeStruct someStruct;
-	Bar<SomeStruct, int> bar = Bar<SomeStruct, int>();
-	bar.add(someStruct);
-
-	// ******
-}
-
-*/
-
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
