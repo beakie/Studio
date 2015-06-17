@@ -157,7 +157,7 @@ namespace Common
 
 		TVALUE operator[] (TINDEX n)
 		{
-			return Items[n];
+			return TVALUE(*Items[n]);
 		}
 
 		bool exists(const TVALUE& value)
