@@ -12,13 +12,13 @@ namespace Movement
 {
 
 	template <typename TVALUE>
-	Common::Vector2<TVALUE> getTranslatedPoint(const Common::ICollection<Common::Matrix3<TVALUE>, UInt8>& jointList, const BoneMap& boneMap, const int parentBoneIndex, const Common::Vector2<TVALUE>& position)
+	Common::Vector2<TVALUE> getTranslatedPoint(const Movement::JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const int parentBoneIndex, const Common::Vector2<TVALUE>& position)
 	{
 		return Space2d::multiplyPlotByMatrix<TVALUE>(position, boneMap.getBoneTransformMatrix<Common::Matrix3<TVALUE>>(jointList, parentBoneIndex));
 	}
 
 	template <typename TVALUE>
-	PointList<Common::Vector2<TVALUE>> getTranslatedJointPositions(const Common::ICollection<Common::Matrix3<TVALUE>, UInt8>& jointList, const BoneMap& boneMap, const PointList<Common::Vector2<TVALUE>>& jointPositions)
+	PointList<Common::Vector2<TVALUE>> getTranslatedJointPositions(const Movement::JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const PointList<Common::Vector2<TVALUE>>& jointPositions)
 	{
 		PointList<Common::Vector2<TVALUE>> translatedJoints = PointList<Common::Vector2<TVALUE>>(jointPositions.PointCount);
 
@@ -29,7 +29,7 @@ namespace Movement
 	}
 
 	template <typename TVALUE>
-	BoneFixedPointList<Common::Vector2<TVALUE>> getTranslatedPoints(const Common::ICollection<Common::Matrix3<TVALUE>, UInt8>& jointList, const BoneMap& boneMap, const BoneFixedPointList<Common::Vector2<TVALUE>>& boneFixedPositions)
+	BoneFixedPointList<Common::Vector2<TVALUE>> getTranslatedPoints(const Movement::JointList<Common::Matrix3<TVALUE>>& jointList, const BoneMap& boneMap, const BoneFixedPointList<Common::Vector2<TVALUE>>& boneFixedPositions)
 	{
 		BoneFixedPointList<Common::Vector2<TVALUE>> translatedPoints = BoneFixedPointList<Common::Vector2<TVALUE>>(boneFixedPositions.PointCount);
 
