@@ -55,14 +55,14 @@ namespace Movement
 			return *this;
 		}
 
-		TMATRIX& add()
+		TMATRIX& addJoint()
 		{
-			add(TMATRIX::getIdentity());
+			addJoint(TMATRIX::getIdentity());
 
 			return *Joints[JointCount - 1];
 		}
 
-		void add(const TMATRIX& item)
+		void addJoint(const TMATRIX& item)
 		{
 			TMATRIX** tmpJoints = new TMATRIX*[JointCount + 1];
 

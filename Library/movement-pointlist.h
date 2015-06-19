@@ -8,6 +8,7 @@ namespace Movement
 {
 	template <typename TPOINT>
 	struct PointList
+		: Common::ICollection<TPOINT, UInt8>
 	{
 		TPOINT** Points;
 		UInt8 PointCount;
@@ -70,6 +71,16 @@ namespace Movement
 			PointCount++;
 
 			return PointCount - 1;
+		}
+
+		UInt8 count() const
+		{
+			return PointCount;
+		}
+
+		TPOINT operator[] (UInt8 n) const
+		{
+			return *Points[n];
 		}
 
 		~PointList()
