@@ -242,7 +242,7 @@ namespace Common
 				(Values[0] * vector.Values[1] - Values[1] * vector.Values[0]));
 		}
 
-		bool isZero()
+		bool isZero() const
 		{
 			return (Values[0] == 0) && (Values[1] == 0) && (Values[2] == 0);
 		}
@@ -256,7 +256,7 @@ namespace Common
 			return *this;
 		}
 
-		Vector3<TVALUE> getAbsolute()
+		Vector3<TVALUE> getAbsolute() const
 		{
 			return Vector3<TVALUE>(*this).absolute();
 		}
@@ -270,7 +270,7 @@ namespace Common
 			return *this;
 		}
 
-		Vector3<TVALUE> getNegative()
+		Vector3<TVALUE> getNegative() const
 		{
 			return Vector3<TVALUE>(*this).negative();
 		}
