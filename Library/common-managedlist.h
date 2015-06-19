@@ -94,7 +94,7 @@ namespace Common
 		TINDEX getIndex(const TVALUE& value)
 		{
 			for (TINDEX i = 0; i < Count; i++)
-				if (Items[i] == value)
+				if (Items[i] == &value)
 					return i + 1;
 
 			return 0;
@@ -163,7 +163,7 @@ namespace Common
 		bool exists(const TVALUE& value)
 		{
 			for (TINDEX i = 0; i < Count; i++)
-				if (Items[i] == value)
+				if (Items[i] == &value)
 					return true;
 
 			return false;
