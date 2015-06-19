@@ -10,7 +10,7 @@ namespace Common
 	public:
 		virtual TINDEX count() const = 0;
 
-		virtual TVALUE operator[] (const TINDEX n) = 0;
+		virtual TVALUE operator[] (const TINDEX n) const = 0;
 	};
 
 }

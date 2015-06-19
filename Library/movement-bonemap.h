@@ -118,12 +118,12 @@ namespace Movement
 		}
 
 		template <typename TMATRIX>
-		TMATRIX getBoneTransformMatrix(const JointList<TMATRIX>& jointList, const UInt8 index) const
+		TMATRIX getBoneTransformMatrix(const Common::ICollection<TMATRIX, UInt8>& jointList, const UInt8 index) const
 		{
 			if (ParentBones[index] != index)
-				return getBoneTransformMatrix(jointList, ParentBones[index]) * *jointList.Joints[index];
+				return getBoneTransformMatrix<TMATRIX>(jointList, ParentBones[index]) * jointList.operator[](index);
 			else
-				return *jointList.Joints[index];
+				return jointList.operator[](index);
 		}
 
 		~BoneMap()

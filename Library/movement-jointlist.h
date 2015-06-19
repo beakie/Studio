@@ -8,7 +8,7 @@ namespace Movement
 {
 	template <typename TMATRIX>
 	struct JointList
-		: Common::ManagedList<TMATRIX, UInt8>
+		: Common::ICollection<TMATRIX, UInt8>
 	{
 		TMATRIX** Joints;
 		UInt8 JointCount;
@@ -20,7 +20,7 @@ namespace Movement
 		}
 
 		template <typename TVALUE = FloatMax>
-		JointList(const JointList<TMATRIX>& jointList)
+		JointList(const Common::ICollection<TMATRIX, UInt8>& jointList)
 		{
 			Joints = new TMATRIX*[jointList.JointCount];
 
@@ -39,7 +39,7 @@ namespace Movement
 				Joints[i] = new TMATRIX(TMATRIX::getIdentity());
 		}
 
-		JointList<TMATRIX>& operator=(const JointList<TMATRIX>& jointList)
+		JointList<TMATRIX>& operator=(const Common::ICollection<TMATRIX, UInt8>& jointList)
 		{
 			TMATRIX** tmpJoints = new TMATRIX*[jointList.JointCount + 1];
 
@@ -55,7 +55,7 @@ namespace Movement
 			return *this;
 		}
 
-		TMATRIX& addJoint()
+		TMATRIX& add()
 		{
 			add(TMATRIX::getIdentity());
 
@@ -83,7 +83,7 @@ namespace Movement
 			return JointCount;
 		}
 
-		TMATRIX operator[] (UInt8 n)
+		TMATRIX operator[] (UInt8 n) const
 		{
 			return *Joints[n];
 		}
