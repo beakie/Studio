@@ -7,12 +7,12 @@ namespace Common
 {
 
 	template <typename TIN, typename TOUT, typename TINDEX>
-	struct IList : ICollection<TIN, TOUT, TINDEX>
+	struct IList : ICollection<TOUT, TINDEX>
 	{
 	public:
 		virtual void remove(const TINDEX index) = 0;
 
-		virtual void add(const TIN item) = 0;
+		virtual void add(const TIN& item) = 0;
 
 		virtual void clear() = 0;
 

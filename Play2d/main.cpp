@@ -4,6 +4,30 @@
 
 #include "skeletalrenderwidget.h"
 
+template <typename T>
+struct IList
+{
+	virtual void add(const T& item) = 0;
+};
+
+template <typename T>
+struct PrimitiveList
+	: IList<T>
+{
+	void add(const T& item)
+	{
+	}
+};
+
+template <typename T>
+struct ComplexList
+	: IList<T>
+{
+	void add(const T& item)
+	{
+	}
+};
+
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -56,7 +80,9 @@ int main(int argc, char *argv[])
 	list = Common::List<unsigned int, int>(list);
 	*/
 
-	
+
+	PrimitiveList<int> pList = PrimitiveList<int>();
+	ComplexList<Movement::Rotating2dActuator<float>> cList = ComplexList<Movement::Rotating2dActuator<float>>();
 
 
 	return a.exec();

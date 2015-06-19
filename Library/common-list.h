@@ -54,7 +54,7 @@ namespace Common
 			Count--;
 		}
 
-		void add(const TVALUE item)
+		void add(const TVALUE& item)
 		{
 			operator+=(item);
 		}
@@ -148,7 +148,7 @@ namespace Common
 			return *this;
 		}
 
-		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TVALUE, TINDEX>& collection)
+		List<TVALUE, TINDEX> & operator+=(const ICollection<TVALUE, TINDEX>& collection)
 		{
 			TINDEX collectionCount = collection.count();
 

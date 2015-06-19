@@ -480,7 +480,6 @@ namespace Common
 	/// vector of size 4 with max bit floating point values
 	/// </summary>
 	typedef Vector4<FloatMax> Vector4F;
-
 }
 
 #endif // COMMON_H
