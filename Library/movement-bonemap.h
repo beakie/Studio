@@ -9,7 +9,6 @@
 namespace Movement
 {
 	struct BoneMap
-		: Common::ICollection<UInt8, UInt8>
 	{
 		UInt8* ParentBones;
 		UInt8 BoneCount;
