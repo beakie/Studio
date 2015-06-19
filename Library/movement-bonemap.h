@@ -9,6 +9,7 @@
 namespace Movement
 {
 	struct BoneMap
+		: Common::ICollection<UInt8, UInt8>
 	{
 		UInt8* ParentBones;
 		UInt8 BoneCount;
@@ -124,6 +125,16 @@ namespace Movement
 				return getBoneTransformMatrix<TMATRIX>(jointList, ParentBones[index]) * jointList.operator[](index);
 			else
 				return jointList.operator[](index);
+		}
+
+		UInt8 count() const
+		{
+			return BoneCount;
+		}
+
+		UInt8 operator[] (UInt8 n) const
+		{
+			return ParentBones[n];
 		}
 
 		~BoneMap()

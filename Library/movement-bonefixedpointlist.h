@@ -8,6 +8,7 @@ namespace Movement
 {
 	template <typename TPOINT>
 	struct BoneFixedPointList
+		: Common::ICollection<Common::Tuple2<int, TPOINT>, UInt8>
 	{
 		UInt8* BoneIndex;
 		TPOINT** Points;
@@ -92,6 +93,16 @@ namespace Movement
 			PointCount++;
 
 			return PointCount - 1;
+		}
+
+		UInt8 count() const
+		{
+			return PointCount;
+		}
+
+		Common::Tuple2<int, TPOINT> operator[] (UInt8 n) const
+		{
+			return Common::Tuple2<int, TPOINT>(BoneIndex[n], *Points[n]);
 		}
 
 		~BoneFixedPointList()
