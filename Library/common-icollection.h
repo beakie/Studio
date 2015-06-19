@@ -4,16 +4,13 @@
 namespace Common
 {
 
-	template <typename TOUT, typename TINDEX>
+	template <typename TVALUE, typename TINDEX>
 	struct ICollection
 	{
 	public:
 		virtual TINDEX count() const = 0;
 
-		virtual TOUT operator[] (TINDEX n) = 0;
-
-		~ICollection() {
-		}
+		virtual TVALUE operator[] (const TINDEX n) = 0;
 	};
 
 }

@@ -4,27 +4,27 @@
 
 #include "skeletalrenderwidget.h"
 
-template <typename T>
+template <typename T1, typename T2>
+struct ICollection
+{
+	virtual T1 operator[] (const T2 n) = 0;
+};
+
+template <typename T1, typename T2>
 struct IList
+	: ICollection<T1, T2>
 {
-	virtual void add(const T& item) = 0;
 };
 
-template <typename T>
-struct PrimitiveList
-	: IList<T>
+template <typename T1, typename T2>
+struct List
+	: IList<T1, T2>
 {
-	void add(const T& item)
+	T1* Items;
+	
+	T1 operator[] (const T2 n)
 	{
-	}
-};
-
-template <typename T>
-struct ComplexList
-	: IList<T>
-{
-	void add(const T& item)
-	{
+		return Items[n];
 	}
 };
 
@@ -81,9 +81,7 @@ int main(int argc, char *argv[])
 	*/
 
 
-	PrimitiveList<int> pList = PrimitiveList<int>();
-	ComplexList<Movement::Rotating2dActuator<float>> cList = ComplexList<Movement::Rotating2dActuator<float>>();
-
+	List<double, int> foo = List<double, int>();
 
 	return a.exec();
 }

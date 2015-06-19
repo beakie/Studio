@@ -9,7 +9,7 @@ namespace Common
 {
 
 	template <typename TVALUE, typename TINDEX = UIntMax>
-	struct ManagedList : IList<const TVALUE &, TVALUE, TINDEX>
+	struct ManagedList : IList<TVALUE, TINDEX>
 	{
 
 	protected:
@@ -155,7 +155,7 @@ namespace Common
 			return *this;
 		}
 
-		TVALUE operator[] (TINDEX n)
+		TVALUE operator[] (const TINDEX n)
 		{
 			return TVALUE(*Items[n]);
 		}

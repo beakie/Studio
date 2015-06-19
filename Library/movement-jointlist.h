@@ -8,6 +8,7 @@ namespace Movement
 {
 	template <typename TMATRIX>
 	struct JointList
+		: Common::ManagedList<TMATRIX, UInt8>
 	{
 		TMATRIX** Joints;
 		UInt8 JointCount;
@@ -56,20 +57,35 @@ namespace Movement
 
 		TMATRIX& addJoint()
 		{
+			add(TMATRIX::getIdentity());
+
+			return *Joints[JointCount - 1];
+		}
+
+		void add(const TMATRIX& item)
+		{
 			TMATRIX** tmpJoints = new TMATRIX*[JointCount + 1];
 
 			for (UInt8 i = 0; i < JointCount; i++)
 				tmpJoints[i] = Joints[i];
 
-			tmpJoints[JointCount] = new TMATRIX(TMATRIX::getIdentity());
+			tmpJoints[JointCount] = new TMATRIX(item);
 
 			delete[] Joints;
 
 			Joints = tmpJoints;
 
 			JointCount++;
+		}
 
-			return *Joints[JointCount - 1];
+		UInt8 count() const
+		{
+			return JointCount;
+		}
+
+		TMATRIX operator[] (UInt8 n)
+		{
+			return *Joints[n];
 		}
 
 		~JointList()
