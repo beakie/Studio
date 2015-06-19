@@ -48,7 +48,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of rows
 		/// </summary>
-		UInt8 getRowCount()
+		UInt8 getRowCount() const
 		{
 			return 2;
 		}
@@ -56,7 +56,7 @@ namespace Common
 		/// <summary>
 		/// Returns the number of columns
 		/// </summary>
-		UInt8 getColumnCount()
+		UInt8 getColumnCount() const
 		{
 			return 2;
 		}
@@ -364,7 +364,7 @@ namespace Common
 		/// <summary>
 		/// Returns the transpose of the matrix
 		/// </summary>
-		Matrix2<TVALUE> getTransposed()
+		Matrix2<TVALUE> getTransposed() const
 		{
 			return Matrix2<TVALUE>(*this).transpose();
 		}
@@ -390,7 +390,7 @@ namespace Common
 		/// <summary>
 		/// Returns the inverse of the matrix
 		/// </summary>
-		Matrix2<TVALUE> getInverted()
+		Matrix2<TVALUE> getInverted() const
 		{
 			return Matrix2<TVALUE>(*this).inverse();
 		}
