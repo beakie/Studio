@@ -45,10 +45,16 @@ public:
 		angle5Edit = new QLineEdit(this);
 
 		angle1Edit->setText("100");
+		angle1Edit->move(0, 0);
 		angle2Edit->setText("200");
+		angle2Edit->move(0, 25);
 		angle3Edit->setText("300");
+		angle3Edit->move(0, 50);
 		angle4Edit->setText("400");
+		angle4Edit->move(0, 75);
 		angle5Edit->setText("500");
+		angle5Edit->move(0, 100);
+		this->setMinimumSize(750, 500);
 
 		this->Skeletal = skeletal;
 
