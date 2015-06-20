@@ -30,33 +30,20 @@ public:
 	QPen translatedPositionJointPen;
 	int translatedPositionJointRadius;
 
-	QLineEdit* angle1Edit;
-	QLineEdit* angle2Edit;
-	QLineEdit* angle3Edit;
-	QLineEdit* angle4Edit;
-	QLineEdit* angle5Edit;
+	QLineEdit* angleEdit[4];
 
 	SkeletalRenderWidget(Skeletals::Implemented<TPOINT, TMATRIX>* skeletal)
 	{
-		angle1Edit = new QLineEdit(this);
-		angle2Edit = new QLineEdit(this);
-		angle3Edit = new QLineEdit(this);
-		angle4Edit = new QLineEdit(this);
-		angle5Edit = new QLineEdit(this);
-
-		angle1Edit->setText("100");
-		angle1Edit->move(0, 0);
-		angle2Edit->setText("200");
-		angle2Edit->move(0, 25);
-		angle3Edit->setText("300");
-		angle3Edit->move(0, 50);
-		angle4Edit->setText("400");
-		angle4Edit->move(0, 75);
-		angle5Edit->setText("500");
-		angle5Edit->move(0, 100);
-		this->setMinimumSize(750, 500);
-
 		this->Skeletal = skeletal;
+
+		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
+		{
+			angleEdit[i] = new QLineEdit(this);
+			angleEdit[i]->setText(QString::number(45 * i));
+			angleEdit[i]->move(0, i * 25);
+		}
+
+		this->setMinimumSize(750, 500);
 
 		this->backgroundBrush = QBrush(Qt::white);
 
@@ -100,11 +87,11 @@ public:
 
 		// This needs the values from IActuators... ToString()?
 		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
-		angleList.add(angle1Edit->text().toFloat());
-		angleList.add(angle2Edit->text().toFloat());
-		angleList.add(angle3Edit->text().toFloat());
-		angleList.add(angle4Edit->text().toFloat());
-		angleList.add(angle5Edit->text().toFloat());
+
+		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
+		{
+			angleList.add(angleEdit[i]->text().toFloat());
+		}
 
 		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
 
