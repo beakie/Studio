@@ -73,6 +73,7 @@ public:
 
 		// ***** Angles
 
+		// This needs the values from IActuators... ToString()?
 		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
 		angleList.add(10);
 		angleList.add(20);
