@@ -5,6 +5,7 @@
 #include <qgraphicswidget.h>
 #include <qpainter.h>
 #include <qstring.h>
+#include <qlineedit.h>
 
 #include "../Library/studio.h"
 
@@ -29,8 +30,26 @@ public:
 	QPen translatedPositionJointPen;
 	int translatedPositionJointRadius;
 
+	QLineEdit* angle1Edit;
+	QLineEdit* angle2Edit;
+	QLineEdit* angle3Edit;
+	QLineEdit* angle4Edit;
+	QLineEdit* angle5Edit;
+
 	SkeletalRenderWidget(Skeletals::Implemented<TPOINT, TMATRIX>* skeletal)
 	{
+		angle1Edit = new QLineEdit(this);
+		angle2Edit = new QLineEdit(this);
+		angle3Edit = new QLineEdit(this);
+		angle4Edit = new QLineEdit(this);
+		angle5Edit = new QLineEdit(this);
+
+		angle1Edit->setText("100");
+		angle2Edit->setText("200");
+		angle3Edit->setText("300");
+		angle4Edit->setText("400");
+		angle5Edit->setText("500");
+
 		this->Skeletal = skeletal;
 
 		this->backgroundBrush = QBrush(Qt::white);
@@ -75,11 +94,11 @@ public:
 
 		// This needs the values from IActuators... ToString()?
 		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
-		angleList.add(10);
-		angleList.add(20);
-		angleList.add(30);
-		angleList.add(40);
-		angleList.add(50);
+		angleList.add(angle1Edit->text().toFloat());
+		angleList.add(angle2Edit->text().toFloat());
+		angleList.add(angle3Edit->text().toFloat());
+		angleList.add(angle4Edit->text().toFloat());
+		angleList.add(angle5Edit->text().toFloat());
 
 		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
 
