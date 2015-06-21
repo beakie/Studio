@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{EABBEA89-1522-47F3-A622-768DE28274A3}"
 	ProjectSection(SolutionItems) = preProject
@@ -160,6 +160,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkeletalRender-Qt", "Skelet
 		Library\skeletalrender-qt.h = Library\skeletalrender-qt.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aerial", "Aerial", "{6B4CD1A8-025D-4B75-B0EA-6FF6B7185E87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -192,5 +194,6 @@ Global
 		{74304190-B709-4A1C-A513-8265DBBF0FFB} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{C7030DD8-7707-43AB-9E34-51F04FA9E724} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 		{839484E3-EB15-439C-9323-E4C9F6E9C47B} = {EABBEA89-1522-47F3-A622-768DE28274A3}
+		{6B4CD1A8-025D-4B75-B0EA-6FF6B7185E87} = {EABBEA89-1522-47F3-A622-768DE28274A3}
 	EndGlobalSection
 EndGlobal
