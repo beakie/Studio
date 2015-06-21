@@ -89,9 +89,7 @@ public:
 		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
 
 		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
-		{
 			angleList.add(angleEdit[i]->text().toFloat());
-		}
 
 		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
 
