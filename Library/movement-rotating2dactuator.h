@@ -17,7 +17,7 @@ namespace Movement
 		{
 		}
 
-		void set(const Common::Matrix3<TVALUE>& matrix)
+		void set(Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Space2d::getRotationMatrix(Angle);
 		}
