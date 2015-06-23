@@ -48,6 +48,10 @@ int main(int argc, char *argv[])
 	Common::List<double> rotationList = Common::List<double>();
 	//rotationList.add(180 - flexAngleDegree);
 	rotationList.add(45);
+	rotationList.add(45);
+	rotationList.add(45);
+	rotationList.add(45);
+	rotationList.add(45);
 
 	for (int i = 0; i < rotationList.count(); i++)
 		if (rotationList.Items[i] != 0)

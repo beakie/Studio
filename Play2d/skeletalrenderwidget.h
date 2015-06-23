@@ -5,6 +5,7 @@
 #include <qgraphicswidget.h>
 #include <qpainter.h>
 #include <qstring.h>
+#include <qlineedit.h>
 
 #include "../Library/studio.h"
 
@@ -29,9 +30,20 @@ public:
 	QPen translatedPositionJointPen;
 	int translatedPositionJointRadius;
 
+	QLineEdit* angleEdit[4];
+
 	SkeletalRenderWidget(Skeletals::Implemented<TPOINT, TMATRIX>* skeletal)
 	{
 		this->Skeletal = skeletal;
+
+		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
+		{
+			angleEdit[i] = new QLineEdit(this);
+			angleEdit[i]->setText(QString::number(45 * i));
+			angleEdit[i]->move(0, i * 25);
+		}
+
+		this->setMinimumSize(750, 500);
 
 		this->backgroundBrush = QBrush(Qt::white);
 
@@ -73,12 +85,11 @@ public:
 
 		// ***** Angles
 
+		// This needs the values from IActuators... ToString()?
 		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
-		angleList.add(10);
-		angleList.add(20);
-		angleList.add(30);
-		angleList.add(40);
-		angleList.add(50);
+
+		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
+			angleList.add(angleEdit[i]->text().toFloat());
 
 		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
 
