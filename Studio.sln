@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Play2d", "Play2d\Play2d.vcxproj", "{539D6705-C81F-4F02-8667-8C3FA2B5053B}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{EABBEA89-1522-47F3-A622-768DE28274A3}"
 	ProjectSection(SolutionItems) = preProject
 		Library\core.h = Library\core.h
@@ -128,8 +130,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picture-Qt", "Picture-Qt", 
 		Library\picture-qt.h = Library\picture-qt.h
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Play2d", "Play2d\Play2d.vcxproj", "{539D6705-C81F-4F02-8667-8C3FA2B5053B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kinematics", "Kinematics", "{6906B4BF-34E6-42FA-9B09-33784287526E}"
 	ProjectSection(SolutionItems) = preProject
 		Library\kinematics-arm2link_.cpp = Library\kinematics-arm2link_.cpp
@@ -159,6 +159,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SkeletalRender-Qt", "Skelet
 	ProjectSection(SolutionItems) = preProject
 		Library\skeletalrender-qt.h = Library\skeletalrender-qt.h
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{34F7D37B-DA33-49F1-9692-BB2BE32EF8F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
