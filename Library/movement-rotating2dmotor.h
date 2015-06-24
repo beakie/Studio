@@ -8,7 +8,7 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Rotating2dMotor : IActuator<Common::Matrix3<TVALUE>>
+	class Rotating2dMotor : public IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 		TVALUE Intensity;

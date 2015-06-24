@@ -8,7 +8,7 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Linear2dActuator : IActuator<Common::Matrix3<TVALUE>> // Translates along X axis
+	class Linear2dActuator : public IActuator<Common::Matrix3<TVALUE>> // Translates along X axis
 	{
 	public:
 		TVALUE Translation;

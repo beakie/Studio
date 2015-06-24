@@ -9,8 +9,7 @@
 namespace Movement
 {
 	template <typename TMATRIX>
-	struct ActuatorControl
-		: Common::ManagedList<IActuator<TMATRIX>>
+	struct ActuatorControl : public Common::ManagedList<IActuator<TMATRIX>>
 	{
 
 

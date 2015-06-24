@@ -8,7 +8,7 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Rotating2dStepper : IActuator<Common::Matrix3<TVALUE>>
+	class Rotating2dStepper : public IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 

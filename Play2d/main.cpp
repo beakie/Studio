@@ -4,23 +4,6 @@
 
 #include "skeletalrenderwidget.h"
 
-struct IFoo
-{
-
-};
-
-struct Bar : IFoo
-{
-
-};
-
-struct Baz
-{
-	void someFunc(const IFoo& foo)
-	{
-	}
-};
-
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -62,16 +45,10 @@ int main(int argc, char *argv[])
 	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::ActuatorControl2d actuatorControl = Movement::ActuatorControl2d();
-	
-	//actuatorControl.operator+=(Movement::Linear2dActuator<float>());
-
-	//actuatorControl.add(Movement::Linear2dActuator<float>());
-	//actuatorControl.add(Movement::Rotating2dServo<float>());
-	//actuatorControl.add(Movement::Rotating2dStepper<float>());
-	//actuatorControl.add(Movement::Rotating2dMotor<float>());
-
-	Baz baz = Baz();
-	baz.someFunc(Bar());
+	actuatorControl.add(Movement::Linear2dActuator<FloatMax>());
+	actuatorControl.add(Movement::Rotating2dServo<FloatMax>());
+	actuatorControl.add(Movement::Rotating2dStepper<FloatMax>());
+	actuatorControl.add(Movement::Rotating2dMotor<FloatMax>());
 
 	return a.exec();
 }

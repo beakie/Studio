@@ -8,7 +8,7 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Rotating2dServo : IActuator<Common::Matrix3<TVALUE>>
+	class Rotating2dServo : public IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 		TVALUE Angle;
