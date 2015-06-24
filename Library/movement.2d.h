@@ -11,6 +11,7 @@
 #include "movement-pointtranslation2d_.h"
 #include "movement-rotating2dmotor.h"
 #include "movement-rotating2dservo.h"
+#include "movement-rotating2dstepper.h"
 #include "movement-rotationlist.h"
 
 namespace Movement

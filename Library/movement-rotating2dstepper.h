@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_ROTATING2DMOTOR_H
-#define MOVEMENT_ROTATING2DMOTOR_H
+#ifndef MOVEMENT_ROTATING2DSTEPPER_H
+#define MOVEMENT_ROTATING2DSTEPPER_H
 
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
@@ -8,11 +8,11 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Rotating2dMotor : IActuator<Common::Matrix3<TVALUE>>
+	class Rotating2dStepper : IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 
-		Rotating2dMotor()
+		Rotating2dStepper()
 		{
 		}
 
@@ -21,10 +21,10 @@ namespace Movement
 			matrix = Common::Matrix3<TVALUE>::getIdentity();
 		}
 
-		virtual ~Rotating2dMotor()
+		virtual ~Rotating2dStepper()
 		{
 		}
 	};
 }
 
-#endif // MOVEMENT_ROTATING2DMOTOR_H
+#endif // MOVEMENT_ROTATING2DSTEPPER_H

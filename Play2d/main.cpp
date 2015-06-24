@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
 
 	Movement::Linear2dActuator<float> linearActuator;
 	Movement::Rotating2dServo<float> rotatingServo;
+	Movement::Rotating2dStepper<float> rotatingStepper;
 	Movement::Rotating2dMotor<float> rotatingMotor;
 
 	return a.exec();
