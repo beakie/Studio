@@ -18,7 +18,7 @@ namespace Movement
 
 		void set(Common::Matrix3<TVALUE>& matrix)
 		{
-			matrix = Common::Matrix3<TVALUE>();
+			matrix = Common::Matrix3<TVALUE>::getIdentity();
 		}
 
 		virtual ~Rotating2dMotor()
