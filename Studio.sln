@@ -63,6 +63,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movement", "Movement", "{2E
 		Library\movement-pointtranslation3d_.h = Library\movement-pointtranslation3d_.h
 		Library\movement-rotating2dmotor.h = Library\movement-rotating2dmotor.h
 		Library\movement-rotating2dservo.h = Library\movement-rotating2dservo.h
+		Library\movement-rotating2dstepper.h = Library\movement-rotating2dstepper.h
 		Library\movement-rotationlist.h = Library\movement-rotationlist.h
 		Library\movement.2d.h = Library\movement.2d.h
 		Library\movement.3d.h = Library\movement.3d.h
