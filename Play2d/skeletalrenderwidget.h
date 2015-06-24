@@ -30,7 +30,7 @@ public:
 	QPen translatedPositionJointPen;
 	int translatedPositionJointRadius;
 
-	QLineEdit* angleEdit[4];
+	QLineEdit* angleEdit[5];
 
 	SkeletalRenderWidget(Skeletals::Implemented<TPOINT, TMATRIX>* skeletal)
 	{
@@ -86,10 +86,13 @@ public:
 		// ***** Angles
 
 		// This needs the values from IActuators... ToString()?
-		Common::ManagedList<FloatMax> angleList = Common::ManagedList<FloatMax>();
+		Common::List<FloatMax> angleList = Common::List<FloatMax>();
 
 		for (UInt8 i = 0; i < this->Skeletal->Joints.JointCount; i++)
-			angleList.add(angleEdit[i]->text().toFloat());
+		{
+			float f = angleEdit[i]->text().toFloat();
+			angleList.add(f);
+		}
 
 		renderAngles(translatedJointPositions, angleList, painter, this->translatedPositionJointPen, offsetX, offsetY);
 
@@ -125,13 +128,13 @@ public:
 			painter.drawEllipse(pointList.Points[i]->Values[0] + offsetX - jointRadius, pointList.Points[i]->Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
 	}
 
-	void renderAngles(Movement::PointList<TPOINT> pointList, Common::ManagedList<FloatMax> angleList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
+	void renderAngles(Movement::PointList<TPOINT> pointList, Common::List<FloatMax> angleList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
 	{
 		painter.setPen(pen);
 		
 		for (int i = 0; i < pointList.PointCount; i++)
 		{
-			QString angleString = QString::number((double)*angleList.Items[i]);
+			QString angleString = QString::number((double)angleList.Items[i]);
 			painter.drawText(pointList.Points[i]->Values[0] + offsetX - 10, pointList.Points[i]->Values[1] + offsetY - 10, angleString);
 		}
 	}
