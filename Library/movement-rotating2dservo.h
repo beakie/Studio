@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_ROTATING2DACTUATOR_H
-#define MOVEMENT_ROTATING2DACTUATOR_H
+#ifndef MOVEMENT_ROTATING2DSERVO_H
+#define MOVEMENT_ROTATING2DSERVO_H
 
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
@@ -8,12 +8,12 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Rotating2dActuator : IActuator<Common::Matrix3<TVALUE>>
+	class Rotating2dServo : IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
 		TVALUE Angle;
 
-		Rotating2dActuator()
+		Rotating2dServo()
 		{
 		}
 
@@ -22,10 +22,10 @@ namespace Movement
 			matrix = Space2d::getRotationMatrix(Angle);
 		}
 
-		virtual ~Rotating2dActuator()
+		virtual ~Rotating2dServo()
 		{
 		}
 	};
 }
 
-#endif // MOVEMENT_ROTATING2DACTUATOR_H
+#endif // MOVEMENT_ROTATING2DSERVO_H

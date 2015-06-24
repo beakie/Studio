@@ -9,7 +9,7 @@
 #include "movement-linear2dactuator.h"
 #include "movement-pointlist.h"
 #include "movement-pointtranslation2d_.h"
-#include "movement-rotating2dactuator.h"
+#include "movement-rotating2dservo.h"
 #include "movement-rotationlist.h"
 
 namespace Movement

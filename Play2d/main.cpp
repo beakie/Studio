@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::Linear2dActuator<float> linearActuator;
-	Movement::Rotating2dActuator<float> rotatingActuator;
+	Movement::Rotating2dServo<float> rotatingServo;
 
 	return a.exec();
 }
