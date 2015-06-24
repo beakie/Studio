@@ -17,7 +17,7 @@ namespace Movement
 		{
 		}
 
-		void set(Common::Matrix3<TVALUE>& matrix)
+		void setLocalActuation(Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Space2d::getTranslationMatrix(Translation, 0);
 		}

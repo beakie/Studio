@@ -16,7 +16,7 @@ namespace Movement
 		{
 		}
 
-		void set(Common::Matrix3<TVALUE>& matrix)
+		void setLocalActuation(Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Common::Matrix3<TVALUE>::getIdentity();
 		}

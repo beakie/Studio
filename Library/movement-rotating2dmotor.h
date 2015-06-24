@@ -11,12 +11,13 @@ namespace Movement
 	class Rotating2dMotor : IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
+		TVALUE Intensity;
 
 		Rotating2dMotor()
 		{
 		}
 
-		void set(Common::Matrix3<TVALUE>& matrix)
+		void setLocalActuation(Common::Matrix3<TVALUE>& matrix)
 		{
 			matrix = Common::Matrix3<TVALUE>::getIdentity();
 		}
