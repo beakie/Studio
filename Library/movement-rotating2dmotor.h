@@ -1,5 +1,5 @@
-#ifndef MOVEMENT_LINEAR2DACTUATOR_H
-#define MOVEMENT_LINEAR2DACTUATOR_H
+#ifndef MOVEMENT_ROTATING2DMOTOR_H
+#define MOVEMENT_ROTATING2DMOTOR_H
 
 #include "space2d-plot.h"
 #include "space2d-transformmatrixbuilders_.h"
@@ -8,24 +8,23 @@
 namespace Movement
 {
 	template <typename TVALUE>
-	class Linear2dActuator : IActuator<Common::Matrix3<TVALUE>> // Translates along X axis
+	class Rotating2dMotor : IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
-		TVALUE Translation;
-			
-		Linear2dActuator()
+
+		Rotating2dMotor()
 		{
 		}
 
 		void set(Common::Matrix3<TVALUE>& matrix)
 		{
-			matrix = Space2d::getTranslationMatrix(Translation, 0);
+			matrix = Common::Matrix3<TVALUE>();
 		}
 
-		virtual ~Linear2dActuator()
+		virtual ~Rotating2dMotor()
 		{
 		}
 	};
 }
 
-#endif // MOVEMENT_LINEAR2DACTUATOR_H
+#endif // MOVEMENT_ROTATING2DMOTOR_H
