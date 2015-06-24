@@ -35,7 +35,7 @@ namespace Movement
 			PointCount = boneFixedPointList.PointCount;
 		}
 
-		BoneFixedPointList(UInt8 size)
+		BoneFixedPointList(const UInt8 size)
 			: PointCount(size)
 		{
 			BoneIndex = new UInt8[size];

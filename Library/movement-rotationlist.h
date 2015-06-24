@@ -29,7 +29,7 @@ namespace Movement
 			RotationCount = rotationList.RotationCount;
 		}
 
-		RotationList(UInt8 size)
+		RotationList(const UInt8 size)
 			: RotationCount(size)
 		{
 			Rotations = new TVECTOR*[size];

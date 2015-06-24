@@ -30,7 +30,7 @@ namespace Movement
 			PointCount = pointList.PointCount;
 		}
 
-		PointList(UInt8 size)
+		PointList(const UInt8 size)
 			: PointCount(size)
 		{
 			Points = new TPOINT*[size];

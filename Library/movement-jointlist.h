@@ -30,7 +30,7 @@ namespace Movement
 			JointCount = jointList.JointCount;
 		}
 
-		JointList(UInt8 size)
+		JointList(const UInt8 size)
 			: JointCount(size)
 		{
 			Joints = new TMATRIX*[size];

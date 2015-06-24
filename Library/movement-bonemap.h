@@ -28,7 +28,7 @@ namespace Movement
 				ParentBones[i] = boneMap.ParentBones[i];
 		}
 
-		BoneMap(UInt8 chainedBoneCount)
+		BoneMap(const UInt8 chainedBoneCount)
 			: BoneCount(chainedBoneCount)
 		{
 			ParentBones = new UInt8[chainedBoneCount];
