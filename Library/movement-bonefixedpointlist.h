@@ -100,7 +100,7 @@ namespace Movement
 			return PointCount;
 		}
 
-		Common::Tuple2<int, TPOINT> operator[] (UInt8 n) const
+		Common::Tuple2<int, TPOINT> & operator[] (UInt8 n) const
 		{
 			return Common::Tuple2<int, TPOINT>(BoneIndex[n], *Points[n]);
 		}

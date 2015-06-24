@@ -155,7 +155,7 @@ namespace Common
 			return *this;
 		}
 
-		TVALUE operator[] (const TINDEX n) const
+		TVALUE & operator[] (const TINDEX n) const
 		{
 			return TVALUE(*Items[n]);
 		}

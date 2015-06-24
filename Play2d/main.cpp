@@ -49,6 +49,10 @@ int main(int argc, char *argv[])
 	actuatorControl.add(Movement::Rotating2dServo<FloatMax>());
 	actuatorControl.add(Movement::Rotating2dStepper<FloatMax>());
 	actuatorControl.add(Movement::Rotating2dMotor<FloatMax>());
+	
+	// This method can be used by some derivative of the angle calc functions. They know what type
+	//   they expect, and can cast whats needed after being supplied an ActuatorControl and indexes.
+	actuatorControl.get<Movement::Linear2dActuator<FloatMax>>(0).Translation = 2;
 
 	return a.exec();
 }

@@ -78,7 +78,7 @@ namespace Movement
 			return PointCount;
 		}
 
-		TPOINT operator[] (UInt8 n) const
+		TPOINT & operator[] (UInt8 n) const
 		{
 			return *Points[n];
 		}

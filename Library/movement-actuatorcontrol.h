@@ -9,10 +9,14 @@
 namespace Movement
 {
 	template <typename TMATRIX>
-	struct ActuatorControl : public Common::ManagedList<IActuator<TMATRIX>>
+	struct ActuatorControl : public Common::ManagedList<IActuator<TMATRIX>, UInt8>
 	{
 
-
+		template <typename TACTUATOR>
+		TACTUATOR & get(const UInt8 n)
+		{
+			return *((TACTUATOR*)(Items[n]));
+		}
 
 		~ActuatorControl()
 		{

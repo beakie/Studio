@@ -83,7 +83,7 @@ namespace Movement
 			return JointCount;
 		}
 
-		TMATRIX operator[] (UInt8 n) const
+		TMATRIX & operator[] (UInt8 n) const
 		{
 			return *Joints[n];
 		}
