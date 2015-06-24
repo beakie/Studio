@@ -4,27 +4,20 @@
 
 #include "skeletalrenderwidget.h"
 
-template <typename T1, typename T2>
-struct ICollection
+struct IFoo
 {
-	virtual T1 operator[] (const T2 n) = 0;
+
 };
 
-template <typename T1, typename T2>
-struct IList
-	: ICollection<T1, T2>
+struct Bar : IFoo
 {
+
 };
 
-template <typename T1, typename T2>
-struct List
-	: IList<T1, T2>
+struct Baz
 {
-	T1* Items;
-	
-	T1 operator[] (const T2 n)
+	void someFunc(const IFoo& foo)
 	{
-		return Items[n];
 	}
 };
 
@@ -69,10 +62,16 @@ int main(int argc, char *argv[])
 	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::ActuatorControl2d actuatorControl = Movement::ActuatorControl2d();
-	actuatorControl.operator+=(Movement::Linear2dActuator<float>());
-	actuatorControl.add(Movement::Rotating2dServo<float>());
-	actuatorControl.add(Movement::Rotating2dStepper<float>());
-	actuatorControl.add(Movement::Rotating2dMotor<float>());
+	
+	//actuatorControl.operator+=(Movement::Linear2dActuator<float>());
+
+	//actuatorControl.add(Movement::Linear2dActuator<float>());
+	//actuatorControl.add(Movement::Rotating2dServo<float>());
+	//actuatorControl.add(Movement::Rotating2dStepper<float>());
+	//actuatorControl.add(Movement::Rotating2dMotor<float>());
+
+	Baz baz = Baz();
+	baz.someFunc(Bar());
 
 	return a.exec();
 }
