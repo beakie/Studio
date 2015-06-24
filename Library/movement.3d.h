@@ -3,6 +3,7 @@
 
 #include "space3d.h"
 
+#include "movement-actuatorcontrol.h"
 #include "movement-bonemap.h"
 #include "movement-bonefixedpointlist.h"
 #include "movement-jointlist.h"
@@ -12,6 +13,10 @@
 
 namespace Movement
 {
+
+	typedef ActuatorControl<Common::Matrix4F32> ActuatorControl3d32;
+	typedef ActuatorControl<Common::Matrix4F64> ActuatorControl3d64;
+	typedef ActuatorControl<Common::Matrix4F> ActuatorControl3d;
 
 	typedef BoneFixedPointList<Space3d::CoordinateF32> BoneFixedPointList3d32;
 	typedef BoneFixedPointList<Space3d::CoordinateF64> BoneFixedPointList3d64;

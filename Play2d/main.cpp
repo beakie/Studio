@@ -68,10 +68,11 @@ int main(int argc, char *argv[])
 
 	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
-	Movement::Linear2dActuator<float> linearActuator;
-	Movement::Rotating2dServo<float> rotatingServo;
-	Movement::Rotating2dStepper<float> rotatingStepper;
-	Movement::Rotating2dMotor<float> rotatingMotor;
+	Movement::ActuatorControl2d actuatorControl = Movement::ActuatorControl2d();
+	actuatorControl.operator+=(Movement::Linear2dActuator<float>());
+	actuatorControl.add(Movement::Rotating2dServo<float>());
+	actuatorControl.add(Movement::Rotating2dStepper<float>());
+	actuatorControl.add(Movement::Rotating2dMotor<float>());
 
 	return a.exec();
 }
