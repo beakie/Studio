@@ -121,7 +121,7 @@ namespace Movement
 		TMATRIX getBoneTransformMatrix(const Common::ICollection<TMATRIX, UInt8>& jointList, const UInt8 index) const
 		{
 			if (ParentBones[index] != index)
-				return getBoneTransformMatrix<TMATRIX>(jointList, ParentBones[index]) * jointList.operator[](index);
+				return jointList.operator[](index) * getBoneTransformMatrix<TMATRIX>(jointList, ParentBones[index]);
 			else
 				return jointList.operator[](index);
 		}
