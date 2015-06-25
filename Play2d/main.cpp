@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	Skeletals::Implemented2d skeletal(5);
 
 	skeletal.ZeroPositions.Points[0]->operator=({ 0, 0 });
-	skeletal.ZeroPositions.Points[1]->operator=({ 75, 0 });
+	skeletal.ZeroPositions.Points[1]->operator=({ 50, 0 });
 	skeletal.ZeroPositions.Points[2]->operator=({ 100, 0 });
 	skeletal.ZeroPositions.Points[3]->operator=({ 150, 0 });
 	skeletal.ZeroPositions.Points[4]->operator=({ 200, 0 });
