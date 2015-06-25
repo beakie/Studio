@@ -11,14 +11,21 @@ namespace Movement
 	class Rotating2dStepper : public IActuator<Common::Matrix3<TVALUE>>
 	{
 	public:
+		int Steps;
+		int Position;
 
 		Rotating2dStepper()
 		{
 		}
 
+		Rotating2dStepper(int stepCount)
+		{
+			StepCount = stepCount;
+		}
+
 		void setLocalActuation(Common::Matrix3<TVALUE>& matrix)
 		{
-			matrix = Common::Matrix3<TVALUE>::getIdentity();
+			matrix = Space2d::getRotationMatrix((Common::Pi * (360 / Steps * Position) / 180.0));
 		}
 
 		virtual ~Rotating2dStepper()
