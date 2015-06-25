@@ -12,7 +12,7 @@ namespace Movement
 	{
 	public:
 		int Steps;
-		int Position;
+		int Position; // Unlike the (unmodified) servo, this can rotate over and over
 
 		Rotating2dStepper()
 		{
