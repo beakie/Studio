@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Points[3]->operator=({ 150, 0 });
 	skeletal.ZeroPositions.Points[4]->operator=({ 200, 0 });
 
+	// Skeletal Render
+
 	SkeletalRenderWidget<Space2d::PlotF, Common::Matrix3F> skeletalRenderWidget(&skeletal);
 	skeletalRenderWidget.show();
 
@@ -35,3 +37,10 @@ int main(int argc, char *argv[])
 
 	return a.exec();
 }
+
+class RenderQtWidget
+{
+	//void renderZeroBones(Common::ICollection<>)
+	//{
+	//}
+};
