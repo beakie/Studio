@@ -38,9 +38,39 @@ int main(int argc, char *argv[])
 	return a.exec();
 }
 
+template <typename TPOINT, typename TMATRIX>
 class RenderQtWidget
 {
-	//void renderZeroBones(Common::ICollection<>)
-	//{
-	//}
+	int CenterX;
+	int CenterY;
+
+	// **
+
+	// I could add pointers to each collection. Then I could create overloads for these functions that don't require collections as parameters.
+
+	// **
+
+	void renderZeroBones(const Movement::BoneMap & boneMap, Common::ICollection<TPOINT, UInt8> & zeroPositions, QPen & pen)
+	{
+		renderLineList(SkeletalRender::getJointToJointBoneLines(boneMap, zeroPositions), painter, this->zeroPositionBonePen, CenterX, CenterY);
+	}
+
+	// **
+
+	void renderLineList(Common::ICollection<Common::Tuple2<Space2d::PlotF, Space2d::PlotF>, UInt8> & lineList, QPainter& painter, QPen pen, const int offsetX, const int offsetY)
+	{
+		painter.setPen(pen);
+
+		for (int i = 0; i < lineList.count(); i++)
+			painter.drawLine(lineList.operator[](i).Item1.Values[0] + offsetX, lineList.operator[](i).Item1.Values[1] + offsetY, lineList.operator[](i).Item2.Values[0] + offsetX, lineList.operator[](i).Item2.Values[1] + offsetY);
+	}
+
+	void renderPointList(Common::ICollection<TPOINT, UInt8> & pointList, QPainter & painter, QPen pen, QBrush brush, const int jointRadius, const int offsetX, const int offsetY)
+	{
+		painter.setPen(pen);
+		painter.setBrush(brush);
+
+		for (int i = 0; i < pointList.count(); i++)
+			painter.drawEllipse(pointList.operator[](i).Values[0] + offsetX - jointRadius, pointList.operator[](i).Values[1] + offsetY - jointRadius, jointRadius * 2, jointRadius * 2);
+	}
 };
