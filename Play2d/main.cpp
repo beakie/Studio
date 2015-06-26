@@ -50,6 +50,10 @@ class RenderQtWidget
 
 	// **
 
+	virtual void renderAll()
+	{
+	}
+
 	void renderZeroBones(const Movement::BoneMap & boneMap, Common::ICollection<TPOINT, UInt8> & zeroPositions, QPen & pen)
 	{
 		renderLineList(SkeletalRender::getJointToJointBoneLines(boneMap, zeroPositions), painter, this->zeroPositionBonePen, CenterX, CenterY);
