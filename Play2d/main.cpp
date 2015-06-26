@@ -4,9 +4,13 @@
 
 #include "skeletalrenderwidget.h"
 
+// Removed 26/06/2015 12:36
+
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
+
+	// Skeletal
 
 	Skeletals::Implemented2d skeletal(5);
 
@@ -16,33 +20,8 @@ int main(int argc, char *argv[])
 	skeletal.ZeroPositions.Points[3]->operator=({ 150, 0 });
 	skeletal.ZeroPositions.Points[4]->operator=({ 200, 0 });
 
-	bool isReachable;
-	double flexAngleRadian;
-	Kinematics::calculateAngleForFlexJointDistance(50, 50, 50, flexAngleRadian, isReachable);
-	double flexAngleDegree = Common::degree(flexAngleRadian);
-
-	Common::List<double> rotationList = Common::List<double>();
-	//rotationList.add(180 - flexAngleDegree);
-	rotationList.add(0);
-	rotationList.add(90);
-	rotationList.add(270);
-	rotationList.add(45);
-	rotationList.add(45);
-
-	for (int i = 0; i < rotationList.count(); i++)
-		if (rotationList.Items[i] != 0)
-			skeletal.Joints.Joints[i]->set(Space2d::getRotationMatrix(Common::radian<double>(rotationList.Items[i]), skeletal.ZeroPositions.Points[i]->Values[0], skeletal.ZeroPositions.Points[i]->Values[1]));
-
 	SkeletalRenderWidget<Space2d::PlotF, Common::Matrix3F> skeletalRenderWidget(&skeletal);
 	skeletalRenderWidget.show();
-
-	//skeletalRenderWidget.Skeletal->getTranslatedEndEffectors();
-	//skeletalRenderWidget.Skeletal->getTranslatedJointPositions();
-	//skeletalRenderWidget.Skeletal->getTranslatedEndEffector(0);
-	//skeletalRenderWidget.Skeletal->getTranslatedBoneFixedPosition(0, Space2d::PlotF64(10, 10));
-	//skeletalRenderWidget.Skeletal->getTranslatedJointPosition(0);
-
-	SkeletalRender::getJointToBoneFixedPositionLines(Movement::getTranslatedJointPositions(skeletal.Joints, skeletal.BoneMap, skeletal.ZeroPositions), skeletal.EndEffectorZeroPositions);
 
 	Movement::ActuatorControl2d actuatorControl = Movement::ActuatorControl2d();
 	actuatorControl.add(Movement::Linear2dActuator<FloatMax>());
